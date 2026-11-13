@@ -1,8 +1,8 @@
-start	end	form	speaker	jp	note
-1.34	5.76	dlg	Dokurobey	やれやれ、数をもってやってみたが、全然役に立たなかったべ。
-5.96	7.78	dlg	Dokurobey	ああ、むしゃくしゃするべ。
-13.74	19.68	dlg	Dokurobey	もとはといえば、こいつらが不甲斐ないから、他の三悪の力を借りることになったべ。	Doronbow on his monitor
-20.18	21.74	dlg	Dokurobey	お仕置きだべ。	he presses a button
-25.20	26.62	dlg	Boyacky	な、なんだ、なんだ、なんだ?	? speaker
-26.62	29.70	dlg	Boyacky	このファンファーレは、もしかしてお仕置き?	? speaker; was: 腰置き
-30.50	31.46	dlg	Tonzra	あれや!	? a skull rocket comes at them; pass 2: アリアー!
+start	end	form	speaker	jp	en	note
+1.34	5.76	dlg	Dokurobey	やれやれ、数をもってやってみたが、全然役に立たなかったべ。	Well, well. I tried throwing numbers at it, but it was no use at all, y'hear.	
+5.96	7.78	dlg	Dokurobey	ああ、むしゃくしゃするべ。	Ugh, I'm so fed up, y'hear.	
+13.74	19.68	dlg	Dokurobey	もとはといえば、こいつらが不甲斐ないから、他の三悪の力を借りることになったべ。	It all started because these three are so useless that I had to borrow the other trios, y'hear.	Doronbow on his monitor
+20.18	21.74	dlg	Dokurobey	お仕置きだべ。	Punishment time, y'hear!	he presses a button
+25.20	26.62	dlg	Boyacky	な、なんだ、なんだ、なんだ?	Wh-what, what, what?	? speaker
+26.62	29.70	dlg	Boyacky	このファンファーレは、もしかしてお仕置き?	That fanfare... could it be punishment time?	? speaker; was: 腰置き
+30.50	31.46	dlg	Tonzra	あれや!	There it is!	? a skull rocket comes at them; pass 2: アリアー!

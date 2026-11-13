@@ -1,27 +1,27 @@
-start	end	form	speaker	jp	note
-3.94	6.54	dlg	Dokurobey	お前たちよくやっただべ	Dokurobey in his human form throughout the endings
-6.54	11.40	dlg	Dokurobey	お前らが新世界の主役だべ
-11.40	14.00	dlg	Dokurobey	さあ主役の座を渡すだべ
-14.00	18.00	dlg	Walsa	早よ渡して主役にしてもらうまんな	? speaker by the Kansai まんな
-18.00	19.36	dlg	Majo	ちょっとお待ち	? was: ちょっと待ち
-19.36	24.42	dlg	Majo	この主役の座ってこの世に二つとない珍しい植物なわけだろう
-24.42	25.24	dlg	Grocky	そうですね
-25.24	29.48	dlg	Majo	ってことは値段をつけられないくらいのお宝ってことだよね
-29.48	36.52	dlg	Grocky	はい。仮にこれを売れば、私たちは生涯遊んで暮らせるほどの大金持ちになれるかもしれませんよ。
-36.62	38.32	dlg	Walsa	ああ、大金持ちだ。
-38.70	42.16	dlg	Majo	それじゃあ、私たちのものにしたほうがいいんじゃないのかね?
-42.48	43.12	dlg	Walsa	せや、せや。
-43.44	46.48	dlg	Grocky	わかりました。それでは、そういうことで。
-48.82	51.24	dlg	Majo	これは私たちがいただいていくよ。
-51.60	52.28	dlg	Dokurobey	なぬー!	pass 2; pass 1: なんの?
-52.68	53.12	dlg	Grocky	それ!	? he pulls the flower up
-54.10	54.68	dlg	Majo	やった!
-55.08	56.20	dlg	Grocky	やりましたね!
-62.86	63.90	dlg	Dokurobey	スカポンタン!	was: 赤ポンター; his insult, as in desu-yo
-65.74	70.72	dlg	Dokurobey	主役の座はうかつに摘むと枯れてしまってなんの役にも立たなくなるだべ	was: 主役のだは迂闊に積む
-70.72	73.16	dlg	Dokurobey	誤ったことをしてくれただべ
-73.16	76.18	dlg	Majo	ってことはもうお宝の価値も
-76.18	79.94	dlg	Walsa	新世界の主役も全部パーってことでっか	was: パーツこと
-83.56	87.40	dlg	Tanpei	どうやらマージョたちのドジで主役の座はダメになったらしいな	was: 魔女たち
-88.14	89.76	dlg	Junko	マージョたちらしいわね	was: 魔女たち
-92.14	93.82	dlg	Majo	そりゃないよ	?
+start	end	form	speaker	jp	en	note
+3.94	6.54	dlg	Dokurobey	お前たちよくやっただべ	You lot did well, y'hear.	Dokurobey in his human form throughout the endings
+6.54	11.40	dlg	Dokurobey	お前らが新世界の主役だべ	You are the stars of the new world, y'hear.	
+11.40	14.00	dlg	Dokurobey	さあ主役の座を渡すだべ	Now, hand over Top Billing, y'hear.	
+14.00	18.00	dlg	Walsa	早よ渡して主役にしてもらうまんな	Hand it over quick so he makes us stars, I tell ya.	? speaker by the Kansai まんな
+18.00	19.36	dlg	Majo	ちょっとお待ち	Just a minute.	? was: ちょっと待ち
+19.36	24.42	dlg	Majo	この主役の座ってこの世に二つとない珍しい植物なわけだろう	This Top Billing is a rare plant, one of a kind in the world, right?	
+24.42	25.24	dlg	Grocky	そうですね	That's right.	
+25.24	29.48	dlg	Majo	ってことは値段をつけられないくらいのお宝ってことだよね	Which means it's a treasure so precious, you can't put a price on it.	
+29.48	36.52	dlg	Grocky	はい。仮にこれを売れば、私たちは生涯遊んで暮らせるほどの大金持ちになれるかもしれませんよ。	Yes. If we sold it, we might be rich enough to live it up for the rest of our lives.	
+36.62	38.32	dlg	Walsa	ああ、大金持ちだ。	Ooh, filthy rich!	
+38.70	42.16	dlg	Majo	それじゃあ、私たちのものにしたほうがいいんじゃないのかね?	Then shouldn't we keep it for ourselves?	
+42.48	43.12	dlg	Walsa	せや、せや。	Yeah, yeah!	
+43.44	46.48	dlg	Grocky	わかりました。それでは、そういうことで。	Understood. Then that's that.	
+48.82	51.24	dlg	Majo	これは私たちがいただいていくよ。	We'll be taking this with us!	
+51.60	52.28	dlg	Dokurobey	なぬー!	Wha-a-at?!	pass 2; pass 1: なんの?
+52.68	53.12	dlg	Grocky	それ!	There!	? he pulls the flower up
+54.10	54.68	dlg	Majo	やった!	We did it!	
+55.08	56.20	dlg	Grocky	やりましたね!	We sure did!	
+62.86	63.90	dlg	Dokurobey	スカポンタン!	You numbskulls!	was: 赤ポンター; his insult, as in desu-yo
+65.74	70.72	dlg	Dokurobey	主役の座はうかつに摘むと枯れてしまってなんの役にも立たなくなるだべ	If Top Billing is picked carelessly, it withers and is no use at all, y'hear!	was: 主役のだは迂闊に積む
+70.72	73.16	dlg	Dokurobey	誤ったことをしてくれただべ	You've gone and made a fine mess of things, y'hear.	
+73.16	76.18	dlg	Majo	ってことはもうお宝の価値も	So that means the treasure's worth is...	
+76.18	79.94	dlg	Walsa	新世界の主役も全部パーってことでっか	...and starring in the new world, it's all gone bust?	was: パーツこと
+83.56	87.40	dlg	Tanpei	どうやらマージョたちのドジで主役の座はダメになったらしいな	Looks like Majo's gang bungled it and ruined Top Billing.	was: 魔女たち
+88.14	89.76	dlg	Junko	マージョたちらしいわね	That's so like Majo's gang.	was: 魔女たち
+92.14	93.82	dlg	Majo	そりゃないよ	That's not fair!	?

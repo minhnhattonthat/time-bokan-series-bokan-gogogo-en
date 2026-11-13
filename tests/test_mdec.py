@@ -63,3 +63,13 @@ def test_marker_subtitles_fit():
     font = ImageFont.truetype(str(fmv_burn.FONT), fmv_burn.SIZE)
     lines = fmv_burn.balance(fmv_burn.wrap("18.30 " + fmv_burn.MARKER, font), font)
     assert len(lines) <= fmv_burn.MAX_LINES and all(font.getlength(ln) <= fmv_burn.MAX_W for ln in lines)
+
+
+def test_english_subtitles_fit_two_lines():
+    from PIL import ImageFont
+    font = ImageFont.truetype(str(fmv_burn.FONT), fmv_burn.SIZE)
+    for f in sorted((ROOT / "script" / "fmv").glob("*.tsv")):
+        for ln in f.read_text(encoding="utf-8").splitlines()[1:]:
+            en = ln.split("\t")[5]
+            lines = fmv_burn.balance(fmv_burn.wrap(en, font), font)
+            assert len(lines) <= 2 and all(font.getlength(x) <= fmv_burn.MAX_W for x in lines), (f.stem, en)

@@ -1,9 +1,9 @@
-start	end	form	speaker	jp	note
-3.76	5.50	dlg	Secovicci	アターシャ様、準備ができました。	was: アンターシャ
-6.18	7.28	dlg	Atasha	そうかい?
-7.68	12.44	dlg	Secovicci	他の三悪に対抗すべく特殊仕様で製作したアンドロメダマ号アルファです。	was: 3枠, すべき, アントロメダマゴ; 号 is a guess
-13.30	18.62	dlg	Secovicci	高速走行ターボエンジンに超金属ボディで固めた最強のマシンでございますよ。	? was: タブエンジン; speaker could be Dowalski
-18.76	20.70	dlg	Atasha	よーし、勝負はいただくよ。
-21.28	22.92	dlg	Atasha	これももう一杯いただくよ。	she is eating noodles
-23.22	24.82	dlg	Dowalski	やったもん!	? pass 2: ヤッターマン!
-25.06	27.74	dlg	Atasha	セコビッチ、ドワルスキー、オジャママンの出発だよ!	was: シャコビッチ、ドラスキー、オダママン
+start	end	form	speaker	jp	en	note
+3.76	5.50	dlg	Secovicci	アターシャ様、準備ができました。	Lady Atasha, everything is ready.	was: アンターシャ
+6.18	7.28	dlg	Atasha	そうかい?	Is it?	
+7.68	12.44	dlg	Secovicci	他の三悪に対抗すべく特殊仕様で製作したアンドロメダマ号アルファです。	The Andromedama Alpha, custom-built to take on the other villain trios.	was: 3枠, すべき, アントロメダマゴ; 号 is a guess
+13.30	18.62	dlg	Secovicci	高速走行ターボエンジンに超金属ボディで固めた最強のマシンでございますよ。	A high-speed turbo engine in a super-metal body: the strongest machine there is!	? was: タブエンジン; speaker could be Dowalski
+18.76	20.70	dlg	Atasha	よーし、勝負はいただくよ。	Right, this race is ours!	
+21.28	22.92	dlg	Atasha	これももう一杯いただくよ。	I'll take another bowl, too!	she is eating noodles
+23.22	24.82	dlg	Dowalski	やったもん!	We did it!	? pass 2: ヤッターマン!
+25.06	27.74	dlg	Atasha	セコビッチ、ドワルスキー、オジャママンの出発だよ!	Secovicci, Dowalski! Ojamaman, move out!	was: シャコビッチ、ドラスキー、オダママン

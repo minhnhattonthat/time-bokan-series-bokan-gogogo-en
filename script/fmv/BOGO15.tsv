@@ -1,22 +1,22 @@
-start	end	form	speaker	jp	note
-5.10	7.54	dlg	Dokurobey	お前たちよくやったべ	pass 1 heard ビー for his べ through this movie and BOGO16, pass 2 べ
-7.54	8.82	dlg	Mirenjo	ドクロベエ!	? both passes: ドクロビー
-8.82	12.38	dlg	Dokurobey	さあ主役の座を我が輩に渡すだべ	was: 渡すだビー
-12.38	15.96	dlg	Dokurobey	さすれば新世界での主役を約束するだべ	was: するだビー
-15.96	18.96	dlg	Mirenjo	ドクロベエ様、ご機嫌うるわしゅう	was: ドクロビー様
-18.96	20.94	dlg	Kokematsu	主役の座はここでございます	? speaker
-22.24	26.54	dlg	Mirenjo	ところで主役の件なのですがお願いがございますの
-26.54	29.00	dlg	Dokurobey	何でも聞いてやるだべ	was: だビー
-29.00	35.20	dlg	Mirenjo	わらわたちにとっての願いは、ナンダラ王国の復活と、我が弟コマロの王位継承でございます。	? ナンダラ, コマロ (the boy shown in her thought bubble at 46 s)
-35.68	41.90	dlg	Mirenjo	どうせ、新世界での主役をやらせていただけるのなら、この条件で叶えてくださいませんか?
-42.52	44.36	dlg	Dokurobey	わかった、任せるだべ。
-44.72	45.86	dlg	Yattodetaman	そうはさせないぞ!	the hero on a branch at 46-50 s
-45.94	46.58	dlg	Dokurobey	なぬ!
-54.86	56.02	dlg	Kokematsu	ヤットデタマン!	? was: やっと出たま; the hero's name is a pun on やっと出た
-56.02	58.88	dlg	Mirenjo	コケ、スカ、主役の座を捕まえるのです!	pass 2; pass 1: ゴクイ、スカイ
-65.58	66.52	dlg	Kokematsu	やったー!	he holds the flower at 66-68 s
-66.82	68.94	dlg	Kokematsu	ジュリーが捕まえましたよー!	? both passes: キョウシーが; his first name in the credits is ジュリー
-72.04	74.22	dlg	Sukadon	アイム・ソーリー…	English; he has sat on the flower
-76.26	78.54	dlg	Kokematsu	ミレンジョ様、これを!	?
-83.00	86.04	dlg	Yattodetaman	主役とはそんなものに頼ってなれるものではない
-86.04	88.80	dlg	Yattodetaman	真の勇気を持つ者だけがなれるんだ
+start	end	form	speaker	jp	en	note
+5.10	7.54	dlg	Dokurobey	お前たちよくやったべ	You lot did well, y'hear.	pass 1 heard ビー for his べ through this movie and BOGO16, pass 2 べ
+7.54	8.82	dlg	Mirenjo	ドクロベエ!	Dokurobey!	? both passes: ドクロビー
+8.82	12.38	dlg	Dokurobey	さあ主役の座を我が輩に渡すだべ	Now, hand Top Billing over to me, y'hear.	was: 渡すだビー
+12.38	15.96	dlg	Dokurobey	さすれば新世界での主役を約束するだべ	Do that, and I promise you top billing in the new world, y'hear.	was: するだビー
+15.96	18.96	dlg	Mirenjo	ドクロベエ様、ご機嫌うるわしゅう	Lord Dokurobey, we trust you are in fine spirits.	was: ドクロビー様
+18.96	20.94	dlg	Kokematsu	主役の座はここでございます	Here is Top Billing, sir.	? speaker
+22.24	26.54	dlg	Mirenjo	ところで主役の件なのですがお願いがございますの	Now, about this starring role... we have a request.	
+26.54	29.00	dlg	Dokurobey	何でも聞いてやるだべ	Ask me anything, y'hear.	was: だビー
+29.00	35.20	dlg	Mirenjo	わらわたちにとっての願いは、ナンダラ王国の復活と、我が弟コマロの王位継承でございます。	We wish to restore the Kingdom of Nandara, and see our little brother Komaro crowned.	? ナンダラ, コマロ (the boy shown in her thought bubble at 46 s)
+35.68	41.90	dlg	Mirenjo	どうせ、新世界での主役をやらせていただけるのなら、この条件で叶えてくださいませんか?	If we are to star in the new world anyway, would you grant us that?	
+42.52	44.36	dlg	Dokurobey	わかった、任せるだべ。	Done. Leave it to me, y'hear.	
+44.72	45.86	dlg	Yattodetaman	そうはさせないぞ!	I won't let that happen!	the hero on a branch at 46-50 s
+45.94	46.58	dlg	Dokurobey	なぬ!	Wha-a-at?!	
+54.86	56.02	dlg	Kokematsu	ヤットデタマン!	Yattodetaman!	? was: やっと出たま; the hero's name is a pun on やっと出た
+56.02	58.88	dlg	Mirenjo	コケ、スカ、主役の座を捕まえるのです!	Koke, Suka, catch Top Billing!	pass 2; pass 1: ゴクイ、スカイ
+65.58	66.52	dlg	Kokematsu	やったー!	Got it!	he holds the flower at 66-68 s
+66.82	68.94	dlg	Kokematsu	ジュリーが捕まえましたよー!	Julie caught it!	? both passes: キョウシーが; his first name in the credits is ジュリー
+72.04	74.22	dlg	Sukadon	アイム・ソーリー…	I'm sorry...	English; he has sat on the flower
+76.26	78.54	dlg	Kokematsu	ミレンジョ様、これを!	Lady Mirenjo, here!	?
+83.00	86.04	dlg	Yattodetaman	主役とはそんなものに頼ってなれるものではない	You can't become a star by relying on a thing like that.	
+86.04	88.80	dlg	Yattodetaman	真の勇気を持つ者だけがなれるんだ	Only those with true courage can!	

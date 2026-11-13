@@ -1,11 +1,11 @@
-start	end	form	speaker	jp	note
-1.28	4.68	dlg	Doronjo	ボヤッキー、私たちの乗るマシンはどうするんだ?	pass 1: ブヤッキー
-5.02	9.96	dlg	Boyacky	いや、こういうこともあろうかと、既にメカを用意してあるんですよ。
-10.02	11.40	dlg	Tonzra	ニューマシンでまんねん。	? was: ニューマシンでもあんねん, pass 2: ニューマシンで万年; split from one Whisper row, end time guessed
-11.40	12.66	dlg	Boyacky	ポチッとな。
-21.44	24.38	dlg	Doronjo	流れ石だね、りゅうせきだね、さすがだね	? pun: three readings of 流石, as in desu-yo MOVIE02; both passes: 流れ石だね、流石だね、さすがだね
-28.46	30.32	dlg	Odate-Buta	ブタもおだてりゃ木に登る	the pig climbs a palm tree on screen
-32.78	34.40	dlg	Doronjo	さあ出発だよ
-34.40	36.32	dlg	Doronjo	ドロンボーの邪魔をする奴らは
-36.32	38.56	dlg	Doronjo	片っ端からやっておしまい!	both passes: やってしまう; her catchphrase is やっておしまい
-38.56	39.70	dlg	Boyacky, Tonzra	アラホラサッサー!	? was: ハロホール再生, pass 2: ハロー!ハロー!ハロー!
+start	end	form	speaker	jp	en	note
+1.28	4.68	dlg	Doronjo	ボヤッキー、私たちの乗るマシンはどうするんだ?	Boyacky, what are we going to ride?	pass 1: ブヤッキー
+5.02	9.96	dlg	Boyacky	いや、こういうこともあろうかと、既にメカを用意してあるんですよ。	Why, I saw this coming, so I've already got a mecha ready!	
+10.02	11.40	dlg	Tonzra	ニューマシンでまんねん。	A brand-new machine, I tell ya!	? was: ニューマシンでもあんねん, pass 2: ニューマシンで万年; split from one Whisper row, end time guessed
+11.40	12.66	dlg	Boyacky	ポチッとな。	Annnd... click!	
+21.44	24.38	dlg	Doronjo	流れ石だね、りゅうせきだね、さすがだね	Genius, genie-us, gee, what a genius!	? pun: three readings of 流石, as in desu-yo MOVIE02; both passes: 流れ石だね、流石だね、さすがだね
+28.46	30.32	dlg	Odate-Buta	ブタもおだてりゃ木に登る	Flatter a pig, and it'll climb a tree!	the pig climbs a palm tree on screen
+32.78	34.40	dlg	Doronjo	さあ出発だよ	Now, let's go!	
+34.40	36.32	dlg	Doronjo	ドロンボーの邪魔をする奴らは	Anyone who gets in Doronbow's way...	
+36.32	38.56	dlg	Doronjo	片っ端からやっておしまい!	...let 'em have it, one and all!	both passes: やってしまう; her catchphrase is やっておしまい
+38.56	39.70	dlg	Boyacky, Tonzra	アラホラサッサー!	Arahora-sassa!	? was: ハロホール再生, pass 2: ハロー!ハロー!ハロー!

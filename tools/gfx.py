@@ -27,6 +27,9 @@ CLASSES = {
     "sign": ("Jersey10-Regular.ttf", J10, 2),         # names, courses, machines, messages, briefings: outlined art
     "label": ("Jersey10-Regular.ttf", J10, False),    # plain text on a panel (machine descriptions), small labels
     "small": ("Tiny5.ttf", 8, False),                 # 8-10 px rows (copyright); Tiny5's native 8 px grid, cap 5
+    # Tiny5 drawn twice as tall (4th field: vertical scale): ~4 px a letter at cap 10, for names in kana-sized boxes
+    "narrow": ("Tiny5.ttf", 8, True, 2),              # one outline (character names in 24-64 px name plates)
+    "narrowlabel": ("Tiny5.ttf", 8, False, 2),        # plain like `label`
     "credit": ("Jersey15-Regular.ttf", 15, True),
 }
 # graphics.tsv form -> class; a translation row may name another class
@@ -131,7 +134,7 @@ def marked(data, rects):
 def glyphs(text, form):
     """(ink, ring 1, ring 2) boolean arrays of the text in its class style, cropped to the ink; rings are empty when the
     class has fewer outlines. "|" breaks a line."""
-    name, size, outline = CLASSES[form]
+    name, size, outline, *yscale = CLASSES[form]
     font = ImageFont.truetype(str(ROOT / "fonts" / name), size)
     lines = text.split("|")
     pad = int(size)  # wide margins: italic overhang (Bangers) reaches past the advance width; the ink is cropped below
@@ -145,6 +148,8 @@ def glyphs(text, form):
     ink = np.array(img)
     rows, cols = np.flatnonzero(ink.any(axis=1)), np.flatnonzero(ink.any(axis=0))
     ink = ink[rows[0]:rows[-1] + 1, cols[0]:cols[-1] + 1]
+    if yscale:
+        ink = np.repeat(ink, yscale[0], axis=0)
     rings = []
     for _ in range(int(outline)):  # 1: one outline; 2: an inner light and an outer dark one (the menu art's style)
         ink = np.pad(ink, 1)

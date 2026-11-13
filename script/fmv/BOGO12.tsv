@@ -1,30 +1,30 @@
-start	end	form	speaker	jp	note
-3.92	6.16	dlg	Doronjo	これだよこれだよ主役の座	? speaker
-6.16	8.28	dlg	Dokurobey	お前たちよくやったべ
-8.28	9.84	dlg	Doronbow	ドクロベエ様	was: ドクルベ様
-9.84	20.40	dlg	Dokurobey	この主役の座はその花一輪を食べるだけで美形に姿を変える効果があるだべ	was: 花一輪も
-20.40	27.40	dlg	Dokurobey	世界一かっちょいい姿になることによって人々を魅了し新世界を築くことができるだべ
-27.40	28.90	dlg	Dokurobey	パクッとな	? was: んぱくっとな; a play on Boyacky's ポチッとな
-44.02	45.54	dlg	Doronjo	でもすごい効果だね
-45.54	48.74	dlg	Doronjo	これだったらさ、私たち自身が美形になれば
-48.74	50.80	dlg	Doronjo	目的は果たせるんじゃないのかね?
-51.04	52.16	dlg	Tonzra	そやそや!
-52.26	53.50	dlg	Boyacky	その手でいきましょう!
-53.70	54.44	dlg	Doronjo	それー!
-59.72	60.72	dlg	Doronjo	私だよ!	? the three scramble for the flower
-74.08	75.46	dlg	Doronjo	やったー!
-75.66	78.08	dlg	Doronjo	私のこの美しさ…
-78.86	79.36	dlg	Doronjo	なんだい?これは
-79.36	80.76	dlg	Doronjo	ひどい!	?
-80.76	83.46	dlg	Boyacky	こんな姿女子高生に見せられないわ	speaker: his close-up at 80-82 s, and his schoolgirl running gag
-85.64	91.64	dlg	Dokurobey	スカポンタン! 主役の座は花一輪を丸ごと食べないと意味がないだべ。	was: アカポンたん, 主役の名は
-91.76	96.30	dlg	Dokurobey	しかもお前たちのせいで我が輩の元の姿に戻ってしまっただべ。	? both passes: 我が輩の; who changed back is unclear (Dokurobey, or the gang into his old form): check frames 76-96 s; pass 1: 戻ってしまったらべ
-96.62	97.90	dlg	Doronbow	ああああああ!
-98.08	99.40	dlg	Dokurobey	アハハハハ!	? speaker; both passes hear laughter
-101.88	103.72	dlg	Gan-chan	なんだあいつらの姿は。
-104.46	106.72	dlg	Ai-chan	あの三人にお似合いな格好ね!
-106.92	108.54	dlg	Omotchama	まったくだコロン!	was: まっちゃくだ!コロン!
-108.58	112.58	dlg	Gan-chan	結局ドロンボーたちの企みも無駄だったみたいだね。	was: 泥棒たち
-112.58	113.66	dlg	Ai-chan	そうね
-114.36	115.88	dlg	Gan-chan	よし、帰ろう
-115.88	116.38	dlg	Ai-chan	うん
+start	end	form	speaker	jp	en	note
+3.92	6.16	dlg	Doronjo	これだよこれだよ主役の座	This is it, this is it! Top Billing!	? speaker
+6.16	8.28	dlg	Dokurobey	お前たちよくやったべ	You lot did well, y'hear.	
+8.28	9.84	dlg	Doronbow	ドクロベエ様	Lord Dokurobey!	was: ドクルベ様
+9.84	20.40	dlg	Dokurobey	この主役の座はその花一輪を食べるだけで美形に姿を変える効果があるだべ	Eat just one Top Billing flower, and it turns you into a beauty, y'hear.	was: 花一輪も
+20.40	27.40	dlg	Dokurobey	世界一かっちょいい姿になることによって人々を魅了し新世界を築くことができるだべ	With the coolest looks in the world, I'll charm everyone and build a new world, y'hear.	
+27.40	28.90	dlg	Dokurobey	パクッとな	Annnd... chomp!	? was: んぱくっとな; a play on Boyacky's ポチッとな
+44.02	45.54	dlg	Doronjo	でもすごい効果だね	Still, what an amazing effect.	
+45.54	48.74	dlg	Doronjo	これだったらさ、私たち自身が美形になれば	In that case, if we turned beautiful ourselves...	
+48.74	50.80	dlg	Doronjo	目的は果たせるんじゃないのかね?	...wouldn't we get what we're after?	
+51.04	52.16	dlg	Tonzra	そやそや!	Yeah, yeah!	
+52.26	53.50	dlg	Boyacky	その手でいきましょう!	Let's do it!	
+53.70	54.44	dlg	Doronjo	それー!	Here goes!	
+59.72	60.72	dlg	Doronjo	私だよ!	It's mine!	? the three scramble for the flower
+74.08	75.46	dlg	Doronjo	やったー!	I did it!	
+75.66	78.08	dlg	Doronjo	私のこの美しさ…	Behold my beauty...	
+78.86	79.36	dlg	Doronjo	なんだい?これは	What's this?	
+79.36	80.76	dlg	Doronjo	ひどい!	How awful!	?
+80.76	83.46	dlg	Boyacky	こんな姿女子高生に見せられないわ	I can't let the high-school girls see me like this!	speaker: his close-up at 80-82 s, and his schoolgirl running gag
+85.64	91.64	dlg	Dokurobey	スカポンタン! 主役の座は花一輪を丸ごと食べないと意味がないだべ。	You numbskulls! Top Billing does nothing unless you eat the whole flower, y'hear!	was: アカポンたん, 主役の名は
+91.76	96.30	dlg	Dokurobey	しかもお前たちのせいで我が輩の元の姿に戻ってしまっただべ。	And thanks to you, I've gone back to my original form, y'hear!	? both passes: 我が輩の; who changed back is unclear (Dokurobey, or the gang into his old form): check frames 76-96 s; pass 1: 戻ってしまったらべ
+96.62	97.90	dlg	Doronbow	ああああああ!	Aaaaaah!	
+98.08	99.40	dlg	Dokurobey	アハハハハ!	Ahahahaha!	? speaker; both passes hear laughter
+101.88	103.72	dlg	Gan-chan	なんだあいつらの姿は。	What happened to them?	
+104.46	106.72	dlg	Ai-chan	あの三人にお似合いな格好ね!	Suits those three perfectly!	
+106.92	108.54	dlg	Omotchama	まったくだコロン!	It sure does, koron!	was: まっちゃくだ!コロン!
+108.58	112.58	dlg	Gan-chan	結局ドロンボーたちの企みも無駄だったみたいだね。	Looks like Doronbow's scheme came to nothing in the end.	was: 泥棒たち
+112.58	113.66	dlg	Ai-chan	そうね	Sure did.	
+114.36	115.88	dlg	Gan-chan	よし、帰ろう	All right, let's go home.	
+115.88	116.38	dlg	Ai-chan	うん	Okay!	

@@ -1,37 +1,37 @@
-start	end	form	speaker	jp	note
-2.18	3.84	dlg	Dokurobey	ジャジャジャジャーン
-5.38	8.04	dlg	Dokurobey	我が輩はドクロベエだべ	was: わが輩はどこのべだべ
-8.70	10.94	dlg	Doronbow	ははーっ	? was: はあ、オッシュ
-10.94	15.58	dlg	Dokurobey	タイムボカンシリーズ歴代の悪役諸君に
-15.58	17.90	dlg	Dokurobey	耳寄りな情報を与えるべ
-17.90	21.68	dlg	Dokurobey	秘境アラゾンの奥の奥、そのまた奥にある	was: そこまた; アラゾン = Amazon parody, map of South America on screen
-21.68	24.76	dlg	Dokurobey	地図にも載っていないクタビレゾンの森に	was: くたびれゾン; course name クタビレゾン
-24.76	28.62	dlg	Dokurobey	主役の座という不思議な力を持った花が生えてるだべ
-29.08	34.78	dlg	Dokurobey	その花の力で我が輩は悪役の新世界を作る計画を立ててるだべ	was: ワンハイ
-39.56	45.20	dlg	Dokurobey	そこでじゃ、その主役の座を見事我が輩の手に届けた者どもには	was: ワンハイ
-45.20	50.54	dlg	Dokurobey	我が輩の作り出す新世界での主役になれることを約束してやるだべ	was: ワンハイ
-51.16	53.46	dlg	Doronjo	悪役新世界の主役だって?	? speaker: Doronbow on screen at 52 s
-53.86	54.30	dlg	Atasha	まあ	? speaker: Atasha's bath at 54 s
-55.20	56.18	dlg	Atasha	すごすぎる	?
-57.30	59.16	dlg	Kokematsu	信じていいのでしょうか?	? speaker: Mirenjo's gang on screen
-59.32	59.60	dlg	Munmun	そう。	?
-60.18	60.62	dlg	Munmun	本当?	?
-61.46	62.70	dlg	Kosuinen	怪しいな。	?
-63.78	64.22	dlg	Yanyan	でも。	? Yanyan's bedroom at 64 s
-64.80	65.24	dlg	Yanyan	すごい。	?
-65.86	66.42	dlg	Dokurobey	でな。	?
-67.44	68.64	dlg	Dokurobey	そこでじゃ。
-68.96	71.48	dlg	Dokurobey	今回はおめえら歴代三悪の中から、	was: 山岳, pass 2: 産学 (さんあく)
-71.58	74.04	dlg	Dokurobey	新世界の主役を選ぶために、
-74.08	77.08	dlg	Dokurobey	マシーンによるレース勝負で行ってもらうだべ。
-77.44	80.44	dlg	Dokurobey	諸君らの無駄な健闘を祈るだべ。
-82.12	85.38	dlg	Dokurobey	と言って我が輩はきらびやかに消える。	? was: キラキラ赤に消える, pass 2: きらめきやっかに; he vanishes in a flash
-90.28	91.40	dlg	Omotchama	おやおやおや
-91.40	92.64	dlg	Boyacky	いつもこれだもんな	? the gang's complaint after the punishment at 86-88 s
-92.64	96.86	dlg	Omotchama	こりゃ大変なことになったコロン
-96.86	97.84	dlg	Omotchama	ガンちゃん
-104.44	106.24	dlg	Gan-chan	悪役の新世界だって	?
-106.78	109.84	dlg	Ai-chan	そんな世界を作られたら大変なことになっちゃうわ
-109.84	113.14	dlg	Omotchama	その主役の座って花を守るでコロンよ
-113.14	117.64	dlg	Gan-chan	よーし、正義の仲間全員で奴らの野望を阻止してやるぞ
-117.64	119.22	dlg	Ai-chan	早速出動よ
+start	end	form	speaker	jp	en	note
+2.18	3.84	dlg	Dokurobey	ジャジャジャジャーン	Ta-da-da-daaan!	
+5.38	8.04	dlg	Dokurobey	我が輩はドクロベエだべ	I am Dokurobey, y'hear!	was: わが輩はどこのべだべ
+8.70	10.94	dlg	Doronbow	ははーっ	Yes, sir!	? was: はあ、オッシュ
+10.94	15.58	dlg	Dokurobey	タイムボカンシリーズ歴代の悪役諸君に	To all you villains of the Time Bokan Series, past and present...	
+15.58	17.90	dlg	Dokurobey	耳寄りな情報を与えるべ	I bring a juicy bit of news, y'hear.	
+17.90	21.68	dlg	Dokurobey	秘境アラゾンの奥の奥、そのまた奥にある	Deep, deep in the wilds of the Arazon, and then deeper still...	was: そこまた; アラゾン = Amazon parody, map of South America on screen
+21.68	24.76	dlg	Dokurobey	地図にも載っていないクタビレゾンの森に	in the Tirezon Forest, a place on no map...	was: くたびれゾン; course name クタビレゾン
+24.76	28.62	dlg	Dokurobey	主役の座という不思議な力を持った花が生えてるだべ	grows a flower with a mysterious power, called Top Billing, y'hear.	
+29.08	34.78	dlg	Dokurobey	その花の力で我が輩は悪役の新世界を作る計画を立ててるだべ	With the power of that flower, I'm planning a new world for villains, y'hear.	was: ワンハイ
+39.56	45.20	dlg	Dokurobey	そこでじゃ、その主役の座を見事我が輩の手に届けた者どもには	So here's the deal. Whoever delivers Top Billing into my hands...	was: ワンハイ
+45.20	50.54	dlg	Dokurobey	我が輩の作り出す新世界での主役になれることを約束してやるだべ	I promise top billing in the new world I create, y'hear!	was: ワンハイ
+51.16	53.46	dlg	Doronjo	悪役新世界の主役だって?	The stars of a new villain world?	? speaker: Doronbow on screen at 52 s
+53.86	54.30	dlg	Atasha	まあ	My!	? speaker: Atasha's bath at 54 s
+55.20	56.18	dlg	Atasha	すごすぎる	That's just too good!	?
+57.30	59.16	dlg	Kokematsu	信じていいのでしょうか?	Can we really believe him?	? speaker: Mirenjo's gang on screen
+59.32	59.60	dlg	Munmun	そう。	Oh?	?
+60.18	60.62	dlg	Munmun	本当?	Really?	?
+61.46	62.70	dlg	Kosuinen	怪しいな。	Sounds fishy.	?
+63.78	64.22	dlg	Yanyan	でも。	Still...	? Yanyan's bedroom at 64 s
+64.80	65.24	dlg	Yanyan	すごい。	Amazing.	?
+65.86	66.42	dlg	Dokurobey	でな。	And so...	?
+67.44	68.64	dlg	Dokurobey	そこでじゃ。	Here's the deal.	
+68.96	71.48	dlg	Dokurobey	今回はおめえら歴代三悪の中から、	This time, from all you villain trios...	was: 山岳, pass 2: 産学 (さんあく)
+71.58	74.04	dlg	Dokurobey	新世界の主役を選ぶために、	...to choose the star of the new world...	
+74.08	77.08	dlg	Dokurobey	マシーンによるレース勝負で行ってもらうだべ。	you'll settle it with a race, machine against machine, y'hear.	
+77.44	80.44	dlg	Dokurobey	諸君らの無駄な健闘を祈るだべ。	I wish you all the best in your futile efforts, y'hear.	
+82.12	85.38	dlg	Dokurobey	と言って我が輩はきらびやかに消える。	And with that, I vanish in a dazzling flash.	? was: キラキラ赤に消える, pass 2: きらめきやっかに; he vanishes in a flash
+90.28	91.40	dlg	Omotchama	おやおやおや	Well, well, well!	
+91.40	92.64	dlg	Boyacky	いつもこれだもんな	It's always like this...	? the gang's complaint after the punishment at 86-88 s
+92.64	96.86	dlg	Omotchama	こりゃ大変なことになったコロン	This is big trouble, koron!	
+96.86	97.84	dlg	Omotchama	ガンちゃん	Gan-chan!	
+104.44	106.24	dlg	Gan-chan	悪役の新世界だって	A new world for villains?	?
+106.78	109.84	dlg	Ai-chan	そんな世界を作られたら大変なことになっちゃうわ	If they make a world like that, it'll be a disaster!	
+109.84	113.14	dlg	Omotchama	その主役の座って花を守るでコロンよ	We must protect that flower, Top Billing, koron!	
+113.14	117.64	dlg	Gan-chan	よーし、正義の仲間全員で奴らの野望を阻止してやるぞ	All right! All us heroes together will stop their evil plans!	
+117.64	119.22	dlg	Ai-chan	早速出動よ	Let's move out right now!	

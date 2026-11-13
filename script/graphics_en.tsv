@@ -1,0 +1,496 @@
+id	en	class	rect
+TITLE#29.1	©Tatsunoko Production 2001		
+TITLE#29.2	©Tatsunoko Production, TV Tokyo		
+TITLE#29.3	©BANPRESTO 2001		
+TITLE#30	Start		
+TITLE#31	Load		
+MODE#0.1	From Time Bokan		
+MODE#0.2	time-traveling,		
+MODE#0.3	glorious villain car #1		
+MODE#1	Mode Select		
+MODE#2	Story Mode		
+MODE#3	Grand Prix		
+MODE#4	VS Mode		
+MODE#5	Time Attack Mode		
+MODE#6	Options		
+MODE#8	Rankings		
+MODE#9	Play Select		
+MODE#14	Go Go Gaikottsu	label	
+MODE#15	Genius Doronbow	label	
+MODE#16	Music		
+MODE#17	Options		
+MODE#18	Controller		
+MODE#19	Machine Data		
+MODE#20	Music		
+MODE#21	Movies		
+MODE#22	Back		
+MODE#27	Shibibiin Rhapsody		
+MODE#28	Tobibiiin Serenade		
+MODE#29	Pigs Fall from the Sky		
+MODE#30	Doronbow's Buzzkill		
+MODE#31	Bokan Blast! Doronbow		
+MODE#32	Akudaman Again		
+MODE#33	Yatterman Song		
+MODE#34	Ah-Uh Ojamaman		
+MODE#35	Zenderman Song	label	
+MODE#36	Yattodetaman Boogie Lady		
+MODE#37	Rescueman Song		
+MODE#38	Yattodetaman Song	narrowlabel	
+MODE#39	Chu Chu Chan		
+MODE#40	Time Bokan		
+MODE#41	Gyakuten! Ippatsuman	narrowlabel	
+MODE#42	Itadaki Mambo		
+MODE#43	Player 1		
+MODE#44	Player 2		
+MODE#45	Controller		
+MODE#46	Type A		
+MODE#47	Type B		
+MODE#48	Type C		
+MODE#49	Back		
+MODE#50	Vibration		
+MODE#67	Gas		
+MODE#68	Steer		
+MODE#69	Brake		
+MODE#70	Drift		
+MODE#71	Item		
+MODE#72	Reverse		
+MODE#73	Story Mode		
+MODE#74	New Game		
+MODE#75	Continue		
+MODE#89	Machine Data		
+MODE#90	Time Gaikottsu		
+MODE#91	Doronbow Tank		
+MODE#92	Skull Mecha		
+MODE#93	Skull Buggy		
+MODE#94	Andromedama		
+MODE#95	Time Rakuda		
+MODE#96	Denden Mecha	label	
+MODE#97	Back		
+MODE#98	Speed		
+MODE#99	Dash		
+MODE#100	Grip		
+MODE#101	Yatterwan		
+MODE#102	Zendalion		
+MODE#103	Wonderbull		
+MODE#104	Tottarunyan		
+MODE#105	Mechabuton	label	
+MODE#115	Majo's Gang		
+MODE#116	Doronbow Gang		
+MODE#117	Akudaman		
+MODE#118	Ojamaman		
+MODE#119	Mirenjo's Gang		
+MODE#120	Clean Evil Trio		
+MODE#121	Yanyan's Party		
+MODE#122	Yatterman		
+MODE#123	Zenderman		
+MODE#124	Flower Cop Trio		
+MODE#125	Kiramekiman		
+MODE#126	Time Bokan		
+MODE#139	Movies		
+MODE#140	Opening	narrow	
+MODE#141	Dokurobey	narrow	
+MODE#142	Start		
+MODE#143	Exit	narrow	
+MODE#144	Ending	narrow	
+MODE#145	Punishment	narrow	
+MODE#146	All Villains		
+MODE#147	All Villains		
+MODE#148	All Villains		
+MODE#149	Majo	narrow	
+MODE#150	Walsa	narrow	
+MODE#151	Mujo	narrow	
+MODE#152	Sukadon	narrow	
+MODE#153	Kokematsu	narrow	
+MODE#154	Grocky	narrow	
+MODE#155	Tonzra	narrow	
+MODE#156	Doronjo	narrow	
+MODE#157	Boyacky	narrow	
+MODE#158	Donjuro	narrow	
+MODE#159	Tobokke	narrow	
+MODE#160	Dowalski	narrow	
+MODE#161	Atasha	narrow	
+MODE#162	Secovicci	narrow	
+MODE#163	Mirenjo	narrow	
+MODE#164	Kyokanchin	narrow	
+MODE#165	Kosuinen	narrow	
+MODE#166	Munmun	narrow	
+MODE#167	Tonmentan	narrow	
+MODE#168	Yanyan	narrow	
+MODE#169	Dasainen	narrow	
+MODE#170	Yatterman-1	narrow	
+MODE#171	Yatterman-2	narrow	
+MODE#172	Zenderman-1	narrow	
+MODE#173	Zenderman-2	narrow	
+MODE#174	Tanpei	narrow	
+MODE#175	Junko	narrow	
+MODE#176	Rouge	narrow	
+MODE#177	Pierre	narrow	
+MODE#178	Ondore	narrow	
+MODE#179	Kiramekiman-1	narrow	
+MODE#180	Kiramekiman-2	narrow	
+MODE#182	Jurassicky Park		
+MODE#183	Hubbub City		
+MODE#184	Great-ish Wall		
+MODE#185	Toaster Island		
+MODE#186	Loch Mess Shore		
+MODE#187	Imalaya Range		
+MODE#188	Whyzca		
+MODE#189	Doze Castle		
+MODE#190	Roast World		
+MODE#191	Moo Land		
+MODE#192	Rosailles Town		
+MODE#193	Antiagara Falls		
+MODE#194	Edopolis		
+MODE#195	Hungrajah Realm		
+MODE#196	Tirezon Forest		
+MODE#197	Toilzon Canyon		
+MODE#198	Tirezon Forest 2		
+MODE#202	Machine	small	
+MODE#203	Cleared		
+CSELECT#0.1	Time Bokan		
+CSELECT#0.2	Grand Prix		
+CSELECT#1.1	Yatterman		
+CSELECT#1.2	Grand Prix		
+CSELECT#2.1	Zenderman	label	
+CSELECT#2.2	Grand Prix		
+CSELECT#3.1	Rescueman		
+CSELECT#3.2	Grand Prix		
+CSELECT#4.1	Yattodetaman		
+CSELECT#4.2	Grand Prix		
+CSELECT#5.1	Ippatsuman		
+CSELECT#5.2	Grand Prix		
+CSELECT#6.1	Itadakiman		
+CSELECT#6.2	Grand Prix		
+CSELECT#7.1	Top Billing		
+CSELECT#7.2	Grand Prix		
+CSELECT#25	Jurassicky Park		
+CSELECT#26	Hubbub City		
+CSELECT#27	Great-ish Wall		
+CSELECT#28	Toaster Island		
+CSELECT#29	Loch Mess Shore		
+CSELECT#30	Imalaya Range		
+CSELECT#31	Whyzca		
+CSELECT#32	Doze Castle		
+CSELECT#33	Roast World		
+CSELECT#34	Moo Land		
+CSELECT#35	Rosailles Town		
+CSELECT#36	Antiagara Falls		
+CSELECT#37	Edopolis		
+CSELECT#38	Hungrajah Realm		
+CSELECT#39	Tirezon Forest		
+CSELECT#40	Toilzon Canyon		
+CSELECT#41	Tirezon Forest 2		
+CSELECT#42	Wonderbull		
+CSELECT#43	Tottarunyan		
+CSELECT#61	Course Select		
+CSELECT#62	Pick four courses!		
+CSELECT#63	Pick a course!		
+CSELECT#67.1	1 Lap		
+CSELECT#67.2	2 Laps		
+CSELECT#67.3	3 Laps		
+CSELECT#68	Laps?		
+CSELECT#69	1 Lap		
+CSELECT#70	2 Laps		
+CSELECT#71	3 Laps		
+CSELECT#72	4 Laps		
+CSELECT#73	5 Laps		
+CSELECT#74	6 Laps		
+CSELECT#75	7 Laps		
+CSELECT#76	8 Laps		
+CSELECT#77	9 Laps		
+CSELECT#78	Time Gaikottsu		
+CSELECT#79	Doronbow Tank		
+CSELECT#80	Skull Mecha		
+CSELECT#81	Skull Buggy		
+CSELECT#82	Andromedama		
+CSELECT#83	Time Rakuda		
+CSELECT#84	Denden Mecha	label	
+CSELECT#85	Yatterwan		
+CSELECT#86	Zendalion		
+CSELECT#87	Time Mechabuton	label	
+CSELECT#112	Best Time		
+CSELECT#113	Best Lap		
+CSELECT#119	Race this Grand Prix?		
+CSELECT#120	Yes		
+CSELECT#121	No		
+MSELECT#2	Machine Select		
+MSELECT#13.1	TIME GAIKOTTSU		
+MSELECT#13.2	MAJO'S GANG		
+MSELECT#14.1	TIME GAIKOTTSU		
+MSELECT#14.2	MAJO'S GANG		
+MSELECT#15.1	DORONBOW TANK		
+MSELECT#15.2	DORONBOW GANG		
+MSELECT#16.1	SKULL MECHA		
+MSELECT#16.2	AKUDAMAN		
+MSELECT#17.1	ANDROMEDAMA		
+MSELECT#17.2	OJAMAMAN		
+MSELECT#18.1	TIME RAKUDA		
+MSELECT#18.2	MIRENJO'S GANG		
+MSELECT#19.1	SKULL BUGGY		
+MSELECT#19.2	CLEAN EVIL TRIO		
+MSELECT#20.1	DENDEN MECHA		
+MSELECT#20.2	YANYAN'S PARTY		
+MSELECT#21.1	YATTERWAN		
+MSELECT#21.2	YATTERMAN		
+MSELECT#22.1	ZENDALION		
+MSELECT#22.2	ZENDERMAN		
+MSELECT#23.1	MECHABUTON		
+MSELECT#23.2	TIME BOKAN		
+MSELECT#24.1	WONDERBULL		
+MSELECT#24.2	FLOWER COP TRIO		
+MSELECT#25.1	TOTTARUNYAN		
+MSELECT#25.2	THIEF KIRAMEKIMAN		
+MSELECT#31	Load a ghost?		
+MSELECT#32	Yes		
+MSELECT#33	No		
+RANK#0	Rankings		
+RANK#1.1	Save Record		
+RANK#1.2	Save Ghost		
+RANK#1.3	Retry		
+RANK#1.4	New Course		
+RANK#1.5	New Machine		
+RANK#1.6	Quit Game		
+RANK#3	Time Gaikottsu		
+RANK#4	Doronbow Tank		
+RANK#5	Skull Mecha		
+RANK#6	Andromedama		
+RANK#7	Time Rakuda		
+RANK#8	Skull Buggy		
+RANK#9	Denden Mecha	label	
+RANK#10	Yatterwan		
+RANK#11	Zendalion		
+RANK#12	Mechabuton	label	
+RANK#13	Wonderbull		
+RANK#14	Tottarunyan		
+RANK#46	Jurassicky Park		
+RANK#47	Hubbub City		
+RANK#48	Great-ish Wall		
+RANK#49	Toaster Island		
+RANK#50	Loch Mess Shore		
+RANK#51	Imalaya Range		
+RANK#52	Whyzca		
+RANK#53	Doze Castle		
+RANK#54	Roast World		
+RANK#55	Moo Land		
+RANK#56	Rosailles Town		
+RANK#57	Antiagara Falls		
+RANK#58	Edopolis		
+RANK#59	Hungrajah Realm		
+RANK#60	Tirezon Forest		
+RANK#61	Toilzon Canyon		
+RANK#78	Best Time		
+RANK#79	Best Lap		
+RANK#81	Rankings		
+RESULT#1	Results		
+RESULT#4	Retry		
+RESULT#5	New Course		
+RESULT#6	New Machine		
+RESULT#7	Quit Game		
+RESULT#8	Ranked In!		
+RESULT#9	Enter Record		
+RESULT#69	Overall		
+RESULT#72	1 Lap		
+RESULT#73	2 Laps		
+RESULT#74	3 Laps		
+RESULT#75	4 Laps		
+RESULT#76	5 Laps		
+RESULT#77	6 Laps		
+RESULT#78	7 Laps		
+RESULT#79	8 Laps		
+RESULT#80	9 Laps		
+RESULT#81	Total Time		
+SAVE#0	Slot 1		
+SAVE#1	Slot 2		
+SAVE#2	Choose a slot to use.		
+SAVE#3	Checking the Memory Card.		
+SAVE#4	No Memory Card inserted.		
+SAVE#5	Memory Card unformatted.		
+SAVE#6	Format it now?		
+SAVE#7	CANCEL		104,1,67,15
+SAVE#8	Formatting the Memory Card.		
+SAVE#9	Format done.		
+SAVE#10	Load which data?		
+SAVE#11	Loading...		
+SAVE#12	Load complete.		
+SAVE#13	No save data.		
+SAVE#14	Already formatted.		
+SAVE#15	Format failed.		
+SAVE#16	The data is corrupted.		
+SAVE#17	Save to which file?		
+SAVE#18	Save this data?		
+SAVE#19	Save here?		
+SAVE#20	Save complete.		
+SAVE#21	Save failed.		
+SAVE#22	Load this data?		
+SAVE#23	Overwrite?		
+SAVE#24	The Memory Card is full.		
+SAVE#25	Saving		
+SAVE#26	Load best times?		
+SAVE#27	Load a ghost?		
+SAVE#28	No ghost data.		
+SAVE#29	Saving best times...		
+SAVE#30	Saving Story Mode...		
+SAVE#31	Loading best times...		
+SAVE#32	Loading Story Mode...		
+SAVE#33	Story Mode:		
+SAVE#34	Loading ghost data...		
+SAVE#35	Best Times:		
+SAVE#36	Saving ghost data...		
+SAVE#37	The ghost data is corrupted.		
+SAVE#39	Time Gaikottsu		
+SAVE#40	Doronbow Tank		
+SAVE#41	Skull Mecha		
+SAVE#42	Andromedama		
+SAVE#43	Time Rakuda		
+SAVE#44	Skull Buggy		
+SAVE#45	Denden Mecha	label	
+SAVE#47	Mechabuton	label	
+SAVE#48	Yatterwan		
+SAVE#49	Zendalion		
+SAVE#50	Wonderbull		
+SAVE#51	Tottarunyan		
+SAVE#52	Jurassicky Park		
+SAVE#53	Hubbub City		
+SAVE#54	Great-ish Wall		
+SAVE#55	Toaster Island		
+SAVE#56	Loch Mess Shore		
+SAVE#57	Imalaya Range		
+SAVE#58	Whyzca		
+SAVE#59	Doze Castle		
+SAVE#60	Roast World		
+SAVE#61	Moo Land		
+SAVE#62	Rosailles Town		
+SAVE#63	Antiagara Falls		
+SAVE#64	Edopolis		
+SAVE#65	Hungrajah Realm		
+SAVE#66	Tirezon Forest		
+SAVE#67	Toilzon Canyon		
+SAVE#68	Tirezon Forest 2		
+SAVE#69	File 1		
+SAVE#70	File 2		
+SAVE#71	File 3		
+SAVE#72	File 4		
+SAVE#73	Machine	small	
+SAVE#74	Cleared		
+SAVE#75	Course	small	
+SAVE#79	Load		
+SAVE#80	Save		
+SAVE#83	Yes		
+SAVE#84	No		
+DOKURO#1	Results		
+DOKURO#3	Time Gaikottsu		
+DOKURO#4	Doronbow Tank		
+DOKURO#5	Skull Mecha		
+DOKURO#6	Andromedama		
+DOKURO#7	Time Rakuda		
+DOKURO#8	Skull Buggy		
+DOKURO#9	Denden Mecha	label	
+DOKURO#34	First up:		
+DOKURO#35	Up next:		
+DOKURO#36	Finish in the top 3, y'hear!		
+DOKURO#37	Finish in 1st, y'hear!		
+DOKURO#38	Jurassicky Park, y'hear		
+DOKURO#39	Hubbub City, y'hear		
+DOKURO#40	Great-ish Wall, y'hear		
+DOKURO#41	Toaster Island, y'hear		
+DOKURO#42	Loch Mess Shore, y'hear		
+DOKURO#43	Imalaya Range, y'hear		
+DOKURO#44	Whyzca, y'hear		
+DOKURO#45	Doze Castle, y'hear		
+DOKURO#46	Roast World, y'hear		
+DOKURO#47	Moo Land, y'hear		
+DOKURO#48	Rosailles Town, y'hear		
+DOKURO#49	Antiagara Falls, y'hear		
+DOKURO#50	Edopolis, y'hear		
+DOKURO#51	Hungrajah Realm, y'hear		
+DOKURO#52	Tirezon Forest, y'hear		
+DOKURO#53	Beat Top Billing, y'hear!		
+DOKURO#54	Well done!		
+DOKURO#55	Stage clear, y'hear!		
+DOKURO#56	You lot,		
+DOKURO#57	try hard, y'hear!		
+DOKURO#58	Beat Mechabuton, y'hear!		
+DOKURO#59	Beat Yatterwan, y'hear!		
+DOKURO#60	Beat Zendalion, y'hear!		
+DOKURO#61	Beat Bullet Head, y'hear!		
+DOKURO#62	Beat the Kyojin, y'hear!		
+DOKURO#63	Beat Kabutozemi, y'hear!		
+DOKURO#64	Beat Rescue Tanuki, y'hear!		
+DOKURO#65	Save the game?		
+DOKURO#66	Quit the game?		
+DOKURO#67	Yes		
+DOKURO#68	No		
+DOKURO#69	Top 3...		
+DOKURO#70	you didn't make it, y'hear!		
+DOKURO#71	You didn't get 1st, y'hear!		
+DOKURO#72	Try once more, y'hear!		
+DOKURO#73	At last,		
+DOKURO#74	You lost, y'hear!		
+DOKURO#75	Skull Stones		
+DOKURO#76	Tune-Up Points		
+GOVER#8	Game Over		
+MODE1#0.1	From Rescueman		
+MODE1#0.2	newly built compact,		
+MODE1#0.3	a super-big machine!		
+MODE1#1.1	From Itadakiman		
+MODE1#1.2	Dragon girl Ryuko's		
+MODE1#1.3	fills this mystic car		
+MODE1#2.1	From Yatterman		
+MODE1#2.2	the Doronbow Gang's		
+MODE1#2.3	all-new original car		
+MODE1#4.1	From Zenderman		
+MODE1#4.2	a proud, tough body		
+MODE1#4.3	runs through time!		
+MODE1#5.1	From Ippatsuman		
+MODE1#5.2	beat justice once (?),		
+MODE1#5.3	the strongest car!		
+MODE1#6.1	From Yattodetaman		
+MODE1#6.2	springs are its trick,		
+MODE1#6.3	a miracle racer!		
+MODE1#7.1	From the 1st series		
+MODE1#7.2	with beetle power,		
+MODE1#7.3	Time Bokan's Unit 1		
+MODE1#8.1	Evil never prospers!		
+MODE1#8.2	Strike a victory pose!		
+MODE1#8.3	Go! The dog mecha!		
+MODE1#9.1	Mighty and melodic,		
+MODE1#9.2	a train of justice,		
+MODE1#9.3	singing lion mecha!		
+MODE1#10.1	From Kiramekiman		
+MODE1#10.2	with 1,000 faces,		
+MODE1#10.3	a super-power car		
+MODE1#11.1	Out for treasure,		
+MODE1#11.2	here in style!		
+MODE1#11.3	dazzling cat mecha!		
+TUP0#1	Tune-Up		
+TUP0#3	Speed		
+TUP0#4	Dash		
+TUP0#5	Grip		
+TUP0#6	Done		
+TUP0#57	Jurassicky Park		
+TUP0#58	Hubbub City		
+TUP0#59	Great-ish Wall		
+TUP0#60	Toaster Island		
+TUP0#61	Loch Mess Shore		
+TUP0#62	Imalaya Range		
+TUP0#63	Whyzca		
+TUP0#64	Doze Castle		
+TUP0#65	Roast World		
+TUP0#66	Moo Land		
+TUP0#67	Rosailles Town		
+TUP0#68	Antiagara Falls		
+TUP0#69	Edopolis		
+TUP0#70	Hungrajah Realm		
+TUP0#71	Tirezon Forest		
+TUP0#72	Toilzon Canyon		
+TUP0#73	Up next:		
+TUP0#74	First up:		
+STAT01#30	Goal!		
+STAT01#31	Final Lap		
+STAT01#61	DUD	narrow	
+STAT01#93	Restart		
+STAT01#94	Redo Grand Prix		
+STAT01#95	To Mode Select		
+STAT01#96	To Title		
+STAT01#97	WRONG WAY	narrow	
+STAT01#102	Resume		

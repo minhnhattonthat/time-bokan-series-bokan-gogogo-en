@@ -1,8 +1,8 @@
-start	end	form	speaker	jp	note
-1.38	4.08	dlg	Munmun	コスイネン、キョカンチン、準備はいいかい?	was: コスイネ、巨漢人
-4.32	5.38	dlg	Kosuinen	はい、バッチリです!
-5.60	10.38	dlg	Kyokanchin	シリーズで唯一、正義に勝ったことのある我々なら、楽勝であります!	speaker by his であります (BOGO16)
-11.42	12.28	dlg	Munmun	当然だよ!
-12.68	15.60	dlg	Munmun	出来レースだって分かってるけど、付き合ってあげよっかね!	was: 敵レース
-16.20	17.60	dlg	Munmun	さあ、出発だよ!
-18.20	18.74	dlg	Kosuinen, Kyokanchin	イエッサー!	pass 1: イエス!, pass 2: Yes sir!
+start	end	form	speaker	jp	en	note
+1.38	4.08	dlg	Munmun	コスイネン、キョカンチン、準備はいいかい?	Kosuinen, Kyokanchin, are you ready?	was: コスイネ、巨漢人
+4.32	5.38	dlg	Kosuinen	はい、バッチリです!	Yes, all set!	
+5.60	10.38	dlg	Kyokanchin	シリーズで唯一、正義に勝ったことのある我々なら、楽勝であります!	We're the only ones in the series who ever beat the good guys. This'll be a cinch, sir!	speaker by his であります (BOGO16)
+11.42	12.28	dlg	Munmun	当然だよ!	Of course!	
+12.68	15.60	dlg	Munmun	出来レースだって分かってるけど、付き合ってあげよっかね!	I know the race is rigged, but I'll play along anyway!	was: 敵レース
+16.20	17.60	dlg	Munmun	さあ、出発だよ!	Now, let's go!	
+18.20	18.74	dlg	Kosuinen, Kyokanchin	イエッサー!	Yes, sir!	pass 1: イエス!, pass 2: Yes sir!

@@ -48,3 +48,14 @@ def test_typeset_stays_in_rect_and_refuses_overflow():
 
 def test_spike_rows_fit():
     assert fit.check(ROOT / "script" / "spike.tsv") == 0
+
+
+def test_translation_covers_every_row_and_fits():
+    path = ROOT / "script" / "graphics_en.tsv"
+    rows = [ln.split("\t") for ln in path.read_text(encoding="utf-8").splitlines()[1:]]
+    want = [r.id for r in gfx_script.rows() if r.form not in gfx.KEEP_FORMS]
+    assert [r[0] for r in rows] == want  # every lettered row once, in graphics.tsv order
+    for rid, en, cls, rect in rows:
+        assert en and en.replace("©", "").isascii() and "  " not in en, rid
+        assert not cls or cls in gfx.CLASSES, rid
+    assert fit.check(path) == 0  # no OVER; "grow" rows get their wider rect in phase 7

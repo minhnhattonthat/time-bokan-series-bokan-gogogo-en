@@ -79,14 +79,15 @@ def test_fmv_scripts_in_time_order():
     for f in files:
         last = 0.0
         for ln in f.read_text(encoding="utf-8").splitlines()[1:]:
-            start, end, form, speaker, jp, *note = ln.split("\t")
+            start, end, form, speaker, jp, en, *note = ln.split("\t")
             assert form in ("dlg", "song", "caption"), ln
             assert last <= float(start) < float(end), ln
             assert not (note and note[0].startswith("draft")), ln  # every file is cleaned
             if form == "song":
-                assert not jp, ln  # D9: lyrics stay out of git
+                assert not jp and not en, ln  # D9: lyrics stay out of git, no subtitles
             else:
                 assert jp and speaker and not re.search(r"[A-Za-z]{4}", jp), ln
+                assert en and en.isascii(), ln
             last = float(start)
 
 
