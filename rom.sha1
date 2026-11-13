@@ -1,2 +1,3 @@
 # SHA-1 of the supported dump, in sha1sum format (`sha1sum -c rom.sha1` works too). One line per file for discs.
-<sha1>  rom/<file>
+c3517ef78e4724c929c9b55025faf68cafcf39f4  rom/Time Bokan Series - Bokan GoGoGo (Japan).bin
+c9263caf9eab4772b735162526f78ee854884cf8  rom/Time Bokan Series - Bokan GoGoGo (Japan).cue

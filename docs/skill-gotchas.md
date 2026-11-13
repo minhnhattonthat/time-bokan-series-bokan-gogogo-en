@@ -1,0 +1,2 @@
+references/platform-ps1.md: Banpresto 2001 "TIMP" archives are Philip Gage byte pair encoding (decoder 0x800141AC here); a skip byte (>=0x80) is still followed by one pair-table entry, as in Gage's expand. Literal-only block: ff 80 fe <u16 BE size> <data>.
+references/platform-ps1.md: TIMs from this game's tool have a wrong pixel-block length word (4x for 8 bpp, 2x for 4 bpp); compute the size from w*h*2 when parsing archive entries.

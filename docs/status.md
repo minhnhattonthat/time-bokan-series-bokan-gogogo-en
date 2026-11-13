@@ -2,8 +2,11 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** <1-9 from the skill's phase table>. Last build: <commit> (<date>).
-- **Done:** <...>
-- **Next:** <...>
-- **Open bugs:** <id - savestate or warp scene - note>
-- **Waiting on the user:** <question, see docs/decisions.md>
+- **Phase:** 2. Debug tool next (Step 0 and phase 1 recon done 2026-11-13). No build yet.
+- **Done:**
+  - Step 0: dump pinned (`rom.sha1`: .bin + .cue), pre-commit hook in `tools/hooks` (a failing test blocked a commit), guard blocks `sed -i`, `tools/skill.py` prints the skill path, smoke boots the original disc on `tools/pcsx` (Banpresto logo, title; scripted Start opens the スタート/ロード menu). Not tested: GUI keyboard input (headless). Tools copied from desu-yo: `disc.py`, `tim.py` (+ `strict=False`), `tim_sheets.py`, `tim_survey.py`, `str_frames.py`, `strings_scan.py`, `check.py`; from the skill: `tbl.py`, `bps.py`, `romdiff.py`. New: `timp.py` (TIMP/BPE codec), `tmp_sheets.py`.
+  - Phase 1: `docs/re/disc.md` (one data track, 197 TIMP archives = 12,197 TIMs, BPE decoder at 0x800141AC, 19 STR movies, XA music/voices), `text.md` (no text engine; 33 Shift-JIS save titles in DEMO.BIN), `graphics.md` (every Japanese sprite by archive and entry; HUD shared by 40 STAT files; movies). `tests/test_recon.py` holds layout, TIMP identity repack, and the save-title count.
+- **Next (phase 2):** warp tool to every screen from a cold boot: title, mode select, story mode (Dokurobey briefing, tune-up, each course, win/lose, stage clear), GP (8 cups), VS, time attack (course/machine select, ghost load, results, ranking), options (controller, machine data, music, movie list), save/load screens, game over, each movie, STAFF roll. Find the state variables first (RAM search with `ramsearch.py` while stepping menus; no debug strings were searched yet: run `tools/strings_scan.py` on the EXE and overlays). Copy desu-yo's `tools/debug/warp.lua`, `warp_all.py`, `scenes.lua`, `primdump.lua` and adapt. Phase 2 should also find how DOKURO#34-74 message pieces are joined (English word order differs) and which TIMP entries are drawn as one sprite vs. tiled.
+- **Phase 1 limits:** course textures (CORCE*, BOSS*) read at about half size; BOGO03-17 frames read only as thumbnails; family archives (LOST1-6, BOS1-6, SETU2-6, COK_*, RESULT02-16, WIN2/3/5, other CAR files) not read individually. Review by the same agent, not independent.
+- **Open bugs:** none.
+- **Waiting on the user:** all non-blocking agent defaults: D7 burn English subtitles into BOGO02-18; D8 full-width English save titles; the ボカン logo stays Japanese (D5) unless an official English logo is found; English credits (D3) mean re-rendering STAFF.STR. Earlier patch search: one web search, nothing; romhacking.net not checked.
