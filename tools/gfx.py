@@ -31,8 +31,12 @@ CLASSES = {
     # Tiny5 drawn twice as tall (4th field: vertical scale): ~4 px a letter at cap 10, for names in kana-sized boxes
     "narrow": ("Tiny5.ttf", 8, True, 2),              # one outline (character names in 24-64 px name plates)
     "narrowlabel": ("Tiny5.ttf", 8, False, 2),        # plain like `label`
+    "tallsign": ("Jersey10-Regular.ttf", J10, 2, 2),  # `sign` twice as tall: machine names in 32-40 px rows (ranking)
+    "tallsign1": ("Jersey10-Regular.ttf", J10, True, 2),  # one outline: a name 1-2 px too wide for `tallsign`
     "credit": ("Jersey15-Regular.ttf", 15, True),
 }
+# Classes whose one outline is drawn 2 px thick (the Japanese title art has a 3-4 px outline; phase 8).
+THICK = {"title", "big"}
 # graphics.tsv form -> class; a translation row may name another class
 FORM_CLASS = {"title": "title", "art": "title", "hud": "big", "menu": "bar", "cup": "bar", "lap": "bar", "team": "label",
               "pause": "bar", "stat": "sign", "badge": "bar", "movie": "bar", "song": "bar", "fix": "bar",
@@ -152,7 +156,7 @@ def glyphs(text, form):
     if yscale:
         ink = np.repeat(ink, yscale[0], axis=0)
     rings = []
-    for _ in range(int(outline)):  # 1: one outline; 2: an inner light and an outer dark one (the menu art's style)
+    for _ in range(2 if form in THICK else int(outline)):  # 1: one; 2: inner light, outer dark (menu art); THICK: 2 px
         ink = np.pad(ink, 1)
         rings = [np.pad(r, 1) for r in rings]
         inside = ink | np.any(rings, axis=0) if rings else ink
@@ -175,33 +179,73 @@ def mode(vals):
     return int(v[c.argmax()])
 
 
-def sampled_inks(px, clut, margin=None):
-    """(background per row, fill per row, outline) indices of a rect of the original; per row because labels sit on
-    palette gradients. Background: commonest of the margin beside the rect (or the rect's end columns), per row when
-    no one index dominates. Fill: commonest inside the strokes. Outline: the commonest other ink."""
+def see_through(px, clut):
+    return clut[0] == 0 and (px == 0).mean() >= 0.1
+
+
+def inpainted(px, known):
+    """px with every pixel not `known` filled from its nearest known neighbour, growing inwards (left/right before
+    up/down, so vertical gradients and horizontal bands carry across): clears lettering painted into a picture."""
+    out, k = px.copy(), known.copy()
+    if not k.any():
+        return out
+    while not k.all():
+        new = np.zeros_like(k)
+        for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):  # last assignment wins: horizontal neighbours first
+            sk = np.zeros_like(k)
+            so = np.zeros_like(out)
+            ys, yd = (slice(0, -dy or None), slice(dy, None)) if dy >= 0 else (slice(-dy, None), slice(0, dy))
+            xs, xd = (slice(0, -dx or None), slice(dx, None)) if dx >= 0 else (slice(-dx, None), slice(0, dx))
+            sk[yd, xd], so[yd, xd] = k[ys, xs], out[ys, xs]
+            take = ~k & sk
+            out[take] = so[take]
+            new |= take
+        k |= new
+    return out
+
+
+def sampled_inks(px, clut, margin=None, ink=None):
+    """(background per row, fill profile, outline) indices of a rect of the original. Background: commonest of the
+    margin beside the rect (or the rect's end columns), per row when no one index dominates (labels on gradients).
+    Fill profile: one index per stroke row, top to bottom (or one index when one dominates). ink: the lettering's
+    pixels when the caller knows them (a textured background, typeset())."""
     ends = np.concatenate([px[:, :2], px[:, -2:]], axis=1)
     side = ends if margin is None or not margin.size else margin
-    if clut[0] == 0 and (px == 0).mean() >= 0.1:  # see-through sprite: clear to transparent
+    if see_through(px, clut):  # clear to transparent
         bg = np.zeros(len(px), int)
+    elif (ends == mode(ends)).mean() > max((side == mode(side)).mean(), 0.6):
+        bg = np.full(len(px), mode(ends))  # the rect's own ends: a rect inside a frame (movie tabs) sees the frame
     elif (side == mode(side)).mean() >= 0.6:
         bg = np.full(len(px), mode(side))
     else:
         bg = np.array([mode(row) for row in side])
-    ink = px != bg[:, None]
+    ink = px != bg[:, None] if ink is None else ink
     if not ink.any():
-        return bg, bg, int(bg[0])
-    luma = lambda i: (clut[i] & 31) * 2 + ((clut[i] >> 5) & 31) * 4 + ((clut[i] >> 10) & 31)  # noqa: E731
-    core = np.zeros_like(ink)
-    core[1:-1, 1:-1] = ink[1:-1, 1:-1] & ink[:-2, 1:-1] & ink[2:, 1:-1] & ink[1:-1, :-2] & ink[1:-1, 2:]
-    if not core.any():
-        fill = np.full(len(px), max(np.unique(px[ink]).tolist(), key=luma))
-    elif (px[core] == mode(px[core])).mean() >= 0.6:
-        fill = np.full(len(px), mode(px[core]))
-    else:
-        have = np.flatnonzero(core.any(axis=1))
-        fill = np.array([mode(px[y][core[y]]) for y in have[np.abs(have[:, None] - np.arange(len(px))).argmin(axis=0)]])
-    rest = px[ink & ~np.isin(px, fill)]
-    return bg, fill, mode(rest) if rest.size else int(fill[0])
+        return bg, bg[:1], int(bg[0])
+    # Outline: the commonest ink on the strokes' edge (an ink pixel beside background or the rect's edge). Fill: the
+    # other inks, per row top to bottom of the strokes (palette gradients), each row the commonest of it and its two
+    # neighbours, so a row crossing a horizontal stroke's outline doesn't turn into a band; typeset() stretches this
+    # profile over the English glyph's height (phase 8: per-row fill at the same y striped every short glyph).
+    p = np.pad(ink, 1)
+    edge = ink & ~(p[:-2, 1:-1] & p[2:, 1:-1] & p[1:-1, :-2] & p[1:-1, 2:])
+    # the ink that lies most on edges, among those with a fair share of them: a drop shadow or highlight beside a
+    # solid stroke (SAVE#80) is the outline, not the solid colour, though the solid colour also touches the edge
+    v, c = np.unique(px[edge], return_counts=True)
+    cand = [i for i, n in zip(v, c) if n >= 0.15 * c.sum()] or [v[c.argmax()]]
+    on_edge = lambda i: (edge & (px == i)).sum() / (px[ink] == i).sum()  # noqa: E731
+    line = int(max(cand, key=on_edge))
+    core = ink & ~edge
+    if core.any() and (px[core] == line).mean() > 0.5 and len(v) > 1:
+        # the edge ink is also most of the strokes' inside: a solid letter with a thin highlight or shadow (SAVE#80)
+        return bg, np.array([line]), int(max((i for i in v if i != line), key=on_edge))
+    inner = ink & (px != line)
+    if not inner.any():
+        return bg, np.array([line]), line
+    have = np.flatnonzero(inner.any(axis=1))
+    fill = np.array([mode(px[max(y - 1, 0):y + 2][inner[max(y - 1, 0):y + 2]]) for y in range(have[0], have[-1] + 1)])
+    if (fill == mode(fill)).mean() >= 0.6:
+        fill = np.array([mode(fill)])
+    return bg, fill, line
 
 
 def grown(rect, size, box):
@@ -232,12 +276,29 @@ def typeset(data, rows, grow=False):
             raise ValueError(f"{text!r} is {gw}x{gh} in class {form}, rect is {w}x{h}")
         margin = np.concatenate([px[y:y + h, max(x - 3, 0):x], px[y:y + h, x + w:x + w + 3]], axis=1)
         orig = px[y:y + h, x:x + w].copy()
-        bg, fill, line = sampled_inks(orig, t.clut, margin)
+        known = None
+        if len(row) > 4 and row[4]:
+            # lettering painted into a picture or pattern (form art): the lettering is the inks a ring 3-10 px around
+            # the rect doesn't use (the by-eye rect may cut the outline); paint it out from its surroundings instead
+            # of clearing to a per-row colour (phase 8: bands across the ranking sky, a flat hole in the skull pattern)
+            ring = px[max(y - 10, 0):y + h + 10, max(x - 10, 0):x + w + 10].copy()
+            iy, ix = y - max(y - 10, 0), x - max(x - 10, 0)
+            ring[max(iy - 3, 0):iy + h + 3, max(ix - 3, 0):ix + w + 3] = -1
+            known = np.isin(orig, ring[ring >= 0])
+            lettering = ~known
+            near = lettering  # paint out a drop shadow within 5 px of it too
+            for _ in range(5):
+                near = near | np.roll(near, 1, 0) | np.roll(near, -1, 0) | np.roll(near, 1, 1) | np.roll(near, -1, 1)
+            v, c = np.unique(ring[ring >= 0], return_counts=True)
+            known &= ~near | np.isin(orig, v[c >= 0.02 * c.sum()])  # a colour common around it is the picture's
+        bg, fill, line = sampled_inks(orig, t.clut, margin, None if known is None else lettering)
         cell = px[y:y + h, x:x + w]
-        cell[:] = bg[:, None]
+        cell[:] = bg[:, None] if known is None else inpainted(orig, known)
         oy, ox = (h - gh) // 2, 0 if left else (w - gw) // 2
         box = cell[oy:oy + gh, ox:ox + gw]
-        if outer.any():  # solid fill (no per-row gradient), lightest ink inside, darkest outside
+        if form in THICK:
+            halo = halo | outer
+        elif outer.any():  # solid fill (no per-row gradient), lightest ink inside, darkest outside
             inks = [i for i in np.unique(orig[orig != bg[:, None]]).tolist()]
             luma = lambda i: (t.clut[i] & 31) * 2 + ((t.clut[i] >> 5) & 31) * 4 + ((t.clut[i] >> 10) & 31)  # noqa: E731
             dark, light = min(inks, key=luma), max(inks, key=luma)
@@ -246,7 +307,8 @@ def typeset(data, rows, grow=False):
             box[ink] = mode(mid) if mid.size else mode(fill)  # the commonest ink between the two outlines
             continue
         box[halo] = line
-        box[ink] = np.broadcast_to(fill[oy:oy + gh, None], ink.shape)[ink]
+        prof = fill[np.round(np.arange(gh) * (len(fill) - 1) / max(gh - 1, 1)).astype(int)]
+        box[ink] = np.broadcast_to(prof[:, None], ink.shape)[ink]
     return tim.with_pixels(t, data, px.reshape(-1).tolist())
 
 
@@ -257,7 +319,7 @@ LEFT_FORMS = {"pause", "course", "machine", "song"}
 
 
 def left_anchored(r):
-    return r.form in LEFT_FORMS and r.x <= 1
+    return r.form in LEFT_FORMS and r.x <= 8  # every list row starts at x 0, 1 or 8 (GP course list: 8)
 
 
 def spike_edits(path=ROOT / "script" / "spike.tsv"):
@@ -269,7 +331,7 @@ def spike_edits(path=ROOT / "script" / "spike.tsv"):
         rid, en, form, rect = (ln.split("\t") + [""] * 4)[:4]
         r = by_id[rid]
         items.append((r, (tuple(map(int, rect.split(","))) if rect else (r.x, r.y, r.w, r.h), en,
-                          form or class_of(r), left_anchored(r))))
+                          form or class_of(r), left_anchored(r), r.form == "art")))
     return {h: (lambda b, rs=rs: typeset(b, [p for _, p in rs], grow=len(rs) == 1 and rs[0][0].form != "art"))
             for h, rs in by_blob(items).items()}
 

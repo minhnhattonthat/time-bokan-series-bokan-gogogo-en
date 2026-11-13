@@ -63,6 +63,30 @@ def test_list_rows_keep_the_japanese_left_anchor():
     assert ink_span(False)[0] > lo + 10
 
 
+def test_inpainted_fills_from_known_neighbours():
+    px = np.array([[1, 1, 1, 2], [1, 9, 9, 2], [3, 3, 3, 3]])
+    out = gfx.inpainted(px, px != 9)
+    assert (out != 9).all() and out[1, 1] == 1 and out[1, 2] == 2  # left/right neighbours, not the row below
+
+
+@needs_rom
+def test_title_fill_has_no_outline_bands():
+    """MACHINE DATA (thick orange outline, yellow-white gradient): no outline-coloured rows cross the English strokes,
+    and the gradient runs top to bottom (phase 8 stripes: per-row fill sampled at the same y as the Japanese)."""
+    r = {x.id: x for x in gfx_script.rows()}["MODE#89"]
+    blob = dict(gfx_index.tims())[r.file]
+    t = tim.parse(blob, strict=False)
+    w = gfx.pixel_width(t)
+    b = np.array(tim.pixels(t, gfx.typeset(blob, [((r.x, r.y, r.w, r.h), "MACHINE DATA", "title")]))).reshape(-1, w)
+    ink = gfx.glyphs("MACHINE DATA", "title")[0]
+    gh, gw = ink.shape
+    oy, ox = r.y + (r.h - gh) // 2, r.x + (r.w - gw) // 2
+    letters = b[oy:oy + gh, ox:ox + gw][ink]
+    assert 1 not in letters.tolist()  # index 1 = the orange outline
+    rows = [gfx.mode(b[oy + y, ox:ox + gw][ink[y]]) for y in range(gh) if ink[y].any()]
+    assert rows[0] != rows[-1]
+
+
 def test_spike_rows_fit():
     assert fit.check(ROOT / "script" / "spike.tsv") == 0
 

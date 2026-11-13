@@ -87,12 +87,12 @@ MODE#124	team	label	108	16	108	16	108	16	1	tim
 MODE#125	team	label	80	14	96	16	96	16	1	tim
 MODE#126	team	label	86	16	96	16	96	16	1	tim
 MODE#139	title	title	111	36	128	48	128	48	1	tim
-MODE#140	movie	bar	46	21	48	32	48	32	1	tim
-MODE#141	movie	bar	46	21	48	32	48	32	1	tim
-MODE#142	movie	bar	46	21	48	32	48	32	1	tim
-MODE#143	movie	bar	46	21	48	32	48	32	1	tim
-MODE#144	movie	bar	46	21	48	32	48	32	1	tim
-MODE#145	movie	bar	46	21	48	32	48	32	1	tim
+MODE#140	movie	bar	40	15	48	32	48	32	1	tim
+MODE#141	movie	bar	40	15	48	32	48	32	1	tim
+MODE#142	movie	bar	40	15	48	32	48	32	1	tim
+MODE#143	movie	bar	40	15	48	32	48	32	1	tim
+MODE#144	movie	bar	40	15	48	32	48	32	1	tim
+MODE#145	movie	bar	40	15	48	32	48	32	1	tim
 MODE#146	badge	bar	75	21	80	24	80	24	1	tim
 MODE#147	badge	bar	75	21	80	24	80	24	1	tim
 MODE#148	badge	bar	75	21	80	24	80	24	1	tim
@@ -280,7 +280,7 @@ RANK#60	course	sign	104	24	112	32	112	32	1	tim
 RANK#61	course	sign	104	23	112	32	112	32	1	tim
 RANK#78	label	label	126	24	128	24	128	24	1	tim
 RANK#79	label	label	126	24	128	24	128	24	1	tim
-RANK#81	art	title	146	38	384	240	146	38	1	rect
+RANK#81	art	title	154	42	384	240	154	42	1	rect
 RESULT#1	title	title	142	33	160	40	160	40	1	tim
 RESULT#4	menu	bar	53	15	56	16	56	16	1	tim
 RESULT#5	menu	bar	98	16	104	16	104	16	1	tim
