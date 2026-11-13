@@ -2,8 +2,42 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 8. QA in the emulator in progress: tour, coverage and first verdicts done; lettering fixes open.
-- **Phase 8 so far (2026-11-14):**
+- **Phase:** 9. Release next (phase 8 done 2026-11-14 on build/en sha1 `6642505a2538ae8c9fb573423b65a08942321502`).
+- **Next (phase 9):** story pass per chapter (`docs/synopsis.md` chapters -> `work/qa/story/manifest.tsv`, verdicts by
+  `codex exec` read-only as in phase 6, `references/translation.md` §Review); tick or resolve every line of
+  `docs/polish.md`; release script (none yet) running `qa_gate.py check work/qa/manifest.tsv work/qa/verdicts`,
+  `textcover.py work/qa/env_cover work/qa/env_cover/strings.tsv --waive docs/text_unshown.tsv` and `jp_left.py`
+  (`--sjis` on DEMO.BIN, `--known script/jp_known.txt` on SLPS_031.33) on the build; debug tool is not in the build
+  (warp is Lua only); xdelta/BPS patch for a 650 MB .bin (bps.py is per-byte Python: check speed, else xdelta3),
+  re-applied and verified; README (base dump hashes from `rom.sha1`), zip = patch + README. Never `gh release create`.
+  The build hash above is what qa_gate's manifest recorded: any rebuild needs a new tour + `qa_gate.py init` (or
+  `waive` with a reason).
+- **Phase 8 done (2026-11-14), build `6642505a`:** smoke ok; warp tour `work/qa/env` 136/136; `qa_gate.py check
+  work/qa/manifest.tsv work/qa/verdicts` exit 0 (149 sheets ok; codex exec verdicts, chunks `work/qa/chunks3`, older
+  verdict files `p1_*`/`p2_*`); coverage 480/495 rows seen + 15 waived, 0 Japanese originals loaded, `textcover.py`
+  exit 0; prompt/choice box centring `tools/text_centre.py nocard_title_load 186,206,20,284 story_save 172,186
+  ta_ghost_prompt 170,186 gp_confirm 50,68` exit 0 (EN centre = JP centre within 0.5 px; `inkbox.py` reads the
+  see-through panel art as ink, unusable here); STAFF roll decoded from the build (`work/qa/staff_all`), text over the
+  wave frames legible zoomed (`work/qa/staff_wave.png`); subtitles judged in the movie sheets by codex.
+- **Phase 8 part 2 (2026-11-14):**
+  - `tools/render_rows.py OUT ID|PREFIX#..` draws every lettered TIM as Japanese | English from the build's own edits,
+    zoomed: judge lettering offline before the 30-min build.
+  - `gfx.sampled_inks`/`typeset` rewritten (D14): outline = the ink lying most on stroke edges (solid letters with a
+    highlight swap), fill = top-to-bottom profile of the other inks stretched over the English glyph (stripes gone,
+    test `test_title_fill_has_no_outline_bands`), `THICK` classes (`title`, `big`) get a 2 px outline, background from
+    the rect's own ends when they beat the margin (framed tabs), `art` rows painted out from their surroundings
+    (`inpainted`, test). Classes: `label` -> `label1` on 36 outlined rows, new `tallsign`/`tallsign1` (Jersey 10 twice
+    as tall) for ranking/briefing machine names, movie tabs `narrowlabel` inside the frame (graphics.tsv rect
+    4,4,40,15), save panels "Car"/"Course" in `label1`, RANK#81 rect widened. GP course lists left-anchored (x <= 8).
+  - Coverage: hero-machine panels MODE1#7-11 waived (`docs/text_unshown.tsv`; machine data lists the 7 villain
+    machines in every reachable state; a watch on the team-clear flags found only the save copy at DEMO 800515A8).
+    `textcover.py work/qa/env_cover work/qa/env_cover/strings.tsv --waive docs/text_unshown.tsv`: 480 shown, 15
+    waived, 0 failing; gfx_cover: 0 Japanese originals loaded (build 5d80422d).
+  - Codex verdicts on build 5d80422d (`work/qa/verdicts/chunk_00[0-3].tsv`, older ones renamed `p1_*`): 90 changed
+    sheets, 9 issues: movie tabs narrow font "crushed" (no wider font fits 40 px: kept, brief now states D11/D14),
+    save panels "Machine"/"Course" (fixed: Car/Course label1), Finish tab background (fixed). Yes/No and prompt boxes:
+    `inkbox.py` can't read see-through panels; centres measured by hand match the Japanese within 2 px.
+- **Phase 8 part 1 (2026-11-14):**
   - Tools: `tools/debug/vramshot.lua` (with `warp_all.py --script`: VRAM dump beside every shot), `tools/gfx_cover.py
     TOUR BUILT.bin` (rows whose lettered TIM is in VRAM in some shot; `JP` lines + exit 1 if a Japanese original is
     loaded; writes `<tour>_cover/` with `strings.tsv` + per-scene `log.txt` for the skill's `textcover.py`),
@@ -64,18 +98,9 @@ Updated at the end of every session. Keep it to what the next session needs; his
     TIM changed, no header/CLUT/size change), `fmv_burn.burn_movie` fails on overlapping rows or a row with no frame,
     tests for discdiff/tim_errors/allowed spec (`test_build.py`), D13 (roll font) + fonts.md, `script/jp_known.txt`
     (4 kana-looking runs in SLPS_031.33 = a rising 16-bit ramp table, for `jp_left.py --known`).
-- **Next (phase 8):** fix clusters 1, 2, 4 and the CSELECT anchor above (render offline first: a scratch
-  `render_rows.py` drew JP|EN TIMs at 3x from `gfx.spike_edits`; promote it to `tools/`), `build.py --en` (full, with
-  STAFF), re-tour with vramshot, `qa_sheets.py`, `qa_gate.py init` (new build), re-verdict changed sheets with
-  `qa_codex.py`, until `qa_gate.py check work/qa/manifest.tsv work/qa/verdicts` exits 0; `textcover.py
-  work/qa/env_cover work/qa/env_cover/strings.tsv` exits 0; `inkbox.py` on Yes/No boxes (gp_confirm, ta_ghost_prompt,
-  story_save, nocard_*). Not yet looked at zoomed: STAFF wave frames, subtitles per movie. Earlier items to look for:
-  grown rows overlapping neighbouring sprites, description panels centred where the Japanese was left-aligned
-  (left-align option if it reads badly), briefing pieces DOKURO#34-74 joined at run time (capital after "At last,"),
-  MODE1#1.2-1.3 at 152 px against the panel border. The 70 `grow` rows (`fit.py script/graphics_en.tsv | grep ^grow`,
-  grown automatically in phase 7 without the zoomed look phase 5 carried) are a zoomed-shot checklist: MODE (33),
-  CSELECT (7), RANK (8), SAVE (9), DOKURO (6), TUP0 (7). `textcover.py` needs a text-read log; graphics-only game, so
-  coverage = every graphics row seen in a shot. Write `docs/synopsis.md` before phase 9.
+- **Phase 8 part 1 follow-ups (closed in part 2):** clusters 1, 2, 4 and the CSELECT anchor fixed; grown rows,
+  centred description panels, the briefing joins (DOKURO#34-74) and MODE1#1.2-1.3 against the border were all in
+  sheets that got `ok` verdicts on build 6642505a; the offline renders (`tools/render_rows.py`) covered every archive.
 - **Phase 6 (done 2026-11-14):** translated by one agent (no subagents in the Orca run), reviewed by `codex exec`.
   - Graphics: `script/graphics_en.tsv` (id, en, class, rect; the spike format, so `fit.py` and `gfx.spike_edits` read
     it): 495 rows, `fit.py` 0 OVER, 70 `grow` (fit only their measured room; phase 7 widens the rect). Test

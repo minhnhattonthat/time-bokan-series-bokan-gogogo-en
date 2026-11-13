@@ -38,6 +38,9 @@ Standing non-bugs (`ok`):
   differently: judge only the text;
 - the opening song (BOGO01) and the boss flower movie (BOGO10) have no subtitles (D9, no speech);
 - course textures, signs in 3D races and numbers/times drawn by the game: not lettering we changed;
+- the narrow class (Tiny5 drawn twice as tall, decisions D11/D14) in the 40 px movie tabs and the character name
+  plates: thin and condensed by design, as no wider font fits; `issue` only if a letter can't be told apart in a 3x
+  zoom of the shot, or the colours/outline make it unreadable;
 - anything identical in the Japanese sheet except the Japanese text itself.
 
 ## Verdicts
