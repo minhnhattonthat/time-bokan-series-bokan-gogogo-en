@@ -22,8 +22,8 @@ WARP = os.path.join(ROOT, "tools", "debug", "warp.lua")
 LONG = {"true_ending": 30000, "staff_roll": 30000, "post_game_save": 45000}  # frame budget when 20000 is not enough
 # scenes with exec hooks (L.on_exec needs the debugger + interpreter)
 DEBUGGER = {f"{p}{t}" for p in ("ending_t", "team_movie_t") for t in range(7)} | {
-    "staff_roll", "true_ending", "post_game_save"}
-NO_SMOKE = {"ending_entry"}
+    "staff_roll", "true_ending", "post_game_save", "game_over"}
+NO_SMOKE = {"ending_entry", "win_c7"}  # win_c7 ends in the ending movie that stalls headless (docs/re/state.md)
 # scene -> scene whose written card (work/qa/warp/<src>/memcard1.mcd) it boots with; run after the others
 CARD_FROM = {"title_load": "story_saved", "story_resume": "story_saved", "ta_ghost_loaded": "ta_ghost_save"}  # scenes that end on a flat colour by design (ending_entry: results.png is its proof)
 

@@ -270,15 +270,19 @@ end
 -- `team` ($gp+0x20, 8003DEA4) is written there too: the machine cursor is not the team id (cursor 0 = team 3,
 -- cursor 3 = team 5).
 W.TEAM = 0x3DEA4
-local function from_machine_select(m, team)
+-- The next time the main loop dispatches state `from`, it runs `to` instead (once).
+function W.swap_at_dispatch(from, to, team)
   local pending = true
   L.on_exec(0x80010FE4, function()
-    if pending and W.m() == 0x13 then
-      W.w32(W.M, m)
+    if pending and W.m() == from then
+      W.w32(W.M, to)
       if team then W.w32(W.TEAM, team) end
       pending = false
     end
   end)
+end
+local function from_machine_select(m, team)
+  W.swap_at_dispatch(0x13, m, team)
   story(5)
   tap_until(function() return W.m() == m end, "circle", string.format("M=13 -> M=%X", m), 40)
 end
@@ -319,6 +323,13 @@ S.staff_roll = function()
   W.check(W.m() == 0x21, "staff roll movie")
   W.done()
 end
+-- Game over (M=0x11, EXE 800112C0 -> DEMO 80064778, GOVER.TMP). No code found that sets M=0x11: forced at dispatch.
+S.game_over = function()
+  from_machine_select(0x11)
+  W.frames(600)
+  W.check(W.m() == 0x11, "game over screen")
+  W.done()
+end
 S.true_ending = function()
   for t = 0, 6 do W.w32(0x3E6A8 + 4 * t, 2) end
   from_machine_select(0x1F)
@@ -334,6 +345,44 @@ S.post_game_save = function()
   W.frames(600)
   W.check(W.m() == 0x22, "post-game save screen")
   W.done()
+end
+
+-- Shots p01..pNN every `every` frames, circle after every `tap`-th one: pages of text that circle advances.
+function W.shoot_through(n, every, tap)
+  local last = -1
+  for i = 1, n do
+    W.frames(every); W.shot(string.format("p%02d", i))
+    if W.m() ~= last then L.log(string.format("%d M=%X", L.frame, W.m())); last = W.m() end
+    if i % tap == 0 then W.tap("circle") end
+  end
+end
+
+-- Per story course: the Dokurobey briefing pages, and the post-race screens after a win (results, his stage-clear
+-- line, the save screen; course 7 goes on to the ending) and after a loss (courses 5 and 7 are boss races).
+-- names: briefing_c0 briefing_c1 briefing_c2 briefing_c3 briefing_c4 briefing_c5 briefing_c6 briefing_c7
+-- names: win_c0 win_c1 win_c2 win_c3 win_c4 win_c5 win_c6 win_c7 boss_lose_c5 boss_lose_c7
+for c = 0, 7 do
+  S["briefing_c" .. c] = function()
+    story_course(c, 0x19)
+    W.shoot_through(16, 100, 2)
+    W.check(W.r16(W.COURSE) == c, "briefing for course " .. c)
+    W.done()
+  end
+  S["win_c" .. c] = function()
+    story_course(c)
+    finish_race(0)
+    W.shoot_through(20, 100, 3)
+    W.done()
+  end
+end
+for _, c in ipairs({ 5, 7 }) do
+  S["boss_lose_c" .. c] = function()
+    story_course(c)
+    finish_race(3)
+    W.shoot_through(20, 100, 3)
+    W.check(W.m() == 0xA, "retry at the tune-up")
+    W.done()
+  end
 end
 
 -- One race per story course: race_c0 .. race_c7 (course 7 plays BOGO10 before the briefing).
@@ -361,6 +410,27 @@ S.opt_controller = function() options(0); W.check(W.m() == 4, "controller setup"
 S.opt_machine_data = function() options(1); W.check(W.m() == 4, "machine data"); W.done() end
 S.opt_music = function() options(2); W.check(W.m() == 4, "music test"); W.done() end
 S.opt_movies = function() options(3); W.check(W.m() == 4, "movie list"); W.done() end
+-- Machine data: one page per machine (down); movie list: 6 tabs (right).
+-- names: machine_data_1 machine_data_2 machine_data_3 machine_data_4 machine_data_5 machine_data_6
+-- names: movie_tab_1 movie_tab_2 movie_tab_3 movie_tab_4 movie_tab_5
+for i = 1, 6 do
+  S["machine_data_" .. i] = function()
+    options(1)
+    for _ = 1, i do W.tap("down"); W.frames(40) end
+    W.frames(200)
+    W.check(W.m() == 4, "machine data page " .. i)
+    W.done()
+  end
+  if i <= 5 then
+    S["movie_tab_" .. i] = function()
+      options(3)
+      for _ = 1, i do W.tap("right"); W.frames(40) end
+      W.frames(200)
+      W.check(W.m() == 4, "movie list tab " .. i)
+      W.done()
+    end
+  end
+end
 
 -- Movie viewer: circle on the movie list sets M=9, which plays movie table entry `$gp+0x58` (8003DEDC, byte; table
 -- 80033FC4: 0 BOGO01, 1 BOGO02, 2-8 team movies, 9 BOGO10, 10-16 team endings, 17 BOGO18, 18 STAFF). The handler
