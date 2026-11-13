@@ -4,6 +4,14 @@ Every Japanese string the player sees is pixels in a TIM inside a TIMP archive (
 movie, or the 32 memory-card save titles in `OVER/DEMO.BIN` (`docs/re/text.md`). Ids are `ARCHIVE#entry`, entry =
 index in `tools/timp.py list`. Sheets: `python -X utf8 tools/tmp_sheets.py work/recon/grap work/x/GRAP/*.TMP`.
 
+**Phase 4: `script/graphics.tsv` is now the authority** (453 text blobs, 507 line rows, read at 2x with
+`tools/gfx_sheet.py`); this file is the phase 1 sweep. Corrections found then: the course is ゴッタガエシティー (not
+ブッタ), もー大陸 (not も一), as the Shift-JIS save titles spell them; MODE #90-105 and #149-182 were off by one or two
+here; MODE1#3 is the same blob as MODE#0; STAT #61 is the スカ (dud) item icon; MSELECT #25's team is 怪盗きらめきマン.
+Copies: 1,011 TIMs carry text, 453 distinct blobs (`tools/gfx_index.py`, canonical = first id in sorted order).
+A second sweep of every unique non-menu blob (`work/gfx/grapart_*`, `stage_*`, `car_*` at half size, sign-like
+textures at 1.5x) found no lettering in CAR, STAGE courses or the GRAP art archives.
+
 Read from contact sheets at 1x (clut 0). **Static sweep only:** which entries show, and where, is for phase 2/5 to
 confirm. "label" = a single word/phrase sprite; "panel" = a picture with lettering inside.
 

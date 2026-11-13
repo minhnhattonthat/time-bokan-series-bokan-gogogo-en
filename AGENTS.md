@@ -8,6 +8,7 @@ Skill: translate-retro-game (Claude Code: plugin, enabled in .claude/settings.js
 - Dump:     `python -X utf8 tools/check_rom.py` (checks the dump against `rom.sha1`)
 - Extract:  `python -X utf8 tools/disc.py x "rom/Time Bokan Series - Bokan GoGoGo (Japan).bin" work/x`; TIMP archives: `tools/timp.py list|x`
 - Survey:   `python -X utf8 tools/tmp_sheets.py work/recon/grap work/x/GRAP/*.TMP` (each archive's entries, labelled); `tools/str_frames.py BIN work/recon/str --every 3` (FMV samples)
+- Script:   `script/graphics.tsv` + `no_text.txt` (`tools/gfx_script.py sheet OUT` row crops; `tools/gfx_sheet.py OUT 'GRAP/MODE#2-60' --rects` unique TIMs), `script/save_titles.tsv`, `script/fmv/BOGOxx.tsv` (`tools/fmv_transcribe.py`, `tools/fmv_draft.py`)
 - Smoke:    `python -X utf8 $SKILL/scripts/emu.py "rom/Time Bokan Series - Bokan GoGoGo (Japan).cue" --out work/qa/smoke --route tools/routes/boot.txt --smoke`
 - Warp:     `python -X utf8 tools/debug/warp_all.py [--jobs 6] [--states] [scene ...]` (cold boot to a scene by name, shot in `work/qa/warp/<scene>/final.png`; `--list` names all; `--states` regenerates `work/states/`). Scenes and their RAM writes: `tools/debug/scenes.lua`. Card fixtures (game-written): `work/qa/warp/story_saved/memcard1.mcd`, `work/qa/warp/ta_ghost_save/memcard1.mcd` (`--sav`).
 - Build / Release: not written yet (phases 3, 9).

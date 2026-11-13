@@ -1,0 +1,87 @@
+"""Phase 4: every TIM on the disc is either text (its blob has rows in script/graphics.tsv) or listed in
+script/no_text.txt, never both; rects hold ink; the save titles roundtrip through tbl/save.tbl; movie scripts are
+in time order."""
+import re
+import sys
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
+import build  # noqa: E402
+import disc  # noqa: E402
+import gfx_index  # noqa: E402
+import gfx_script  # noqa: E402
+import gfx_sheet  # noqa: E402
+import save_titles  # noqa: E402
+from tbl import Table  # noqa: E402
+
+BIN = build.ROM / build.BIN
+needs_rom = pytest.mark.skipif(not BIN.exists(), reason="needs the dump in rom/")
+
+
+@pytest.fixture(scope="module")
+def tims():
+    return gfx_index.tims()
+
+
+def test_gfx_rows_are_unique_and_complete():
+    rows = gfx_script.rows()
+    ids = [r.id for r in rows]
+    assert len(ids) == len(set(ids))
+    assert all(r.jp and r.w > 0 and r.h > 0 and r.form for r in rows)
+
+
+@needs_rom
+def test_every_tim_is_accounted_for_once(tims):
+    idx = gfx_index.index(tims)
+    sha = {i: h for i, h, _, _ in idx}
+    canon = {i: c for i, _, _, c in idx}
+    counts = {}
+    for i, _ in tims:
+        counts[i.split("#")[0]] = counts.get(i.split("#")[0], 0) + 1
+    text_files = {r.file for r in gfx_script.rows()}
+    assert all(canon[f] == f for f in text_files), "graphics.tsv must name the canonical copy"
+    text_hashes = {sha[f] for f in text_files}
+    listed = gfx_script.no_text(archives=counts)
+    assert listed <= set(sha), listed - set(sha)
+    for i in sha:
+        assert (sha[i] in text_hashes) != (i in listed), i
+    assert len(tims) == 12209
+
+
+@needs_rom
+def test_gfx_rects_hold_ink(tims):
+    blob = dict(tims)
+    for r in gfx_script.rows():
+        img = gfx_sheet.render(blob[r.file])
+        assert r.x >= 0 and r.y >= 0 and r.x + r.w <= img.width and r.y + r.h <= img.height, r.id
+        assert img.crop((r.x, r.y, r.x + r.w, r.y + r.h)).getchannel("A").getbbox(), f"{r.id} is blank"
+
+
+@needs_rom
+def test_save_titles_roundtrip():
+    demo = disc.Disc(str(BIN)).read(save_titles.FILE)
+    t = Table.load(save_titles.TBL)
+    rows = save_titles.rows()
+    fields = save_titles.fields(demo)
+    assert len(rows) == len(fields) == 33
+    for (n, off, jp), (o, b) in zip(rows, fields):
+        assert int(off, 16) == o
+        assert save_titles.decode(t, b) == jp
+        assert save_titles.encode(t, jp) == b
+
+
+def test_fmv_scripts_in_time_order():
+    files = sorted((ROOT / "script" / "fmv").glob("*.tsv"))
+    assert [f.stem for f in files] == [f"BOGO{n:02d}" for n in range(1, 19)]
+    for f in files:
+        last = 0.0
+        for ln in f.read_text(encoding="utf-8").splitlines()[1:]:
+            start, end, form, speaker, jp, *note = ln.split("\t")
+            assert form in ("dlg", "song", "caption"), ln
+            assert last <= float(start) < float(end), ln
+            if form != "song" and not (note and note[0].startswith("draft")):  # drafts are raw Whisper
+                assert jp and not re.search(r"[A-Za-z]{4}", jp), ln
+            last = float(start)

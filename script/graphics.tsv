@@ -1,0 +1,508 @@
+id	file	x	y	w	h	form	jp	note
+TITLE#5	GRAP/TITLE#5	0	0	128	50	keep	ボカン	logo piece, stays Japanese (D5)
+TITLE#6	GRAP/TITLE#6	1	0	124	49	keep	ボカン	logo piece, stays Japanese (D5)
+TITLE#7	GRAP/TITLE#7	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#8	GRAP/TITLE#8	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#9	GRAP/TITLE#9	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#10	GRAP/TITLE#10	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#11	GRAP/TITLE#11	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#12	GRAP/TITLE#12	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#13	GRAP/TITLE#13	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#14	GRAP/TITLE#14	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#15	GRAP/TITLE#15	0	0	168	28	keep	タイムボカンシリーズ	logo piece, stays Japanese (D5)
+TITLE#16	GRAP/TITLE#16	1	0	163	28	keep	ボカン	logo piece, stays Japanese (D5)
+TITLE#29.1	GRAP/TITLE#29	6	2	120	9	copy	©タツノコプロ 2001	romanize Tatsunoko Pro, TV Tokyo
+TITLE#29.2	GRAP/TITLE#29	6	12	138	9	copy	©タツノコプロ・テレビ東京	romanize Tatsunoko Pro, TV Tokyo
+TITLE#29.3	GRAP/TITLE#29	6	23	147	8	copy	©BANPRESTO 2001	romanize Tatsunoko Pro, TV Tokyo
+TITLE#30	GRAP/TITLE#30	0	1	54	15	menu	スタート
+TITLE#31	GRAP/TITLE#31	0	0	40	16	menu	ロード
+MODE#0.1	GRAP/MODE#0	11	3	125	13	panel	タイムボカンに登場	opaque panel, 16 px lines; MODE1 has the other 12
+MODE#0.2	GRAP/MODE#0	11	17	97	13	panel	時間航行可能な	opaque panel, 16 px lines; MODE1 has the other 12
+MODE#0.3	GRAP/MODE#0	11	31	139	13	panel	栄光の悪玉1号マシン	opaque panel, 16 px lines; MODE1 has the other 12
+MODE#1	GRAP/MODE#1	12	4	231	39	title	モード セレクト
+MODE#2	GRAP/MODE#2	6	2	132	22	menu	ストーリーモード
+MODE#3	GRAP/MODE#3	6	2	83	22	menu	GPモード
+MODE#4	GRAP/MODE#4	6	2	83	22	menu	VSモード
+MODE#5	GRAP/MODE#5	5	2	174	22	menu	タイムアタックモード
+MODE#6	GRAP/MODE#6	6	4	87	20	menu	オプション
+MODE#8	GRAP/MODE#8	6	2	86	22	menu	ランキング
+MODE#9	GRAP/MODE#9	10	4	233	39	title	プレイ セレクト
+MODE#14	GRAP/MODE#14	0	0	131	16	menu	それゆけガイコッツ
+MODE#15	GRAP/MODE#15	0	0	100	16	menu	天才ドロンボー
+MODE#16	GRAP/MODE#16	0	3	160	36	title	ミュージック
+MODE#17	GRAP/MODE#17	0	3	160	40	title	オプション
+MODE#18	GRAP/MODE#18	7	3	110	21	menu	コントローラ
+MODE#19	GRAP/MODE#19	6	1	113	23	menu	マシンデータ
+MODE#20	GRAP/MODE#20	7	2	104	22	menu	ミュージック
+MODE#21	GRAP/MODE#21	6	1	73	23	menu	ムービー
+MODE#22	GRAP/MODE#22	7	3	59	21	menu	もどる
+MODE#27	GRAP/MODE#27	1	0	156	16	song	シビビーン・ラプソディー
+MODE#28	GRAP/MODE#28	0	1	152	15	song	とびびぃ〜んセレナーデ
+MODE#29	GRAP/MODE#29	0	1	157	15	song	空からブタが降ってくる
+MODE#30	GRAP/MODE#30	1	0	149	16	song	ドロンボーのシラーケッ
+MODE#31	GRAP/MODE#31	0	0	163	16	song	ボカンと一発!ドロンボー
+MODE#32	GRAP/MODE#32	0	1	130	15	song	これまたアクダマン
+MODE#33	GRAP/MODE#33	0	0	112	16	song	ヤッターマンの歌
+MODE#34	GRAP/MODE#34	0	1	142	15	song	アーウー・オジャママン
+MODE#35	GRAP/MODE#35	0	0	102	16	song	ゼンダマンの歌
+MODE#36	GRAP/MODE#36	0	1	202	15	song	ヤットデタマン・ブギウギ・レディ
+MODE#37	GRAP/MODE#37	0	1	115	15	song	オタスケマンの歌
+MODE#38	GRAP/MODE#38	0	1	125	15	song	ヤットデタマンの歌
+MODE#39	GRAP/MODE#39	0	2	132	14	song	チュウ・チュウ・チャン
+MODE#40	GRAP/MODE#40	0	1	86	15	song	タイムボカン
+MODE#41	GRAP/MODE#41	0	0	118	16	song	逆転イッパツマン
+MODE#42	GRAP/MODE#42	0	1	106	15	song	いただきマンボ
+MODE#43	GRAP/MODE#43	0	0	80	16	menu	コントローラ 1
+MODE#44	GRAP/MODE#44	0	0	80	16	menu	コントローラ 2
+MODE#45	GRAP/MODE#45	11	15	170	32	title	コントローラ
+MODE#46	GRAP/MODE#46	5	0	57	16	menu	タイプ A
+MODE#47	GRAP/MODE#47	5	0	57	16	menu	タイプ B
+MODE#48	GRAP/MODE#48	5	0	57	16	menu	タイプ C
+MODE#49	GRAP/MODE#49	0	0	45	16	menu	もどる
+MODE#50	GRAP/MODE#50	0	0	108	16	menu	バイブレーション
+MODE#67	GRAP/MODE#67	0	2	58	14	menu	アクセル
+MODE#68	GRAP/MODE#68	0	1	59	15	menu	ハンドル
+MODE#69	GRAP/MODE#69	1	0	52	16	menu	ブレーキ
+MODE#70	GRAP/MODE#70	1	0	54	16	menu	ドリフト
+MODE#71	GRAP/MODE#71	0	2	55	14	menu	アイテム
+MODE#72	GRAP/MODE#72	0	0	41	16	menu	バック
+MODE#73	GRAP/MODE#73	7	4	241	39	title	ストーリーモード
+MODE#74	GRAP/MODE#74	7	4	103	20	menu	さいしょから
+MODE#75	GRAP/MODE#75	6	3	92	21	menu	つづきから
+MODE#89	GRAP/MODE#89	2	11	187	36	title	マシン データ
+MODE#90	GRAP/MODE#90	0	7	126	17	machine	タイムガイコッツ
+MODE#91	GRAP/MODE#91	0	6	126	18	machine	ドロンボータンク
+MODE#92	GRAP/MODE#92	0	7	125	17	machine	シャレコウベメカ
+MODE#93	GRAP/MODE#93	0	6	127	18	machine	シャレコウベバギー
+MODE#94	GRAP/MODE#94	0	6	130	18	machine	アンドロメダマ号α
+MODE#95	GRAP/MODE#95	0	5	110	19	machine	タイムラワーダ
+MODE#96	GRAP/MODE#96	0	5	95	19	machine	デンデンメカ
+MODE#97	GRAP/MODE#97	0	7	46	17	menu	もどる
+MODE#98	GRAP/MODE#98	0	0	44	16	stat	スピード
+MODE#99	GRAP/MODE#99	0	0	41	16	stat	ダッシュ
+MODE#100	GRAP/MODE#100	0	0	45	16	stat	グリップ
+MODE#101	GRAP/MODE#101	0	8	92	16	machine	ヤッターワン
+MODE#102	GRAP/MODE#102	0	7	111	17	machine	ゼンダライオン
+MODE#103	GRAP/MODE#103	0	7	96	17	machine	ワンダーブル
+MODE#104	GRAP/MODE#104	0	8	107	16	machine	トッタルニャン
+MODE#105	GRAP/MODE#105	0	7	78	17	machine	メカブトン
+MODE#115	GRAP/MODE#115	16	0	81	16	team	マージョ一味
+MODE#116	GRAP/MODE#116	6	0	101	16	team	ドロンボー一味
+MODE#117	GRAP/MODE#117	16	0	70	16	team	アクダマン
+MODE#118	GRAP/MODE#118	17	0	82	16	team	オジャママン
+MODE#119	GRAP/MODE#119	8	0	95	16	team	ミレンジョ一味
+MODE#120	GRAP/MODE#120	2	1	108	15	team	クリーン悪トリオ
+MODE#121	GRAP/MODE#121	12	0	87	16	team	ヤンヤン一行
+MODE#122	GRAP/MODE#122	7	2	81	14	team	ヤッターマン
+MODE#123	GRAP/MODE#123	13	0	71	16	team	ゼンダマン
+MODE#124	GRAP/MODE#124	0	0	108	16	team	花の刑事(デカ)トリオ
+MODE#125	GRAP/MODE#125	8	2	80	14	team	きらめきマン
+MODE#126	GRAP/MODE#126	5	0	86	16	team	タイムボカン
+MODE#139	GRAP/MODE#139	8	11	111	36	title	ムービー
+MODE#140	GRAP/MODE#140	1	1	46	21	movie	オープニング
+MODE#141	GRAP/MODE#141	1	1	46	21	movie	ドクロベエ
+MODE#142	GRAP/MODE#142	1	1	46	21	movie	スタート
+MODE#143	GRAP/MODE#143	1	1	46	21	movie	シュウリョウ
+MODE#144	GRAP/MODE#144	1	1	46	21	movie	エンディング
+MODE#145	GRAP/MODE#145	1	1	46	21	movie	おしおき
+MODE#146	GRAP/MODE#146	2	3	75	21	badge	全悪共通
+MODE#147	GRAP/MODE#147	2	3	75	21	badge	全悪共通
+MODE#148	GRAP/MODE#148	2	3	75	21	badge	全悪共通
+MODE#149	GRAP/MODE#149	1	1	42	11	name	マージョ
+MODE#150	GRAP/MODE#150	1	2	43	11	name	ワルサー
+MODE#151	GRAP/MODE#151	1	1	42	11	name	ムージョ
+MODE#152	GRAP/MODE#152	1	1	41	12	name	スカドン
+MODE#153	GRAP/MODE#153	1	0	42	12	name	コケマツ
+MODE#154	GRAP/MODE#154	1	1	54	12	name	グロッキー
+MODE#155	GRAP/MODE#155	1	0	53	13	name	トンズラー
+MODE#156	GRAP/MODE#156	1	1	51	11	name	ドロンジョ
+MODE#157	GRAP/MODE#157	1	1	49	11	name	ボヤッキー
+MODE#158	GRAP/MODE#158	1	1	60	11	name	ドンジューロー
+MODE#159	GRAP/MODE#159	1	1	47	11	name	トボッケー
+MODE#160	GRAP/MODE#160	1	1	57	12	name	ドワルスキー
+MODE#161	GRAP/MODE#161	1	1	53	12	name	アターシャ
+MODE#162	GRAP/MODE#162	1	1	49	12	name	セコビッチ
+MODE#163	GRAP/MODE#163	1	1	48	12	name	ミレンジョ
+MODE#164	GRAP/MODE#164	1	1	62	12	name	キョカンチン
+MODE#165	GRAP/MODE#165	1	1	50	12	name	コスイネン
+MODE#166	GRAP/MODE#166	1	1	45	12	name	ムンムン
+MODE#167	GRAP/MODE#167	1	1	58	12	name	トンメンタン
+MODE#168	GRAP/MODE#168	1	1	42	11	name	ヤンヤン
+MODE#169	GRAP/MODE#169	1	0	52	12	name	ダサイネン
+MODE#170	GRAP/MODE#170	1	4	77	12	name	ヤッターマン1号
+MODE#171	GRAP/MODE#171	1	4	77	12	name	ヤッターマン2号
+MODE#172	GRAP/MODE#172	0	3	71	12	name	ゼンダマン1号
+MODE#173	GRAP/MODE#173	0	4	71	12	name	ゼンダマン2号
+MODE#174	GRAP/MODE#174	0	2	24	12	name	丹平
+MODE#175	GRAP/MODE#175	0	1	24	13	name	淳子
+MODE#176	GRAP/MODE#176	0	0	48	16	name	ルージュ
+MODE#177	GRAP/MODE#177	0	0	48	16	name	ピエール
+MODE#178	GRAP/MODE#178	0	0	56	16	name	オンドレー
+MODE#179	GRAP/MODE#179	0	0	88	16	name	きらめきマン1号
+MODE#180	GRAP/MODE#180	0	0	88	16	name	きらめきマン2号
+MODE#182	GRAP/MODE#182	0	0	112	16	course	ジュラッキパーク
+MODE#183	GRAP/MODE#183	0	0	126	16	course	ゴッタガエシティー
+MODE#184	GRAP/MODE#184	1	0	85	16	course	半里の長城
+MODE#185	GRAP/MODE#185	1	0	84	16	course	トースター島
+MODE#186	GRAP/MODE#186	1	0	97	16	course	ナス湖の湖畔
+MODE#187	GRAP/MODE#187	1	1	92	15	course	イマラヤ山脈
+MODE#188	GRAP/MODE#188	1	0	79	16	course	ナゼカ平原
+MODE#189	GRAP/MODE#189	1	1	76	15	course	ドーセ宮殿
+MODE#190	GRAP/MODE#190	1	1	114	15	course	ローストワールド
+MODE#191	GRAP/MODE#191	1	0	66	16	course	もー大陸
+MODE#192	GRAP/MODE#192	0	0	120	16	course	バラサイユタウン
+MODE#193	GRAP/MODE#193	1	0	104	16	course	アリアガラの滝
+MODE#194	GRAP/MODE#194	1	0	95	16	course	エドロポリス
+MODE#195	GRAP/MODE#195	1	1	122	15	course	マハラヘッタ王国
+MODE#196	GRAP/MODE#196	0	0	124	16	course	クタビレゾンの森
+MODE#197	GRAP/MODE#197	1	0	126	16	course	ホネオリゾン渓谷
+MODE#198	GRAP/MODE#198	0	0	141	16	course	クタビレゾンの森 2
+MODE#202	GRAP/MODE#202	0	6	30	10	label	マシン
+MODE#203	GRAP/MODE#203	0	6	55	10	label	クリアコース
+CSELECT#0.1	GRAP/CSELECT#0	24	12	96	15	cup	タイムボカン	opaque plate, 2 lines
+CSELECT#0.2	GRAP/CSELECT#0	33	28	77	16	cup	グランプリ	opaque plate, 2 lines
+CSELECT#1.1	GRAP/CSELECT#1	27	13	90	14	cup	ヤッターマン
+CSELECT#1.2	GRAP/CSELECT#1	33	28	77	16	cup	グランプリ
+CSELECT#2.1	GRAP/CSELECT#2	32	12	79	15	cup	ゼンダマン
+CSELECT#2.2	GRAP/CSELECT#2	33	28	77	16	cup	グランプリ
+CSELECT#3.1	GRAP/CSELECT#3	25	13	93	14	cup	オタスケマン
+CSELECT#3.2	GRAP/CSELECT#3	33	28	77	16	cup	グランプリ
+CSELECT#4.1	GRAP/CSELECT#4	18	12	107	15	cup	ヤットデタマン
+CSELECT#4.2	GRAP/CSELECT#4	33	28	77	16	cup	グランプリ
+CSELECT#5.1	GRAP/CSELECT#5	23	11	96	16	cup	イッパツマン
+CSELECT#5.2	GRAP/CSELECT#5	33	28	77	16	cup	グランプリ
+CSELECT#6.1	GRAP/CSELECT#6	25	12	93	15	cup	イタダキマン
+CSELECT#6.2	GRAP/CSELECT#6	33	28	77	16	cup	グランプリ
+CSELECT#7.1	GRAP/CSELECT#7	25	12	93	15	cup	シュヤクノザ
+CSELECT#7.2	GRAP/CSELECT#7	33	28	77	16	cup	グランプリ
+CSELECT#25	GRAP/CSELECT#25	8	9	104	23	course	ジュラッキパーク
+CSELECT#26	GRAP/CSELECT#26	8	9	103	22	course	ゴッタガエシティー
+CSELECT#27	GRAP/CSELECT#27	8	8	87	24	course	半里の長城
+CSELECT#28	GRAP/CSELECT#28	8	8	86	24	course	トースター島
+CSELECT#29	GRAP/CSELECT#29	8	8	99	24	course	ナス湖の湖畔
+CSELECT#30	GRAP/CSELECT#30	8	8	94	24	course	イマラヤ山脈
+CSELECT#31	GRAP/CSELECT#31	8	8	81	24	course	ナゼカ平原
+CSELECT#32	GRAP/CSELECT#32	8	8	78	24	course	ドーセ宮殿
+CSELECT#33	GRAP/CSELECT#33	8	8	103	24	course	ローストワールド
+CSELECT#34	GRAP/CSELECT#34	8	8	68	24	course	もー大陸
+CSELECT#35	GRAP/CSELECT#35	8	9	104	23	course	バラサイユタウン
+CSELECT#36	GRAP/CSELECT#36	8	9	104	23	course	アリアガラの滝
+CSELECT#37	GRAP/CSELECT#37	8	8	98	24	course	エドロポリス
+CSELECT#38	GRAP/CSELECT#38	8	8	104	24	course	マハラヘッタ王国
+CSELECT#39	GRAP/CSELECT#39	8	8	104	24	course	クタビレゾンの森
+CSELECT#40	GRAP/CSELECT#40	8	9	104	23	course	ホネオリゾン渓谷
+CSELECT#41	GRAP/CSELECT#41	8	8	120	24	course	クタビレゾンの森2
+CSELECT#42	GRAP/CSELECT#42	0	7	96	17	machine	ワンダーブル
+CSELECT#43	GRAP/CSELECT#43	0	8	107	16	machine	トッタルニャン
+CSELECT#61	GRAP/CSELECT#61	8	14	209	33	title	コース セレクト
+CSELECT#62	GRAP/CSELECT#62	3	27	195	18	msg	コースを4つ選んで下さい!
+CSELECT#63	GRAP/CSELECT#63	0	1	171	18	msg	コースを選んで下さい!
+CSELECT#67.1	GRAP/CSELECT#67	24	24	57	16	panel	ラップ 1	opaque, dim lettering; rect split evenly
+CSELECT#67.2	GRAP/CSELECT#67	24	40	57	16	panel	ラップ 2	opaque, dim lettering; rect split evenly
+CSELECT#67.3	GRAP/CSELECT#67	24	56	57	16	panel	ラップ 3	opaque, dim lettering; rect split evenly
+CSELECT#68	GRAP/CSELECT#68	0	0	59	15	label	周回数?
+CSELECT#69	GRAP/CSELECT#69	5	0	55	16	lap	ラップ 1
+CSELECT#70	GRAP/CSELECT#70	5	0	57	16	lap	ラップ 2
+CSELECT#71	GRAP/CSELECT#71	5	0	57	16	lap	ラップ 3
+CSELECT#72	GRAP/CSELECT#72	5	0	58	16	lap	ラップ 4
+CSELECT#73	GRAP/CSELECT#73	5	0	57	16	lap	ラップ 5
+CSELECT#74	GRAP/CSELECT#74	5	0	57	16	lap	ラップ 6
+CSELECT#75	GRAP/CSELECT#75	5	0	57	16	lap	ラップ 7
+CSELECT#76	GRAP/CSELECT#76	5	0	57	16	lap	ラップ 8
+CSELECT#77	GRAP/CSELECT#77	5	0	57	16	lap	ラップ 9
+CSELECT#78	GRAP/CSELECT#78	0	7	126	17	machine	タイムガイコッツ
+CSELECT#79	GRAP/CSELECT#79	0	6	126	18	machine	ドロンボータンク
+CSELECT#80	GRAP/CSELECT#80	0	7	125	17	machine	シャレコウベメカ
+CSELECT#81	GRAP/CSELECT#81	0	6	127	18	machine	シャレコウベバギー
+CSELECT#82	GRAP/CSELECT#82	0	6	130	18	machine	アンドロメダマ号α
+CSELECT#83	GRAP/CSELECT#83	0	5	110	19	machine	タイムラワーダ
+CSELECT#84	GRAP/CSELECT#84	0	5	95	19	machine	デンデンメカ
+CSELECT#85	GRAP/CSELECT#85	0	8	92	16	machine	ヤッターワン
+CSELECT#86	GRAP/CSELECT#86	0	7	111	17	machine	ゼンダライオン
+CSELECT#87	GRAP/CSELECT#87	0	7	112	17	machine	タイムメカブトン
+CSELECT#112	GRAP/CSELECT#112	1	0	126	16	label	ベストタイム
+CSELECT#113	GRAP/CSELECT#113	1	0	126	16	label	ベストラップ
+CSELECT#119	GRAP/CSELECT#119	0	0	232	16	msg	このグランプリでよろしいですか?
+CSELECT#120	GRAP/CSELECT#120	0	2	30	14	menu	はい
+CSELECT#121	GRAP/CSELECT#121	0	2	46	14	menu	いいえ
+MSELECT#2	GRAP/MSELECT#2	8	14	208	33	title	マシン セレクト
+MSELECT#13.1	GRAP/MSELECT#13	4	2	136	14	plate	タイムガイコッツ	highlighted copy of #14; rects by hand: frame and text share colours
+MSELECT#13.2	GRAP/MSELECT#13	4	16	136	14	plate	マージョ一味	highlighted copy of #14; rects by hand: frame and text share colours
+MSELECT#14.1	GRAP/MSELECT#14	4	2	136	14	plate	タイムガイコッツ	rects by hand: frame and text share colours
+MSELECT#14.2	GRAP/MSELECT#14	4	16	136	14	plate	マージョ一味	rects by hand: frame and text share colours
+MSELECT#15.1	GRAP/MSELECT#15	4	2	136	14	plate	ドロンボータンク	rects by hand: frame and text share colours
+MSELECT#15.2	GRAP/MSELECT#15	4	16	136	14	plate	ドロンボー一味	rects by hand: frame and text share colours
+MSELECT#16.1	GRAP/MSELECT#16	4	2	136	14	plate	シャレコウベメカ	rects by hand: frame and text share colours
+MSELECT#16.2	GRAP/MSELECT#16	4	16	136	14	plate	アクダマン	rects by hand: frame and text share colours
+MSELECT#17.1	GRAP/MSELECT#17	4	2	136	14	plate	アンドロメダマ号α	rects by hand: frame and text share colours
+MSELECT#17.2	GRAP/MSELECT#17	4	16	136	14	plate	オジャママン	rects by hand: frame and text share colours
+MSELECT#18.1	GRAP/MSELECT#18	4	2	136	14	plate	タイムラワーダ	rects by hand: frame and text share colours
+MSELECT#18.2	GRAP/MSELECT#18	4	16	136	14	plate	ミレンジョ一味	rects by hand: frame and text share colours
+MSELECT#19.1	GRAP/MSELECT#19	4	2	136	14	plate	シャレコウベバギー	rects by hand: frame and text share colours
+MSELECT#19.2	GRAP/MSELECT#19	4	16	136	14	plate	クリーン悪トリオ	rects by hand: frame and text share colours
+MSELECT#20.1	GRAP/MSELECT#20	4	2	136	14	plate	デンデンメカ	rects by hand: frame and text share colours
+MSELECT#20.2	GRAP/MSELECT#20	4	16	136	14	plate	ヤンヤン一行	rects by hand: frame and text share colours
+MSELECT#21.1	GRAP/MSELECT#21	4	2	136	14	plate	ヤッターワン	rects by hand: frame and text share colours
+MSELECT#21.2	GRAP/MSELECT#21	4	16	136	14	plate	ヤッターマン	rects by hand: frame and text share colours
+MSELECT#22.1	GRAP/MSELECT#22	4	2	136	14	plate	ゼンダライオン	rects by hand: frame and text share colours
+MSELECT#22.2	GRAP/MSELECT#22	4	16	136	14	plate	ゼンダマン	rects by hand: frame and text share colours
+MSELECT#23.1	GRAP/MSELECT#23	4	2	136	14	plate	メカブトン	rects by hand: frame and text share colours
+MSELECT#23.2	GRAP/MSELECT#23	4	16	136	14	plate	タイムボカン	rects by hand: frame and text share colours
+MSELECT#24.1	GRAP/MSELECT#24	4	2	136	14	plate	ワンダーブル	rects by hand: frame and text share colours
+MSELECT#24.2	GRAP/MSELECT#24	4	16	136	14	plate	花の刑事(デカ)トリオ	rects by hand: frame and text share colours
+MSELECT#25.1	GRAP/MSELECT#25	4	2	136	14	plate	トッタルニャン	rects by hand: frame and text share colours
+MSELECT#25.2	GRAP/MSELECT#25	4	16	136	14	plate	怪盗きらめきマン	rects by hand: frame and text share colours
+MSELECT#31	GRAP/MSELECT#31	0	0	175	16	msg	ゴーストをロードしますか?
+MSELECT#32	GRAP/MSELECT#32	0	2	30	14	menu	はい
+MSELECT#33	GRAP/MSELECT#33	0	2	46	14	menu	いいえ
+RANK#0	GRAP/RANK#0	6	0	149	35	title	ランキング
+RANK#1.1	GRAP/RANK#1	24	6	120	16	panel	レコードをセーブする	opaque menu panel; rect split evenly
+RANK#1.2	GRAP/RANK#1	24	22	120	17	panel	ゴーストをセーブする	opaque menu panel; rect split evenly
+RANK#1.3	GRAP/RANK#1	24	39	120	16	panel	リトライ	opaque menu panel; rect split evenly
+RANK#1.4	GRAP/RANK#1	24	55	120	16	panel	コースチェンジ	opaque menu panel; rect split evenly
+RANK#1.5	GRAP/RANK#1	24	71	120	17	panel	マシンチェンジ	opaque menu panel; rect split evenly
+RANK#1.6	GRAP/RANK#1	24	88	120	16	panel	ゲームをやめる	opaque menu panel; rect split evenly
+RANK#3	GRAP/RANK#3	0	6	126	34	machine	タイムガイコッツ
+RANK#4	GRAP/RANK#4	0	4	126	36	machine	ドロンボータンク
+RANK#5	GRAP/RANK#5	0	6	125	34	machine	シャレコウベメカ
+RANK#6	GRAP/RANK#6	0	4	130	36	machine	アンドロメダマ号α
+RANK#7	GRAP/RANK#7	0	2	110	38	machine	タイムラワーダ
+RANK#8	GRAP/RANK#8	0	4	127	36	machine	シャレコウベバギー
+RANK#9	GRAP/RANK#9	0	2	95	38	machine	デンデンメカ
+RANK#10	GRAP/RANK#10	0	8	92	32	machine	ヤッターワン
+RANK#11	GRAP/RANK#11	0	6	111	34	machine	ゼンダライオン
+RANK#12	GRAP/RANK#12	0	7	78	33	machine	メカブトン
+RANK#13	GRAP/RANK#13	0	6	96	34	machine	ワンダーブル
+RANK#14	GRAP/RANK#14	0	8	107	32	machine	トッタルニャン
+RANK#46	GRAP/RANK#46	8	9	104	23	course	ジュラッキパーク
+RANK#47	GRAP/RANK#47	8	9	103	22	course	ゴッタガエシティー
+RANK#48	GRAP/RANK#48	8	8	87	24	course	半里の長城
+RANK#49	GRAP/RANK#49	8	8	86	24	course	トースター島
+RANK#50	GRAP/RANK#50	8	8	99	24	course	ナス湖の湖畔
+RANK#51	GRAP/RANK#51	8	8	94	24	course	イマラヤ山脈
+RANK#52	GRAP/RANK#52	8	8	81	24	course	ナゼカ平原
+RANK#53	GRAP/RANK#53	8	8	78	24	course	ドーセ宮殿
+RANK#54	GRAP/RANK#54	8	8	103	24	course	ローストワールド
+RANK#55	GRAP/RANK#55	8	8	68	24	course	もー大陸
+RANK#56	GRAP/RANK#56	8	9	104	23	course	バラサイユタウン
+RANK#57	GRAP/RANK#57	8	9	104	23	course	アリアガラの滝
+RANK#58	GRAP/RANK#58	8	8	98	24	course	エドロポリス
+RANK#59	GRAP/RANK#59	8	8	104	24	course	マハラヘッタ王国
+RANK#60	GRAP/RANK#60	8	8	104	24	course	クタビレゾンの森
+RANK#61	GRAP/RANK#61	8	9	104	23	course	ホネオリゾン渓谷
+RANK#78	GRAP/RANK#78	1	0	126	24	label	ベストタイム
+RANK#79	GRAP/RANK#79	1	0	126	24	label	ベストラップ
+RANK#81	GRAP/RANK#81	120	40	146	38	art	ランキング	lettered into the background art; rect by eye
+RESULT#1	GRAP/RESULT#1	9	2	142	33	title	レース結果
+RESULT#4	GRAP/RESULT#4	0	1	53	15	menu	リトライ
+RESULT#5	GRAP/RESULT#5	0	0	98	16	menu	コースチェンジ
+RESULT#6	GRAP/RESULT#6	0	0	100	16	menu	マシンチェンジ
+RESULT#7	GRAP/RESULT#7	0	0	97	16	menu	ゲームをやめる
+RESULT#8	GRAP/RESULT#8	0	2	77	30	label	ランク・イン
+RESULT#9	GRAP/RESULT#9	0	0	127	16	menu	レコードを記録する
+RESULT#69	GRAP/RESULT#69	16	2	127	33	title	総合結果
+RESULT#72	GRAP/RESULT#72	5	0	55	32	lap	ラップ 1
+RESULT#73	GRAP/RESULT#73	5	0	57	32	lap	ラップ 2
+RESULT#74	GRAP/RESULT#74	5	0	57	32	lap	ラップ 3
+RESULT#75	GRAP/RESULT#75	5	0	58	32	lap	ラップ 4
+RESULT#76	GRAP/RESULT#76	5	0	57	32	lap	ラップ 5
+RESULT#77	GRAP/RESULT#77	5	0	57	32	lap	ラップ 6
+RESULT#78	GRAP/RESULT#78	5	0	57	32	lap	ラップ 7
+RESULT#79	GRAP/RESULT#79	5	0	57	32	lap	ラップ 8
+RESULT#80	GRAP/RESULT#80	5	0	57	32	lap	ラップ 9
+RESULT#81	GRAP/RESULT#81	3	0	106	32	label	トータルタイム
+SAVE#0	GRAP/SAVE#0	0	0	72	16	menu	スロット 1
+SAVE#1	GRAP/SAVE#1	0	0	74	16	menu	スロット 2
+SAVE#2	GRAP/SAVE#2	0	0	225	16	msg	使用するスロットを選んで下さい。
+SAVE#3	GRAP/SAVE#3	0	0	242	16	msg	メモリーカードをチェックしています。
+SAVE#4	GRAP/SAVE#4	0	0	236	16	msg	メモリーカードが差さっていません。
+SAVE#5	GRAP/SAVE#5	0	0	205	16	msg	メモリーカードが未初期化です。
+SAVE#6	GRAP/SAVE#6	0	0	190	16	msg	初期化してよろしいですか。
+SAVE#7	GRAP/SAVE#7	1	1	170	15	fix	OK CANSEL	English; misspelt CANSEL, fix to CANCEL
+SAVE#8	GRAP/SAVE#8	0	0	236	16	msg	メモリーカードを初期化しています。
+SAVE#9	GRAP/SAVE#9	0	0	83	16	msg	初期化終了。
+SAVE#10	GRAP/SAVE#10	0	0	196	16	msg	どのデータをロードしますか?
+SAVE#11	GRAP/SAVE#11	0	0	92	16	msg	ロード中です。
+SAVE#12	GRAP/SAVE#12	0	0	163	16	msg	ロードが、終了しました。
+SAVE#13	GRAP/SAVE#13	0	0	180	16	msg	セーブデータがありません。
+SAVE#14	GRAP/SAVE#14	0	0	144	16	msg	初期化してあります。
+SAVE#15	GRAP/SAVE#15	0	0	159	16	msg	初期化に失敗しました。
+SAVE#16	GRAP/SAVE#16	0	0	168	16	msg	データがこわれています。
+SAVE#17	GRAP/SAVE#17	0	0	212	16	msg	どのファイルにセーブしますか?
+SAVE#18	GRAP/SAVE#18	0	0	199	16	msg	このデータをセーブしますか?
+SAVE#19	GRAP/SAVE#19	0	0	236	16	msg	ここにセーブしてよろしいですか?
+SAVE#20	GRAP/SAVE#20	0	0	154	16	msg	セーブが終了しました。
+SAVE#21	GRAP/SAVE#21	0	0	154	16	msg	セーブに失敗しました。
+SAVE#22	GRAP/SAVE#22	0	0	196	16	msg	このデータをロードしますか?
+SAVE#23	GRAP/SAVE#23	0	0	117	16	msg	上書きしますか?
+SAVE#24	GRAP/SAVE#24	0	0	235	16	msg	メモリーカードに空きがありません。
+SAVE#25	GRAP/SAVE#25	0	0	57	16	msg	セーブ中
+SAVE#26	GRAP/SAVE#26	0	0	201	16	msg	ベストタイムをロードしますか?
+SAVE#27	GRAP/SAVE#27	0	0	175	16	msg	ゴーストをロードしますか?
+SAVE#28	GRAP/SAVE#28	0	0	187	16	msg	ゴーストデータが、ありません。
+SAVE#29	GRAP/SAVE#29	0	0	182	16	msg	ベストタイムのセーブ中です。
+SAVE#30	GRAP/SAVE#30	0	0	194	16	msg	ストーリーモードのセーブ中です。
+SAVE#31	GRAP/SAVE#31	0	0	182	16	msg	ベストタイムのロード中です。
+SAVE#32	GRAP/SAVE#32	0	0	194	16	msg	ストーリーモードのロード中です。
+SAVE#33	GRAP/SAVE#33	0	0	103	16	msg	ストーリーモードの	first piece; joins another sprite at run time
+SAVE#34	GRAP/SAVE#34	0	0	194	16	msg	ゴーストデータのロード中です。
+SAVE#35	GRAP/SAVE#35	0	0	91	16	msg	ベストタイムの	first piece; joins another sprite at run time
+SAVE#36	GRAP/SAVE#36	0	0	194	16	msg	ゴーストデータのセーブ中です。
+SAVE#37	GRAP/SAVE#37	0	0	216	16	msg	ゴーストデータがこわれています。
+SAVE#39	GRAP/SAVE#39	1	0	124	16	machine	タイムガイコッツ
+SAVE#40	GRAP/SAVE#40	1	0	124	16	machine	ドロンボータンク
+SAVE#41	GRAP/SAVE#41	1	0	123	16	machine	シャレコウベメカ
+SAVE#42	GRAP/SAVE#42	1	0	127	16	machine	アンドロメダマ号α
+SAVE#43	GRAP/SAVE#43	1	0	108	16	machine	タイムラワーダ
+SAVE#44	GRAP/SAVE#44	0	0	125	16	machine	シャレコウベバギー
+SAVE#45	GRAP/SAVE#45	1	0	93	16	machine	デンデンメカ
+SAVE#47	GRAP/SAVE#47	0	0	76	16	machine	メカブトン
+SAVE#48	GRAP/SAVE#48	0	2	86	14	machine	ヤッターワン
+SAVE#49	GRAP/SAVE#49	1	0	103	16	machine	ゼンダライオン
+SAVE#50	GRAP/SAVE#50	1	0	88	16	machine	ワンダーブル
+SAVE#51	GRAP/SAVE#51	0	2	99	14	machine	トッタルニャン
+SAVE#52	GRAP/SAVE#52	0	0	112	16	course	ジュラッキパーク
+SAVE#53	GRAP/SAVE#53	0	0	126	16	course	ゴッタガエシティー
+SAVE#54	GRAP/SAVE#54	1	0	85	16	course	半里の長城
+SAVE#55	GRAP/SAVE#55	1	0	84	16	course	トースター島
+SAVE#56	GRAP/SAVE#56	1	0	97	16	course	ナス湖の湖畔
+SAVE#57	GRAP/SAVE#57	1	1	92	15	course	イマラヤ山脈
+SAVE#58	GRAP/SAVE#58	1	0	79	16	course	ナゼカ平原
+SAVE#59	GRAP/SAVE#59	1	1	76	15	course	ドーセ宮殿
+SAVE#60	GRAP/SAVE#60	1	1	114	15	course	ローストワールド
+SAVE#61	GRAP/SAVE#61	1	0	66	16	course	もー大陸
+SAVE#62	GRAP/SAVE#62	0	0	120	16	course	バラサイユタウン
+SAVE#63	GRAP/SAVE#63	1	0	104	16	course	アリアガラの滝
+SAVE#64	GRAP/SAVE#64	1	0	95	16	course	エドロポリス
+SAVE#65	GRAP/SAVE#65	1	1	122	15	course	マハラヘッタ王国
+SAVE#66	GRAP/SAVE#66	0	0	124	16	course	クタビレゾンの森
+SAVE#67	GRAP/SAVE#67	1	0	126	16	course	ホネオリゾン渓谷
+SAVE#68	GRAP/SAVE#68	0	0	141	16	course	クタビレゾンの森 2
+SAVE#69	GRAP/SAVE#69	0	2	61	14	label	ファイル1
+SAVE#70	GRAP/SAVE#70	0	1	63	15	label	ファイル2
+SAVE#71	GRAP/SAVE#71	0	2	63	14	label	ファイル3
+SAVE#72	GRAP/SAVE#72	0	1	63	15	label	ファイル4
+SAVE#73	GRAP/SAVE#73	0	6	30	10	label	マシン
+SAVE#74	GRAP/SAVE#74	0	6	55	10	label	クリアコース
+SAVE#75	GRAP/SAVE#75	0	6	28	10	label	コース
+SAVE#79	GRAP/SAVE#79	54	40	74	34	art	ロード	lettered into the skull-pattern panel; rect by eye
+SAVE#80	GRAP/SAVE#80	48	34	82	32	art	セーブ	lettered into the skull-pattern panel; rect by eye
+SAVE#83	GRAP/SAVE#83	0	2	30	14	menu	はい
+SAVE#84	GRAP/SAVE#84	0	2	46	14	menu	いいえ
+DOKURO#1	GRAP/DOKURO#1	7	1	106	25	title	レース結果
+DOKURO#3	GRAP/DOKURO#3	0	6	126	34	machine	タイムガイコッツ
+DOKURO#4	GRAP/DOKURO#4	0	4	126	36	machine	ドロンボータンク
+DOKURO#5	GRAP/DOKURO#5	0	6	125	34	machine	シャレコウベメカ
+DOKURO#6	GRAP/DOKURO#6	0	4	130	36	machine	アンドロメダマ号α
+DOKURO#7	GRAP/DOKURO#7	0	2	110	38	machine	タイムラワーダ
+DOKURO#8	GRAP/DOKURO#8	0	4	127	36	machine	シャレコウベバギー
+DOKURO#9	GRAP/DOKURO#9	0	2	95	38	machine	デンデンメカ
+DOKURO#34	GRAP/DOKURO#34	0	1	122	23	brief	はじめのコースは、	briefing piece; pieces join at run time (order is code)
+DOKURO#35	GRAP/DOKURO#35	0	0	106	24	brief	つぎのコースは、	briefing piece
+DOKURO#36	GRAP/DOKURO#36	0	0	192	24	brief	3位までに、ゴールするだベエ~	briefing piece
+DOKURO#37	GRAP/DOKURO#37	1	0	173	24	brief	1位で、ゴールするだベエ~	briefing piece
+DOKURO#38	GRAP/DOKURO#38	0	0	172	24	brief	ジュラッキパーク だベエ~	briefing piece
+DOKURO#39	GRAP/DOKURO#39	0	0	185	24	brief	ゴッタガエシティー だベエ~	briefing piece
+DOKURO#40	GRAP/DOKURO#40	0	0	141	24	brief	半里の長城 だベエ~	briefing piece
+DOKURO#41	GRAP/DOKURO#41	0	0	142	24	brief	トースター島 だベエ~	briefing piece
+DOKURO#42	GRAP/DOKURO#42	0	0	154	24	brief	ナス湖の湖畔 だベエ~	briefing piece
+DOKURO#43	GRAP/DOKURO#43	0	0	149	24	brief	イマラヤ山脈 だベエ~	briefing piece
+DOKURO#44	GRAP/DOKURO#44	0	0	137	24	brief	ナゼカ平原 だベエ~	briefing piece
+DOKURO#45	GRAP/DOKURO#45	0	0	135	24	brief	ドーセ宮殿 だベエ~	briefing piece
+DOKURO#46	GRAP/DOKURO#46	0	0	172	24	brief	ローストワールド だベエ~	briefing piece
+DOKURO#47	GRAP/DOKURO#47	0	0	125	24	brief	もー大陸 だベエ~	briefing piece
+DOKURO#48	GRAP/DOKURO#48	0	0	176	24	brief	バラサイユタウン だベエ~	briefing piece
+DOKURO#49	GRAP/DOKURO#49	0	0	165	24	brief	アリアガラの滝 だベエ~	briefing piece
+DOKURO#50	GRAP/DOKURO#50	0	0	149	24	brief	エドロポリス だベエ~	briefing piece
+DOKURO#51	GRAP/DOKURO#51	0	0	179	24	brief	マハラヘッタ王国 だベエ~	briefing piece
+DOKURO#52	GRAP/DOKURO#52	0	0	176	24	brief	クタビレゾンの森 だベエ~	briefing piece
+DOKURO#53	GRAP/DOKURO#53	0	0	192	24	brief	シュヤクノザを、倒すだベエ~	briefing piece
+DOKURO#54	GRAP/DOKURO#54	0	0	94	24	brief	よくやったベエ	briefing piece
+DOKURO#55	GRAP/DOKURO#55	0	0	155	24	brief	ステージクリアだベエ~	briefing piece
+DOKURO#56	GRAP/DOKURO#56	0	2	75	22	brief	おめえたち	briefing piece
+DOKURO#57	GRAP/DOKURO#57	0	0	120	23	brief	がんばるだベエ~	briefing piece
+DOKURO#58	GRAP/DOKURO#58	0	0	172	24	brief	メカブトンに勝つだベエ~	briefing piece
+DOKURO#59	GRAP/DOKURO#59	0	0	183	24	brief	ヤッターワンに勝つだベエ~	briefing piece
+DOKURO#60	GRAP/DOKURO#60	0	0	192	24	brief	ゼンダライオンに勝つだベエ~	briefing piece
+DOKURO#61	GRAP/DOKURO#61	0	0	186	24	brief	弾丸ヘッド号に勝つだベエ~	briefing piece
+DOKURO#62	GRAP/DOKURO#62	0	0	142	24	brief	巨神号に勝つだベエ~	briefing piece
+DOKURO#63	GRAP/DOKURO#63	0	0	170	24	brief	カブトゼミに勝つだベエ~	briefing piece
+DOKURO#64	GRAP/DOKURO#64	0	0	190	24	brief	オタスケタヌキに勝つだベエ~	briefing piece
+DOKURO#65	GRAP/DOKURO#65	0	0	115	24	brief	セーブしますか?	briefing piece
+DOKURO#66	GRAP/DOKURO#66	0	0	160	24	brief	ゲームを終了しますか?	briefing piece
+DOKURO#67	GRAP/DOKURO#67	32	3	30	21	menu	はい
+DOKURO#68	GRAP/DOKURO#68	32	3	46	21	menu	いいえ
+DOKURO#69	GRAP/DOKURO#69	0	1	73	23	brief	3位までに、	briefing piece
+DOKURO#70	GRAP/DOKURO#70	0	0	162	24	brief	ゴールできなかったベエ~	briefing piece
+DOKURO#71	GRAP/DOKURO#71	1	0	168	24	brief	1位に、なれなかったベエ~	briefing piece
+DOKURO#72	GRAP/DOKURO#72	0	0	179	24	brief	もう一度、がんばるだベエ~	briefing piece
+DOKURO#73	GRAP/DOKURO#73	0	2	55	22	brief	いよいよ	briefing piece
+DOKURO#74	GRAP/DOKURO#74	0	2	120	22	brief	勝てなかったベエ~	briefing piece
+DOKURO#75	GRAP/DOKURO#75	0	0	108	24	label	ドクロストン獲得数
+DOKURO#76	GRAP/DOKURO#76	0	0	120	24	label	チューンアップポイント
+GOVER#8	GRAP/GOVER#8	13	3	231	42	title	ゲームオーバー
+MODE1#0.1	GRAP/MODE1#0	12	4	124	13	panel	オタスケマンに登場	opaque panel, as MODE#0
+MODE1#0.2	GRAP/MODE1#0	11	18	139	13	panel	小型走行用に新開発の	opaque panel, as MODE#0
+MODE1#0.3	GRAP/MODE1#0	12	32	138	13	panel	スーパービッグマシン	opaque panel, as MODE#0
+MODE1#1.1	GRAP/MODE1#1	11	4	139	14	panel	イタダキマンに登場	first kanji of line 2 read small: 龍?; rect split evenly
+MODE1#1.2	GRAP/MODE1#1	11	18	139	13	panel	龍神の娘「竜子」の	first kanji of line 2 read small: 龍?; rect split evenly
+MODE1#1.3	GRAP/MODE1#1	11	31	139	14	panel	力を宿す神秘のマシン	first kanji of line 2 read small: 龍?; rect split evenly
+MODE1#2.1	GRAP/MODE1#2	11	4	139	14	panel	ヤッターマンに登場	rect split evenly
+MODE1#2.2	GRAP/MODE1#2	11	18	139	13	panel	ドロンボーが用意した	rect split evenly
+MODE1#2.3	GRAP/MODE1#2	11	31	139	14	panel	新型オリジナルマシン	rect split evenly
+MODE1#4.1	GRAP/MODE1#4	11	3	111	13	panel	ゼンダマンに登場
+MODE1#4.2	GRAP/MODE1#4	11	17	138	13	panel	頑丈なボディが自慢の
+MODE1#4.3	GRAP/MODE1#4	11	31	125	13	panel	時空を駆けるマシン
+MODE1#5.1	GRAP/MODE1#5	11	3	139	14	panel	イッパツマンに登場	rect split evenly
+MODE1#5.2	GRAP/MODE1#5	11	17	139	13	panel	唯一正義に勝利(?)	rect split evenly
+MODE1#5.3	GRAP/MODE1#5	11	30	139	14	panel	実力1番の強力マシン	rect split evenly
+MODE1#6.1	GRAP/MODE1#6	11	4	139	14	panel	ヤットデタマンに登場	rect split evenly
+MODE1#6.2	GRAP/MODE1#6	11	18	139	13	panel	バネ走行がポイントの	rect split evenly
+MODE1#6.3	GRAP/MODE1#6	11	31	139	14	panel	ミラクル激走マシン	rect split evenly
+MODE1#7.1	GRAP/MODE1#7	11	4	139	13	panel	シリーズ1作目に登場	rect split evenly
+MODE1#7.2	GRAP/MODE1#7	11	17	139	14	panel	カブトムシパワーの	rect split evenly
+MODE1#7.3	GRAP/MODE1#7	11	31	139	13	panel	タイムボカンの1号機	rect split evenly
+MODE1#8.1	GRAP/MODE1#8	10	5	139	13	panel	この世に悪は栄えない	rect split evenly
+MODE1#8.2	GRAP/MODE1#8	10	18	139	13	panel	勝利のポーズだ	rect split evenly
+MODE1#8.3	GRAP/MODE1#8	10	31	139	13	panel	出動!イヌ型メカ	rect split evenly
+MODE1#9.1	GRAP/MODE1#9	10	4	125	13	panel	力自慢で のど自慢	rect split evenly
+MODE1#9.2	GRAP/MODE1#9	10	17	125	14	panel	正義の汽車です	rect split evenly
+MODE1#9.3	GRAP/MODE1#9	10	31	125	13	panel	歌う♪ライオンメカ	rect split evenly
+MODE1#10.1	GRAP/MODE1#10	11	3	125	14	panel	きらめきマンに登場	rect split evenly
+MODE1#10.2	GRAP/MODE1#10	11	17	125	13	panel	1000のカオを持つ	rect split evenly
+MODE1#10.3	GRAP/MODE1#10	11	30	125	14	panel	パワフル超力マシン	rect split evenly
+MODE1#11.1	GRAP/MODE1#11	11	4	139	13	panel	お宝 ねらって	rect split evenly
+MODE1#11.2	GRAP/MODE1#11	11	17	139	14	panel	かれいに参上!	rect split evenly
+MODE1#11.3	GRAP/MODE1#11	11	31	139	13	panel	きらめき ネコ型メカ	rect split evenly
+TUP0#1	GRAP/TUP0#1	6	5	196	34	title	チューンアップ
+TUP0#3	GRAP/TUP0#3	1	4	60	18	stat	スピード
+TUP0#4	GRAP/TUP0#4	1	3	59	18	stat	ダッシュ
+TUP0#5	GRAP/TUP0#5	1	3	62	19	stat	グリップ
+TUP0#6	GRAP/TUP0#6	14	4	35	18	menu	終了
+TUP0#57	GRAP/TUP0#57	0	0	112	16	course	ジュラッキパーク
+TUP0#58	GRAP/TUP0#58	0	0	126	16	course	ゴッタガエシティー
+TUP0#59	GRAP/TUP0#59	1	0	85	16	course	半里の長城
+TUP0#60	GRAP/TUP0#60	1	0	84	16	course	トースター島
+TUP0#61	GRAP/TUP0#61	1	0	97	16	course	ナス湖の湖畔
+TUP0#62	GRAP/TUP0#62	1	1	92	15	course	イマラヤ山脈
+TUP0#63	GRAP/TUP0#63	1	0	79	16	course	ナゼカ平原
+TUP0#64	GRAP/TUP0#64	1	1	76	15	course	ドーセ宮殿
+TUP0#65	GRAP/TUP0#65	1	1	114	15	course	ローストワールド
+TUP0#66	GRAP/TUP0#66	1	0	66	16	course	もー大陸
+TUP0#67	GRAP/TUP0#67	0	0	120	16	course	バラサイユタウン
+TUP0#68	GRAP/TUP0#68	1	0	104	16	course	アリアガラの滝
+TUP0#69	GRAP/TUP0#69	1	0	95	16	course	エドロポリス
+TUP0#70	GRAP/TUP0#70	1	1	122	15	course	マハラヘッタ王国
+TUP0#71	GRAP/TUP0#71	0	0	124	16	course	クタビレゾンの森
+TUP0#72	GRAP/TUP0#72	1	0	126	16	course	ホネオリゾン渓谷
+TUP0#73	GRAP/TUP0#73	0	0	77	14	label	次のコースは。
+TUP0#74	GRAP/TUP0#74	1	0	78	14	label	はじめのコースは。
+STAT01#30	STAGE/STAT01#30	1	0	85	32	hud	ゴール
+STAT01#31	STAGE/STAT01#31	0	0	127	31	hud	ファイナルラップ	#193 in each STAT file is the same blob
+STAT01#61	STAGE/STAT01#61	2	19	28	12	hud	スカ	item icon: skull over the word スカ (dud); rect by eye
+STAT01#93	STAGE/STAT01#93	0	1	66	14	pause	リスタート
+STAT01#94	STAGE/STAT01#94	0	0	124	16	pause	GPのはじめに戻る
+STAT01#95	STAGE/STAT01#95	0	0	127	16	pause	モードセレクトに戻る
+STAT01#96	STAGE/STAT01#96	0	1	93	15	pause	タイトルに戻る
+STAT01#97	STAGE/STAT01#97	0	0	47	16	hud	逆走行
+STAT01#102	STAGE/STAT01#102	0	0	79	16	pause	ゲームに戻る
