@@ -34,8 +34,11 @@ Philip Gage's byte pair encoding: blocks of [pair table][u16 BE size][size bytes
   TIMs back to back.
 - Some entries' TIM pixel-block length word is wrong (CAR, STAT): `tim.parse(b, strict=False)` ignores it.
 - `timp.pack(blobs, comp)` rebuilds a file byte-identically from the original compressed bytes (test). `bpe_store` is a
-  literal-only encoder (no pairs, input size + 5 per 64 KB block); a real BPE encoder can come later if a file must not
-  grow. Whether a file may grow depends on the free sectors after it (unmeasured) and on load buffer sizes (unknown).
+  literal-only encoder (no pairs, input size + 5 per 64 KB block). Phase 5: `bpe_encode` is a real Gage encoder and
+  `bpe_best` keeps the smallest of blocks 5,000/8,000/15,000. Limits it stays inside, measured over every block of every
+  TIMP on the disc: at most 15,623 bytes out of one block, 6,198 packed bytes, decoder stack depth 78 (`bpe_encode`
+  caps pair nesting at 64). Files keep their size (`disc.write_file` can't resize; load buffer sizes unknown), so the
+  build zero-pads a smaller archive and stops on a larger one.
 
 ## Text
 

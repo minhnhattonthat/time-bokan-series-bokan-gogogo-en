@@ -1,0 +1,27 @@
+id	en	class	rect
+TITLE#29.1	©Tatsunoko Pro 2001
+TITLE#30	Start
+MODE#0.1	From Time Bokan
+MODE#1	Mode Select
+MODE#2	Story Mode
+MODE#3	GP Mode
+MODE#27	Shibibiin Rhapsody
+MODE#90	Time Gaikottsu
+MODE#91	Doronbow Tank
+MODE#98	Speed
+MODE#115	Majo's Gang
+MODE#140	Movie	label
+MODE#147	All Villains
+MODE#149	Majo		0,0,48,16
+MODE#182	Juracky Park
+MODE#202	Machine	small
+CSELECT#0.1	Time Bokan
+CSELECT#25	Juracky Park
+CSELECT#62	Choose four courses!
+CSELECT#69	Lap 1
+MSELECT#13.1	Time Gaikottsu
+RANK#81	Ranking
+DOKURO#34	The first course
+STAT01#30	Goal
+STAT01#93	Restart
+MSELECT#14.1	Time Gaikottsu		

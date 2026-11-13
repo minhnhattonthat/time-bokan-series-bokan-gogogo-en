@@ -80,6 +80,67 @@ def bpe_store(data):
     return bytes(out)
 
 
+def bpe_encode(data, block=5000, max_stack=64, threshold=3):
+    """Gage BPE in the game's format, so an edited entry stays about as small as the original. Limits stay inside
+    what the disc's own streams already make the game's decoder do (docs/re/disc.md: decoder stack up to 78 entries,
+    15,623 bytes out of one block): input blocks of `block` bytes, pair nesting kept to `max_stack` stack entries."""
+    import numpy as np
+    out, i = bytearray(), 0
+    while i < len(data):
+        seen, j = set(), i  # Gage's block: stop at `block` bytes or 200 distinct ones, leaving codes for pairs
+        while j < len(data) and j - i < block and (data[j] in seen or len(seen) < 200):
+            seen.add(data[j])
+            j += 1
+        buf, i = data[i:j], j
+        left, right, stack = list(range(256)), [0] * 256, [1] * 256
+        free = [c for c in range(256) if c not in set(buf)]
+        while free and len(buf) > 1:
+            a = np.frombuffer(buf, np.uint8).astype(np.int32)
+            cnt = np.bincount(a[:-1] * 256 + a[1:], minlength=65536)
+            while True:
+                p = int(cnt.argmax())
+                x, y = divmod(p, 256)
+                s = max(2, 1 + stack[x], stack[y])
+                if cnt[p] < threshold or s <= max_stack:
+                    break
+                cnt[p] = 0
+            if cnt[p] < threshold:
+                break
+            c = free.pop()
+            left[c], right[c], stack[c] = x, y, s
+            buf = buf.replace(bytes((x, y)), bytes((c,)))
+        c = 0
+        while c < 256:
+            if left[c] == c:  # run of literals: a skip byte, then one entry always follows unless the table ended
+                n = 1
+                while n < 128 and c + n < 256 and left[c + n] == c + n:
+                    n += 1
+                out.append(n + 127)
+                c += n
+                if c == 256:
+                    break
+                ents = [c]
+            else:
+                n = 1
+                while n < 128 and c + n < 256 and left[c + n] != c + n:
+                    n += 1
+                out.append(n - 1)
+                ents = range(c, c + n)
+            for e in ents:
+                out.append(left[e])
+                if left[e] != e:
+                    out.append(right[e])
+            c = ents[-1] + 1
+        out += struct.pack(">H", len(buf)) + buf
+    return bytes(out)
+
+
+def bpe_best(data):
+    """The smallest of bpe_encode at a few block sizes, all within the 15,623-byte block the disc's own streams already
+    make the decoder take (docs/re/disc.md): an archive may not grow, as files keep their size (disc.write_file)."""
+    return min((bpe_encode(data, block=k) for k in (5000, 8000, 15000)), key=len)
+
+
 def align_of(data):
     """4 when the archive shows word padding (a gap before an entry or after the last one: 56 of 196 disc archives),
     else 1. An archive aligned by chance with no gap packs the same either way, so it gets the tighter 1."""
