@@ -9,7 +9,8 @@ Skill: translate-retro-game (Claude Code: plugin, enabled in .claude/settings.js
 - Extract:  `python -X utf8 tools/disc.py x "rom/Time Bokan Series - Bokan GoGoGo (Japan).bin" work/x`; TIMP archives: `tools/timp.py list|x`
 - Survey:   `python -X utf8 tools/tmp_sheets.py work/recon/grap work/x/GRAP/*.TMP` (each archive's entries, labelled); `tools/str_frames.py BIN work/recon/str --every 3` (FMV samples)
 - Smoke:    `python -X utf8 $SKILL/scripts/emu.py "rom/Time Bokan Series - Bokan GoGoGo (Japan).cue" --out work/qa/smoke --route tools/routes/boot.txt --smoke`
-- Build / Warp / Release: not written yet (phases 2, 3, 9).
+- Warp:     `python -X utf8 tools/debug/warp_all.py [--jobs 6] [--states] [scene ...]` (cold boot to a scene by name, shot in `work/qa/warp/<scene>/final.png`; `--list` names all; `--states` regenerates `work/states/`). Scenes and their RAM writes: `tools/debug/scenes.lua`. Card fixtures: `work/saves/*.mcd`.
+- Build / Release: not written yet (phases 3, 9).
 - Clean:    `python -X utf8 tools/clean.py` (published projects: lists rebuildable/downloadable files; `--yes` deletes)
 
 ## Paths

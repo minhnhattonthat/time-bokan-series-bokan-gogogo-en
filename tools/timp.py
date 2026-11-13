@@ -80,16 +80,23 @@ def bpe_store(data):
     return bytes(out)
 
 
-def pack(blobs, comp=None):
+def align_of(data):
+    """4 when every entry starts on a word (62 of 196 disc archives: zero gaps, file padded to 4), else 1."""
+    return 4 if len(data) % 4 == 0 and all(o % 4 == 0 for o, _, _ in entries(data)) else 1
+
+
+def pack(blobs, comp=None, align=1):
     """Build a TIMP file. comp[i] (optional) is entry i's compressed bytes, kept as-is (identity build)."""
     comp = list(comp) if comp else [bpe_store(b) for b in blobs]
     off = 4 + 12 * len(blobs) + 4
     head, body = bytearray(MAGIC), bytearray()
     for b, c in zip(blobs, comp):
+        body += bytes(-(off + len(body)) % align)
         head += struct.pack("<III", off + len(body), len(b), len(c))
         body += c
     head += struct.pack("<i", -1)
-    return bytes(head + body)
+    out = head + body
+    return bytes(out + bytes(-len(out) % align))
 
 
 if __name__ == "__main__":
