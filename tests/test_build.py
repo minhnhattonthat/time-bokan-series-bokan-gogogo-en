@@ -61,6 +61,49 @@ def test_align_of_needs_a_gap():
 
 
 @needs_rom
+def test_discdiff_flags_unallowed_files_and_subheaders(built_bin, tmp_path):
+    import discdiff
+    copy = tmp_path / "d.bin"
+    shutil.copyfile(built_bin, copy)
+    d = disc.Disc(str(build.ROM / build.BIN))
+    cnf, demo = d.files["/SYSTEM.CNF"].lba, d.files["/OVER/DEMO.BIN"].lba
+    with open(copy, "r+b") as f:
+        for off in (cnf * disc.SECTOR + disc.USER, demo * disc.SECTOR + 18, demo * disc.SECTOR + 600):
+            f.seek(off)
+            b = f.read(1)
+            f.seek(off)
+            f.write(bytes([b[0] ^ 1]))
+    errs, per = discdiff.check(build.ROM / build.BIN, copy, {"/OVER/DEMO.BIN"})
+    assert any("SYSTEM.CNF" in e and "not allowed" in e for e in errs)
+    assert any("DEMO.BIN" in e and "subheader" in e for e in errs)
+    assert len(errs) == 2 and per == {"/OVER/DEMO.BIN": 1}
+    assert discdiff.check(build.ROM / build.BIN, copy, {"/OVER/DEMO.BIN", "/SYSTEM.CNF"})[0] == [e for e in errs if "DEMO" in e]
+
+
+@needs_rom
+def test_tim_errors_flags_stray_and_missed_writes():
+    import tim
+    blobs = timp.unpack(disc.Disc(str(build.ROM / build.BIN)).read("/GRAP/GOVER.TMP"))
+    a, b = blobs[0], next(x for x in blobs if x != blobs[0])
+    flip = lambda x, o: x[:o] + bytes([x[o] ^ 1]) + x[o + 1:]  # noqa: E731
+    ed = flip(a, len(a) - 1)
+    edits = {hashlib.sha1(a).hexdigest(): lambda x: ed}
+    orig = [("G#0", a), ("G#1", a), ("G#2", b)]
+    assert build.tim_errors(orig, [("G#0", ed), ("G#1", ed), ("G#2", b)], edits) == []
+    hdr = tim.parse(a, strict=False).px_off - 1  # last byte before the pixels: pixel-block header
+    errs = build.tim_errors(orig, [("G#0", flip(ed, hdr)), ("G#1", a), ("G#2", flip(b, len(b) - 1))], edits)
+    assert errs == ["G#0: not its edit's output", "G#0: TIM header, CLUT or size changed",
+                    "G#1: original copy of an edited blob left", "G#2: unedited TIM changed"]
+    assert build.tim_errors(orig, orig[:2], edits)
+
+
+@needs_rom
+def test_english_edits_stay_in_the_committed_allowed_list():
+    import gfx
+    assert build.allowed_files(gfx.spike_edits(gfx.EN)) <= build.allowed_spec()
+
+
+@needs_rom
 def test_write_file_changes_only_that_file(built_bin, tmp_path):
     copy = tmp_path / "t.bin"
     shutil.copyfile(built_bin, copy)

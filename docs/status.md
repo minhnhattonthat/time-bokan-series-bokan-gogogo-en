@@ -25,12 +25,20 @@ Updated at the end of every session. Keep it to what the next session needs; his
     (`work/qa/en_smoke`). Warp tour on build/en: **129/129 scenes ok** (`work/qa/en/<scene>/final.png`); a 9-shot
     half-size look (title, mode select, machine select, machine data, movies tab, pause, team movie subtitle, GP
     results) shows English everywhere, nothing zoomed yet.
+  - Harness review (`.harness/reviews/...-phase7.md`: 0 Critical, 1 Important, 5 Minor), all applied: committed spec
+    `script/allowed.txt` (STR only for movies with `en` rows + STAFF.STR; `english()` fails if edits reach another
+    file), entry-level `build.tim_errors` after discdiff (every copy of an edited blob = its edit's output, no other
+    TIM changed, no header/CLUT/size change), `fmv_burn.burn_movie` fails on overlapping rows or a row with no frame,
+    tests for discdiff/tim_errors/allowed spec (`test_build.py`), D13 (roll font) + fonts.md, `script/jp_known.txt`
+    (4 kana-looking runs in SLPS_031.33 = a rising 16-bit ramp table, for `jp_left.py --known`).
 - **Next (phase 8):** zoomed visual QA of the en tour with `qa_gate.py` manifests and read-only verdicts (self or
   `codex exec`; no subagents in Orca): every graphics row in a cold-boot shot, chapter cards/briefings c0-c7, game over,
   credits roll frames (wave frames at high qscale), subtitles in every movie, `inkbox.py` on menus. Items to look for:
   grown rows overlapping neighbouring sprites, description panels centred where the Japanese was left-aligned
   (left-align option if it reads badly), briefing pieces DOKURO#34-74 joined at run time (capital after "At last,"),
-  MODE1#1.2-1.3 at 152 px against the panel border. `textcover.py` needs a text-read log; graphics-only game, so
+  MODE1#1.2-1.3 at 152 px against the panel border. The 70 `grow` rows (`fit.py script/graphics_en.tsv | grep ^grow`,
+  grown automatically in phase 7 without the zoomed look phase 5 carried) are a zoomed-shot checklist: MODE (33),
+  CSELECT (7), RANK (8), SAVE (9), DOKURO (6), TUP0 (7). `textcover.py` needs a text-read log; graphics-only game, so
   coverage = every graphics row seen in a shot. Write `docs/synopsis.md` before phase 9.
 - **Phase 6 (done 2026-11-14):** translated by one agent (no subagents in the Orca run), reviewed by `codex exec`.
   - Graphics: `script/graphics_en.tsv` (id, en, class, rect; the spike format, so `fit.py` and `gfx.spike_edits` read
@@ -68,7 +76,7 @@ Updated at the end of every session. Keep it to what the next session needs; his
   - Movies: `tools/mdec.py` + `tools/fmv_burn.py` ported from desu-yo (BOGO movies are STR v2 320x224, every frame roundtrips). STAFF.STR is v3: `tools/staff.py` decodes it with ffmpeg and writes v2 frames (`mdec.encode_rgb`) into the same sectors; **the game plays the v2 roll** (test line seen in `work/qa/spike/staff_roll`). Re-encoding all 2,415 frames takes ~20 min.
   - Review: independent `codex exec` (read-only) of the phase 5 code, `work/review/phase5_codex.txt`: ran the tests, 102 BPE round trips, rect isolation on 465 real rows, 5 STAFF frames rewritten in memory; 1 Minor (Bangers' italic overhang clipped by the glyph canvas, so the width gate measured 1 px short), fixed. In-game shots and font choices were read by the implementer only.
   - Encoder: `timp.bpe_best` (smallest of three block sizes) fixed a 2-byte growth the build test caught; limits measured from every disc block (15,623 bytes out, stack 78) in `docs/re/disc.md`.
-- **Carried from phase 5 to 7:** left-align option for description panels; rect growth for `grow` rows after a zoomed look at their marker shot (neighbours overlap in machine data panels); briefing pieces (DOKURO#34-74) join at run time in an order set by code, unknown (the English assumes "First up:" + "<course>, y'hear"); briefing screen is 384 px wide mode.
+- **Carried from phase 5 to 7, now phase 8:** left-align option for description panels; rect growth for `grow` rows after a zoomed look at their marker shot (neighbours overlap in machine data panels); briefing pieces (DOKURO#34-74) join at run time in an order set by code, unknown (the English assumes "First up:" + "<course>, y'hear"); briefing screen is 384 px wide mode.
 - **Phase 4 (done 2026-11-14):**
   - `script/graphics.tsv`: 507 line rows over 453 text blobs (1,011 TIMs with text once copies are counted; `tools/gfx_index.py` names each blob by its first `ARCHIVE#entry`, the build replaces by hash). `script/no_text.txt`: the other 11,198 TIMs, as whole archives or entry ranges. `tests/test_script.py`: every TIM is in exactly one, rows name the canonical copy, every rect is inside its TIM and has ink. Forms: `keep` = the ボカン logo (D5), `fix` = SAVE#7 "CANSEL", `art` = lettering painted into a picture (RANK#81, SAVE#79/80, STAT#61), rect by eye.
   - Rects: one-line rows = the sprite's opaque box; multi-line panels from ink bands (`tools/gfx_sheet.py inklines`), split evenly where bands touch (noted), MSELECT plates by hand. Phase 5 should take exact spans in game. Draft source was `work/gfx/spec.tsv` (gitignored); from now on edit `graphics.tsv` itself (`gfx_script.py draft` would overwrite it).

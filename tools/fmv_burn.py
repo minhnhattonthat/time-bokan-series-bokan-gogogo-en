@@ -86,7 +86,11 @@ def burn_frame(p, ink, halo):
 
 
 def burn_movie(track, entry, movie, subs):
-    """New raw sectors {lba: bytes} for one movie. subs = [(start, end, text)]; times in seconds."""
+    """New raw sectors {lba: bytes} for one movie. subs = [(start, end, text)]; times in seconds. Fails if rows overlap
+    (the later one would be hidden) or a row reaches no frame (too short or past the movie's end)."""
+    for a, b in zip(subs, subs[1:]):
+        assert a[1] <= b[0], f"{movie}: rows overlap: {a} / {b}"
+    hit = set()
     d = disc.Disc(track)
     n = -(-entry.size // 2048)
     raw = {i: d.raw(entry.lba + i) for i in range(n)}
@@ -100,6 +104,7 @@ def burn_movie(track, entry, movie, subs):
         sub = next((s for s in subs if s[0] <= t < s[1]), None)
         if not sub:
             continue
+        hit.add(sub)
         if sub[2] not in masks:
             lines = balance(wrap(sub[2], font), font)
             assert len(lines) <= MAX_LINES, f"{movie}: subtitle over {MAX_LINES} lines: {sub[2]!r}"
@@ -124,6 +129,8 @@ def burn_movie(track, entry, movie, subs):
             disc.form1_seal(sec)
             out[entry.lba + i] = bytes(sec)
         stats["frames"] += 1
+    missed = [s for s in subs if s not in hit]
+    assert not missed, f"{movie}: rows reach no frame: {missed}"
     return movie, out, stats
 
 

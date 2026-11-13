@@ -1,0 +1,7 @@
+# jp_left.py --sjis --known for SLPS_031.33: runs that are not text (phase 7 review, Minor 5).
+# 0x025B00-0x025BB3 and 0x025BD4-...: rising 16-bit LE words (8236, 8245, 8254, ... step ~15), a numeric ramp table;
+# its bytes happen to read as kana. Save titles (DEMO.BIN) are the game's only Shift-JIS text (docs/re/text.md).
+025B0F ramp table, not text
+025B23 ramp table, not text
+025C2F ramp table, not text
+025C43 ramp table, not text
