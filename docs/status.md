@@ -2,7 +2,36 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 7. Insert, fit, check next: phase 6 (translation) done 2026-11-14. English exists for every row; the build doesn't letter it yet.
+- **Phase:** 8. QA in the emulator next: phase 7 (insert, fit, check) done 2026-11-14.
+- **Phase 7 (done 2026-11-14):** `python -X utf8 tools/build.py --en` -> `build/en/` (~30 min; `--no-staff` ~6 min
+  skips the roll). Last build 07:34, bin sha1 `2b68bc19cd5a84fdadf883e5b8c3d34c44b63905`.
+  - Graphics: `gfx.spike_edits(gfx.EN)` letters all 495 rows; a TIM's only row (fit.py `grow`) widens about its
+    centre inside the TIM at build time (`gfx.grown`, `typeset(grow=True)`), no rect edits needed. Tests
+    `test_gfx.py::test_every_english_row_letters`, `test_grown_rect_stays_in_its_tim`.
+  - Subtitles: `fmv_burn.en_subs` (en column) into BOGO02-18: 11,190 frames burnt, up to +4 qscale.
+  - Save titles: `save_titles.english/patch` into /OVER/DEMO.BIN; `jp_left.py --sjis` on the built DEMO.BIN: 0 runs
+    (original 54). Test `test_script.py::test_english_save_titles_land_in_their_fields`.
+  - STAFF roll: `tools/staff_roll.py` (strip | bands | layout | shot OUT N.. | drift). The roll scrolls 2.225 px/frame
+    to frame 2340, then holds and fades. The stitched strip (`work/fmv/STAFF/strip.png`, 30th percentile per row)
+    gives clean text; its lines match all 202 credits rows in order (roles right-aligned left of x 212, actors right,
+    centred heads/names; the final card is centred on screen). Each frame: Japanese ink filled from a frame ±4-20
+    where the text has moved on, English (Liberation Sans Bold 12, ◆ drawn as polygons, `<Anime R>` subs) drawn with
+    a soft dark halo, faded with the original after the stop. All 2,415 frames re-encoded v2; highest qscale 12 (the
+    wave frames; check zoomed in phase 8). Needs `staff.py decode` frames in `work/fmv/STAFF/all` (strip builds
+    itself). Tests `tests/test_staff_roll.py` (skip without the frames).
+  - Checks: `tools/discdiff.py` (sector-level romdiff, the skill's romdiff.py is per-byte Python and can't take a
+    650 MB disc): 122,040 sectors changed in 75 files, all in `build/en/allowed.txt` (edited TIMP archives, DEMO.BIN,
+    /STR/*), headers untouched. No text engine, so no control codes. `tools/check.py` 33 passed. Smoke ok
+    (`work/qa/en_smoke`). Warp tour on build/en: **129/129 scenes ok** (`work/qa/en/<scene>/final.png`); a 9-shot
+    half-size look (title, mode select, machine select, machine data, movies tab, pause, team movie subtitle, GP
+    results) shows English everywhere, nothing zoomed yet.
+- **Next (phase 8):** zoomed visual QA of the en tour with `qa_gate.py` manifests and read-only verdicts (self or
+  `codex exec`; no subagents in Orca): every graphics row in a cold-boot shot, chapter cards/briefings c0-c7, game over,
+  credits roll frames (wave frames at high qscale), subtitles in every movie, `inkbox.py` on menus. Items to look for:
+  grown rows overlapping neighbouring sprites, description panels centred where the Japanese was left-aligned
+  (left-align option if it reads badly), briefing pieces DOKURO#34-74 joined at run time (capital after "At last,"),
+  MODE1#1.2-1.3 at 152 px against the panel border. `textcover.py` needs a text-read log; graphics-only game, so
+  coverage = every graphics row seen in a shot. Write `docs/synopsis.md` before phase 9.
 - **Phase 6 (done 2026-11-14):** translated by one agent (no subagents in the Orca run), reviewed by `codex exec`.
   - Graphics: `script/graphics_en.tsv` (id, en, class, rect; the spike format, so `fit.py` and `gfx.spike_edits` read
     it): 495 rows, `fit.py` 0 OVER, 70 `grow` (fit only their measured room; phase 7 widens the rect). Test
@@ -32,10 +61,6 @@ Updated at the end of every session. Keep it to what the next session needs; his
     but ©; waivers in `GLOSSARY_WAIVED`). Third codex pass over every line changed since p6b (`phase6_codex3.txt`):
     1 Important (MODE1#1), fixed; fourth pass (`phase6_codex4.txt`): **Assessment: Approved**.
     `docs/synopsis.md` still to write before phase 9 (story pass chapter list).
-- **Next (phase 7):** build lettering from `graphics_en.tsv` (spike_edits takes the path), grow rects for `grow` rows
-  after a zoomed marker look, subtitles from the `en` column (`fmv_burn.read_rows` returns jp today), STAFF.STR roll
-  from `credits.tsv` en (font still open: default Liberation Sans Bold, the roll's longest line is "Infini
-  Entertainment Technology"), save titles through `save_titles.encode`, romdiff/lint, full tour.
 - **Phase 5 (done 2026-11-14):** details in `docs/re/engine.md`.
   - Marker build (`build.py --marker`): every graphics row painted with its row number (single-row TIMs painted whole to show the drawn span), marker subtitles in BOGO02-18. 441 edited blobs, 0 original copies left on the disc. Tour `work/qa/marker`: **129/129 scenes ok**; sheets `work/qa/msheet/` read (half size, zooms of `ta_menu`, a movie, `true_ending`): every listed sprite marked, no Japanese left but the logo (D5) and STAFF.STR.
   - Fonts (D10): classes `title`/`big`/`menu` (Bangers 34/28/22), `bar` (Liberation Sans Bold 14), `sign`/`label` (Jersey 10 at native 18.67, double outline / plain), `small` (Tiny5 8, added to `fonts/`), subtitles Liberation Serif Bold 13. Chosen with `tools/font_try.py` on the real TIMs; `gfx.typeset` now does a double outline (darkest out, lightest in, commonest mid ink as fill). Spike builds (`build.py --spike`, `script/spike.tsv`, 27 rows, one or more per form) toured: `work/qa/spike` (128/129, `game_over` failed once with a Lua coroutine error and passed on rerun), `work/qa/spike2` (17 scenes). English seen in game on mode select, machine data, movie tabs, course select, machine select plate, ranking, pause, title copyright, briefing page.
