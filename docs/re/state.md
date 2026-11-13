@@ -63,6 +63,17 @@ Thread 0 yield sites used as "screen is live" tests: 80052AAC mode select (and i
 - VS: machine select waits for player 2.
 - Idle at the title returns to the opening movie (no attract race).
 
+## Race (story race, M=0x1B; partly verified)
+
+- Cross accelerates (default button type A). The race does not end until the player finishes: idle for 14,000
+  frames the CPUs keep lapping. There is no attract race.
+- Kart structs: 7 karts, stride 0x1B4; a u16 track-progress counter at `8003EC84 + i*0x1B4` (rises along the track
+  across laps; CPUs reach ~450-540 by frame 14,000). The player is slot 3 (`8003F1A0`) in a story race. The bytes at
+  progress-8 and progress-0xC look like laps done (0 player, 1 CPUs at frame 14,000).
+- **Not working:** progress and the -8/-0xC bytes are recomputed from the kart position every frame, so poking them
+  does nothing. Holding the player-vs-CPU differing bytes (offsets -0x52/-0x51, -0x1C/-0x1B, -0xF2/-0xF1,
+  -0x92/-0x91, +0x26/+0x27/+0x2D/+0x2F) to the CPU values did not make the player drive itself.
+
 ## Emulator workaround (warp.lua, RAM only)
 
 The libspu reverb-area clear (80018DB4, WaitEvent at 80018EE4) and SpuIsTransferCompleted (TestEvent loop at

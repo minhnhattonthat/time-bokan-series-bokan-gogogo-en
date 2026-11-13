@@ -55,6 +55,7 @@ end
 local co
 L.on_frame(function()
   W.qa_patches()
+  if not SCENE then return end -- loaded only for the workaround (runs from a savestate)
   if not co then
     if not SCENES then error("load tools/debug/scenes.lua with --script") end
     local fn = SCENES[SCENE]

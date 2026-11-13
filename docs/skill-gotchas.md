@@ -1,2 +1,5 @@
 references/platform-ps1.md: Banpresto 2001 "TIMP" archives are Philip Gage byte pair encoding (decoder 0x800141AC here); a skip byte (>=0x80) is still followed by one pair-table entry, as in Gage's expand. Literal-only block: ff 80 fe <u16 BE size> <data>.
 references/platform-ps1.md: TIMs from this game's tool have a wrong pixel-block length word (4x for 8 bpp, 2x for 4 bpp); compute the size from w*h*2 when parsing archive entries.
+references/emulator-qa.md (PCSX-Redux): headless, a libspu SPU DMA event never fires at a later sound reload, so SpuClearReverbWorkArea's WaitEvent and SpuIsTransferCompleted(WAIT)'s TestEvent loop hang forever (mute or not, dynarec or interpreter). Nop both waits in RAM from the warp Lua (this game: 80018EE4, 8001E6B4).
+references/emulator-qa.md: games built on a coroutine thread library keep menu cursors as stack locals of the screen thread (fixed addresses per screen, e.g. 801FFAxx); the thread's saved return address (saved sp + 4) is a usable "this loop is live" test.
+references/emulator-qa.md: blinking menu cursors make a press look ignored in a 1-in-2 shot sample; judge input by the cursor RAM value, not the shot.
