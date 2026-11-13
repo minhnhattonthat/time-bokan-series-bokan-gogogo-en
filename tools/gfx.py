@@ -213,7 +213,8 @@ def sampled_inks(px, clut, margin=None, ink=None):
     side = ends if margin is None or not margin.size else margin
     if see_through(px, clut):  # clear to transparent
         bg = np.zeros(len(px), int)
-    elif (ends == mode(ends)).mean() > max((side == mode(side)).mean(), 0.6):
+    elif (ends == mode(ends)).mean() > max((side == mode(side)).mean(), 0.6) or (
+            (side == mode(side)).mean() < 0.6 and mode(ends) == mode(px) and (ends == mode(ends)).mean() >= 0.5):
         bg = np.full(len(px), mode(ends))  # the rect's own ends: a rect inside a frame (movie tabs) sees the frame
     elif (side == mode(side)).mean() >= 0.6:
         bg = np.full(len(px), mode(side))

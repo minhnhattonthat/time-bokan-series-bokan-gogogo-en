@@ -145,7 +145,7 @@ MODE#195	Hungrajah Realm
 MODE#196	Tirezon Forest		
 MODE#197	Toilzon Canyon		
 MODE#198	Tirezon Forest 2		
-MODE#202	Machine	narrow	
+MODE#202	Car	label1	
 MODE#203	Cleared	label1	
 CSELECT#0.1	Time Bokan		
 CSELECT#0.2	Grand Prix		
@@ -370,9 +370,9 @@ SAVE#69	File 1	label1
 SAVE#70	File 2	label1	
 SAVE#71	File 3	label1	
 SAVE#72	File 4	label1	
-SAVE#73	Machine	narrow	
+SAVE#73	Car	label1	
 SAVE#74	Cleared	label1	
-SAVE#75	Course	narrow	
+SAVE#75	Course	label1	
 SAVE#79	Load		
 SAVE#80	Save		
 SAVE#83	Yes		
