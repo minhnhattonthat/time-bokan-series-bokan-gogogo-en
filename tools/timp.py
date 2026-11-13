@@ -81,13 +81,20 @@ def bpe_store(data):
 
 
 def align_of(data):
-    """4 when every entry starts on a word (62 of 196 disc archives: zero gaps, file padded to 4), else 1."""
-    return 4 if len(data) % 4 == 0 and all(o % 4 == 0 for o, _, _ in entries(data)) else 1
+    """4 when the archive shows word padding (a gap before an entry or after the last one: 56 of 196 disc archives),
+    else 1. An archive aligned by chance with no gap packs the same either way, so it gets the tighter 1."""
+    es = entries(data)
+    pos, gap = 4 + 12 * len(es) + 4, False
+    for o, _, c in es:
+        gap |= o != pos
+        pos = o + c
+    return 4 if (gap or pos != len(data)) and all(o % 4 == 0 for o, _, _ in es) else 1
 
 
 def pack(blobs, comp=None, align=1):
     """Build a TIMP file. comp[i] (optional) is entry i's compressed bytes, kept as-is (identity build)."""
     comp = list(comp) if comp else [bpe_store(b) for b in blobs]
+    assert len(comp) == len(blobs), f"{len(blobs)} blobs, {len(comp)} compressed streams"
     off = 4 + 12 * len(blobs) + 4
     head, body = bytearray(MAGIC), bytearray()
     for b, c in zip(blobs, comp):

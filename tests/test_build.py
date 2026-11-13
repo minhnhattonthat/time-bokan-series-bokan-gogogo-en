@@ -18,7 +18,18 @@ needs_rom = pytest.mark.skipif(not (build.ROM / build.BIN).exists(), reason="nee
 @pytest.fixture(scope="module")
 def built_bin(tmp_path_factory):
     out = tmp_path_factory.mktemp("build")
-    build.build(out, identity=True)
+    calls = []
+    write, rebuild = disc.Disc.write_file, build.rebuild_timp
+    disc.Disc.write_file = lambda self, p, b: (calls.append(p), write(self, p, b))
+    build.rebuild_timp = lambda data: (calls.append(timp.MAGIC), rebuild(data))[1]
+    try:
+        build.build(out, identity=True)
+    finally:
+        disc.Disc.write_file, build.rebuild_timp = write, rebuild
+    d = disc.Disc(str(build.ROM / build.BIN))
+    # not vacuous: every form 1 file was rewritten and every TIMP archive went through unpack/pack
+    assert set(calls) - {timp.MAGIC} == {p for p, e in d.files.items() if not d.is_xa(e)}
+    assert calls.count(timp.MAGIC) == 196
     return out / build.BIN
 
 
@@ -36,7 +47,17 @@ def test_an_edited_timp_entry_lands_and_the_rest_keep_their_bytes():
     new = build.rebuild_timp(data, lambda i, b: b[:-1] + bytes([b[-1] ^ 1]) if i == 0 else b)
     old, got = timp.unpack(data), timp.unpack(new)
     assert got[0] != old[0] and got[0][:-1] == old[0][:-1] and got[1:] == old[1:]
-    assert timp.pack(old, [data[o:o + c] for o, _, c in timp.entries(data)], timp.align_of(data)) == data
+    comp = lambda b: [b[o:o + c] for o, _, c in timp.entries(b)]  # noqa: E731
+    assert comp(new)[1:] == comp(data)[1:]  # untouched entries keep their BPE bytes
+    assert timp.pack(old, comp(data), timp.align_of(data)) == data
+
+
+def test_align_of_needs_a_gap():
+    a, b = b"x" * 4, b"y" * 4  # aligned by chance, no padding: packed layout
+    assert timp.align_of(timp.pack([a, b], [a, b], 1)) == 1
+    assert timp.align_of(timp.pack([a, b], [b"x" * 3, b], 4)) == 4
+    with pytest.raises(AssertionError):
+        timp.pack([a, b], [a])
 
 
 @needs_rom
