@@ -413,6 +413,21 @@ S.opt_movies = function() options(3); W.check(W.m() == 4, "movie list"); W.done(
 -- Machine data: one page per machine (down); movie list: 6 tabs (right).
 -- names: machine_data_1 machine_data_2 machine_data_3 machine_data_4 machine_data_5 machine_data_6
 -- names: movie_tab_1 movie_tab_2 movie_tab_3 movie_tab_4 movie_tab_5
+-- names: machine_desc_1 machine_desc_2 machine_desc_3 machine_desc_4 machine_desc_5 machine_desc_6 machine_desc_7
+-- machine_desc_<i>: list row i's description panel (GRAP/MODE1.TMP), opened with circle. All teams are marked
+-- cleared first: that unlocks row 7 (Itadakiman's machine, "Unknown Mecha" before). Row 8 is Back.
+for i = 1, 7 do
+  S["machine_desc_" .. i] = function()
+    for t = 0, 6 do W.w32(0x3E6A8 + 4 * t, 2) end
+    options(1)
+    for _ = 1, i - 1 do W.tap("down"); W.frames(40) end
+    W.tap("circle"); W.frames(60); W.shot("open1")
+    W.frames(120); W.shot("open2")
+    W.frames(200)
+    W.check(W.m() == 4, "machine description " .. i)
+    W.done()
+  end
+end
 for i = 1, 6 do
   S["machine_data_" .. i] = function()
     options(1)

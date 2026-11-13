@@ -15,7 +15,7 @@ MODE#5	Time Attack Mode
 MODE#6	Options		
 MODE#8	Rankings		
 MODE#9	Play Select		
-MODE#14	Go Go Gaikottsu	label	
+MODE#14	Go Go Gaikottsu	label1	
 MODE#15	Genius Doronbow	label	
 MODE#16	Music		
 MODE#17	Options		
@@ -32,7 +32,7 @@ MODE#31	Bokan Blast! Doronbow
 MODE#32	Akudaman Again		
 MODE#33	Yatterman Song		
 MODE#34	Ah-Uh Ojamaman		
-MODE#35	Zenderman Song	label	
+MODE#35	Zenderman Song	label1	
 MODE#36	Yattodetaman Boogie Lady		
 MODE#37	Rescueman Song		
 MODE#38	Yattodetaman Song	narrowlabel	
@@ -64,7 +64,7 @@ MODE#92	Skull Mecha
 MODE#93	Skull Buggy		
 MODE#94	Andromedama		
 MODE#95	Time Rakuda		
-MODE#96	Denden Mecha	label	
+MODE#96	Denden Mecha	label1	
 MODE#97	Back		
 MODE#98	Speed		
 MODE#99	Dash		
@@ -151,7 +151,7 @@ CSELECT#0.1	Time Bokan
 CSELECT#0.2	Grand Prix		
 CSELECT#1.1	Yatterman		
 CSELECT#1.2	Grand Prix		
-CSELECT#2.1	Zenderman	label	
+CSELECT#2.1	Zenderman	label1	
 CSELECT#2.2	Grand Prix		
 CSELECT#3.1	Rescueman		
 CSELECT#3.2	Grand Prix		
@@ -204,7 +204,7 @@ CSELECT#80	Skull Mecha
 CSELECT#81	Skull Buggy		
 CSELECT#82	Andromedama		
 CSELECT#83	Time Rakuda		
-CSELECT#84	Denden Mecha	label	
+CSELECT#84	Denden Mecha	label1	
 CSELECT#85	Yatterwan		
 CSELECT#86	Zendalion		
 CSELECT#87	Time Mechabuton	label	
@@ -256,10 +256,10 @@ RANK#5	Skull Mecha
 RANK#6	Andromedama		
 RANK#7	Time Rakuda		
 RANK#8	Skull Buggy		
-RANK#9	Denden Mecha	label	
+RANK#9	Denden Mecha	label1	
 RANK#10	Yatterwan		
 RANK#11	Zendalion		
-RANK#12	Mechabuton	label	
+RANK#12	Mechabuton	label1	
 RANK#13	Wonderbull		
 RANK#14	Tottarunyan		
 RANK#46	Jurassicky Park		
@@ -343,7 +343,7 @@ SAVE#41	Skull Mecha
 SAVE#42	Andromedama		
 SAVE#43	Time Rakuda		
 SAVE#44	Skull Buggy		
-SAVE#45	Denden Mecha	label	
+SAVE#45	Denden Mecha	label1	
 SAVE#47	Mechabuton	label	
 SAVE#48	Yatterwan		
 SAVE#49	Zendalion		
@@ -384,7 +384,7 @@ DOKURO#5	Skull Mecha
 DOKURO#6	Andromedama		
 DOKURO#7	Time Rakuda		
 DOKURO#8	Skull Buggy		
-DOKURO#9	Denden Mecha	label	
+DOKURO#9	Denden Mecha	label1	
 DOKURO#34	First up:		
 DOKURO#35	Up next:		
 DOKURO#36	Finish in the top 3, y'hear!		

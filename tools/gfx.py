@@ -26,6 +26,7 @@ CLASSES = {
     "bar": ("LiberationSans-Bold.ttf", 14, True),     # buttons and bars: Bangers garbles below 18 px (desu-yo D16)
     "sign": ("Jersey10-Regular.ttf", J10, 2),         # names, courses, machines, messages, briefings: outlined art
     "label": ("Jersey10-Regular.ttf", J10, False),    # plain text on a panel (machine descriptions), small labels
+    "label1": ("Jersey10-Regular.ttf", J10, True),    # one outline: names 1-2 px too wide for `sign`, on see-through sprites
     "small": ("Tiny5.ttf", 8, False),                 # 8-10 px rows (copyright); Tiny5's native 8 px grid, cap 5
     # Tiny5 drawn twice as tall (4th field: vertical scale): ~4 px a letter at cap 10, for names in kana-sized boxes
     "narrow": ("Tiny5.ttf", 8, True, 2),              # one outline (character names in 24-64 px name plates)
@@ -218,12 +219,15 @@ def typeset(data, rows, grow=False):
     assert t and t.bpp in (4, 8), "not a CLUT TIM"
     width = pixel_width(t)
     px = np.array(tim.pixels(t, data), dtype=np.int32).reshape(t.px_wh[1], width)
-    for (x, y, w, h), text, form in rows:
+    for row in rows:
+        (x, y, w, h), text, form = row[:3]
+        left = len(row) > 3 and row[3]  # left-anchored like the Japanese (LEFT_FORMS): x kept, grows to the right
         assert x + w <= width and y + h <= t.px_wh[1], f"rect {x, y, w, h} outside {width}x{t.px_wh[1]}"
         ink, halo, outer = glyphs(text, form)
         gh, gw = ink.shape
         if grow and (gw > w or gh > h) and gw <= width and gh <= t.px_wh[1]:
-            x, y, w, h = grown((x, y, w, h), (gw, gh), (width, t.px_wh[1]))
+            gx, y, nw, h = grown((x, y, w, h), (gw, gh), (width, t.px_wh[1]))
+            x, w = (min(x, width - nw), nw) if left else (gx, nw)
         if gw > w or gh > h:
             raise ValueError(f"{text!r} is {gw}x{gh} in class {form}, rect is {w}x{h}")
         margin = np.concatenate([px[y:y + h, max(x - 3, 0):x], px[y:y + h, x + w:x + w + 3]], axis=1)
@@ -231,7 +235,7 @@ def typeset(data, rows, grow=False):
         bg, fill, line = sampled_inks(orig, t.clut, margin)
         cell = px[y:y + h, x:x + w]
         cell[:] = bg[:, None]
-        oy, ox = (h - gh) // 2, (w - gw) // 2
+        oy, ox = (h - gh) // 2, 0 if left else (w - gw) // 2
         box = cell[oy:oy + gh, ox:ox + gw]
         if outer.any():  # solid fill (no per-row gradient), lightest ink inside, darkest outside
             inks = [i for i in np.unique(orig[orig != bg[:, None]]).tolist()]
@@ -247,6 +251,13 @@ def typeset(data, rows, grow=False):
 
 
 EN = ROOT / "script" / "graphics_en.tsv"
+# Forms drawn as on-screen lists whose Japanese starts at the TIM's left edge (pause menu, course, machine and song
+# lists, phase 8): English keeps that anchor, else the items' left edges go ragged.
+LEFT_FORMS = {"pause", "course", "machine", "song"}
+
+
+def left_anchored(r):
+    return r.form in LEFT_FORMS and r.x <= 1
 
 
 def spike_edits(path=ROOT / "script" / "spike.tsv"):
@@ -258,7 +269,7 @@ def spike_edits(path=ROOT / "script" / "spike.tsv"):
         rid, en, form, rect = (ln.split("\t") + [""] * 4)[:4]
         r = by_id[rid]
         items.append((r, (tuple(map(int, rect.split(","))) if rect else (r.x, r.y, r.w, r.h), en,
-                          form or class_of(r))))
+                          form or class_of(r), left_anchored(r))))
     return {h: (lambda b, rs=rs: typeset(b, [p for _, p in rs], grow=len(rs) == 1 and rs[0][0].form != "art"))
             for h, rs in by_blob(items).items()}
 

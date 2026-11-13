@@ -46,6 +46,23 @@ def test_typeset_stays_in_rect_and_refuses_overflow():
         gfx.typeset(blob, [((r.x, r.y, r.w, r.h), "Story Mode Story Mode Story Mode", "menu")])
 
 
+@needs_rom
+def test_list_rows_keep_the_japanese_left_anchor():
+    r = {x.id: x for x in gfx_script.rows()}["STAT01#93"]  # リスタート in the pause list, 66 px of a wider TIM
+    assert gfx.left_anchored(r)
+    blob = dict(gfx_index.tims())[r.file]
+    t = tim.parse(blob, strict=False)
+    w = gfx.pixel_width(t)
+
+    def ink_span(left):
+        b = np.array(tim.pixels(t, gfx.typeset(blob, [((r.x, r.y, r.w, r.h), "Go", "label", left)]))).reshape(-1, w)
+        cols = np.flatnonzero((b[r.y:r.y + r.h] != b[r.y:r.y + r.h, r.x + r.w - 1:r.x + r.w]).any(axis=0))
+        return cols.min(), cols.max()
+    lo, hi = ink_span(True)
+    assert lo <= r.x + 1 and hi < r.x + r.w // 2  # short English sits at the Japanese start, not mid-rect
+    assert ink_span(False)[0] > lo + 10
+
+
 def test_spike_rows_fit():
     assert fit.check(ROOT / "script" / "spike.tsv") == 0
 

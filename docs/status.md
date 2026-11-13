@@ -2,7 +2,40 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 8. QA in the emulator next: phase 7 (insert, fit, check) done 2026-11-14.
+- **Phase:** 8. QA in the emulator in progress: tour, coverage and first verdicts done; lettering fixes open.
+- **Phase 8 so far (2026-11-14):**
+  - Tools: `tools/debug/vramshot.lua` (with `warp_all.py --script`: VRAM dump beside every shot), `tools/gfx_cover.py
+    TOUR BUILT.bin` (rows whose lettered TIM is in VRAM in some shot; `JP` lines + exit 1 if a Japanese original is
+    loaded; writes `<tour>_cover/` with `strings.tsv` + per-scene `log.txt` for the skill's `textcover.py`),
+    `tools/qa_sheets.py TOUR OUT` (per-scene sheets, full size), `tools/qa_codex.py CHUNK..` (codex exec read-only
+    verdicts per qa_gate chunk; brief `docs/visual-qa-brief.md`). New scenes `machine_desc_1..7` (description
+    panels, GRAP/MODE1; all teams marked cleared unlocks row 7).
+  - Tour `work/qa/env` on build/en (sha1 `2b68bc19...`): 136/136 scenes ok. Coverage `work/qa/env_cover`: before the
+    machine_desc scenes 462/495 rows, with them **480/495**, **0 Japanese originals loaded**. Missing: MODE1#7-11
+    (5 of 12 description panels; the machine-data list has 7 machines + Back, so 7-11 must belong to machines
+    unlocked elsewhere, e.g. hero machines in VS: find the unlock flag, add scenes, or waive with the reason).
+  - Sheets `work/qa/sheets_en` (149), Japanese `work/qa/sheets_jp`; manifest `work/qa/manifest.tsv` (build/en);
+    codex verdicts `work/qa/verdicts/chunk_00[0-5].tsv`: 149 sheets, **37 issue**, rest ok. Issue clusters:
+    1. Stripes: titles (MACHINE DATA, TUNE-UP, OVERALL) show hard horizontal bands where the Japanese is a smooth
+       red->yellow gradient. Cause: `typeset` fills each rect row with that row's sampled fill (`sampled_inks`), but
+       the English glyph is shorter than the Japanese, so it samples a middle slice with highlight rows. Fix idea:
+       stretch the Japanese ink's top..bottom fill profile over the glyph height (a luma-median filter alone did not
+       remove them; tried and reverted).
+    2. Narrow names (`narrow`, D11) in machine panels/movie tabs are tiny and wrong-coloured: pale fill, dark
+       outline, a strike through "Doronjo". Cause: thin plain Japanese strokes have no `core`, so `sampled_inks`
+       takes the lightest ink as fill; use the commonest ink there instead. Movie tab "Dokurobey" (MODE#141) unreadable.
+       Of the 39 narrow rows, ~16 fit `label1`/`sign` now (scratch fit table); mixing fonts within one panel is the
+       trade-off.
+    3. "Denden Mecha" (plain `label`, no outline) broken on see-through sprites: fixed by new class `label1` (Jersey 10,
+       one outline) on the 9 label rows that fit (MODE#14/35/96, CSELECT#2.1/84, RANK#9/12, SAVE#45, DOKURO#9);
+       MODE#15/105, CSELECT#87, SAVE#47 still `label` (1-3 px over). Not yet seen in game.
+    4. Save/ghost file panels: "Machine"/"Course" labels (`small`, Tiny5 8 px) illegible (story_saved, title_load,
+       ta_ghost_*). Needs a bigger class or a shorter word.
+  - Lists left-aligned like the Japanese: `gfx.LEFT_FORMS` (pause, course, machine, song) with x <= 1 keep the left
+    anchor and grow rightwards (`typeset` 4th field; test `test_list_rows_keep_the_japanese_left_anchor`); pause menu
+    checked in game (`build/en_ns`, `work/qa/ens/pause`). Still ragged: GP course list (CSELECT#25-38 course rows sit
+    at x 8, not <= 1: widen the rule to a common left x). Overlaps on gp_confirm / ta_ghost_prompt are the original's.
+  - `docs/synopsis.md` written (premise, 7 trio routes, true ending).
 - **Phase 7 (done 2026-11-14):** `python -X utf8 tools/build.py --en` -> `build/en/` (~30 min; `--no-staff` ~6 min
   skips the roll). Last build 07:34, bin sha1 `2b68bc19cd5a84fdadf883e5b8c3d34c44b63905`.
   - Graphics: `gfx.spike_edits(gfx.EN)` letters all 495 rows; a TIM's only row (fit.py `grow`) widens about its
@@ -31,9 +64,12 @@ Updated at the end of every session. Keep it to what the next session needs; his
     TIM changed, no header/CLUT/size change), `fmv_burn.burn_movie` fails on overlapping rows or a row with no frame,
     tests for discdiff/tim_errors/allowed spec (`test_build.py`), D13 (roll font) + fonts.md, `script/jp_known.txt`
     (4 kana-looking runs in SLPS_031.33 = a rising 16-bit ramp table, for `jp_left.py --known`).
-- **Next (phase 8):** zoomed visual QA of the en tour with `qa_gate.py` manifests and read-only verdicts (self or
-  `codex exec`; no subagents in Orca): every graphics row in a cold-boot shot, chapter cards/briefings c0-c7, game over,
-  credits roll frames (wave frames at high qscale), subtitles in every movie, `inkbox.py` on menus. Items to look for:
+- **Next (phase 8):** fix clusters 1, 2, 4 and the CSELECT anchor above (render offline first: a scratch
+  `render_rows.py` drew JP|EN TIMs at 3x from `gfx.spike_edits`; promote it to `tools/`), `build.py --en` (full, with
+  STAFF), re-tour with vramshot, `qa_sheets.py`, `qa_gate.py init` (new build), re-verdict changed sheets with
+  `qa_codex.py`, until `qa_gate.py check work/qa/manifest.tsv work/qa/verdicts` exits 0; `textcover.py
+  work/qa/env_cover work/qa/env_cover/strings.tsv` exits 0; `inkbox.py` on Yes/No boxes (gp_confirm, ta_ghost_prompt,
+  story_save, nocard_*). Not yet looked at zoomed: STAFF wave frames, subtitles per movie. Earlier items to look for:
   grown rows overlapping neighbouring sprites, description panels centred where the Japanese was left-aligned
   (left-align option if it reads badly), briefing pieces DOKURO#34-74 joined at run time (capital after "At last,"),
   MODE1#1.2-1.3 at 152 px against the panel border. The 70 `grow` rows (`fit.py script/graphics_en.tsv | grep ^grow`,
