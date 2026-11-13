@@ -19,8 +19,11 @@ from skill import SKILL  # noqa: E402
 DEFAULT_ROM = os.path.join(ROOT, "rom", "Time Bokan Series - Bokan GoGoGo (Japan).cue")
 SCENES = os.path.join(ROOT, "tools", "debug", "scenes.lua")
 WARP = os.path.join(ROOT, "tools", "debug", "warp.lua")
-LONG = {"true_ending": 30000, "staff_roll": 30000}  # scene -> frame budget when 20000 is not enough
-NO_SMOKE = set()  # scenes that end on a flat colour by design
+LONG = {"true_ending": 30000, "staff_roll": 30000, "post_game_save": 45000}  # frame budget when 20000 is not enough
+# scenes with exec hooks (L.on_exec needs the debugger + interpreter)
+DEBUGGER = {f"{p}{t}" for p in ("ending_t", "team_movie_t") for t in range(7)} | {
+    "staff_roll", "true_ending", "post_game_save"}
+NO_SMOKE = {"ending_entry"}  # scenes that end on a flat colour by design (ending_entry: results.png is its proof)
 
 
 CARD = os.path.join(ROOT, "work", "saves", "blank.mcd")
@@ -66,6 +69,8 @@ def run(scene, rom, out, states, extra):
            "--timeout", "1200", "--sav", CARD, "--script", WARP, "--script", SCENES, "--var", f"SCENE='{scene}'"] + extra
     if scene not in NO_SMOKE:
         cmd.append("--smoke")
+    if scene in DEBUGGER:
+        cmd.append("--debugger")
     if states:
         cmd += ["--state-out", os.path.join(ROOT, "work", "states", scene + ".sstate")]
     r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding="utf-8", errors="replace")
