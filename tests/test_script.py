@@ -74,6 +74,18 @@ def test_save_titles_roundtrip():
         assert save_titles.decode(t, save_titles.encode(t, en)) == en  # D8: full width, fits the field
 
 
+@needs_rom
+def test_english_save_titles_land_in_their_fields():
+    demo = disc.Disc(str(BIN)).read(save_titles.FILE)
+    new = save_titles.english(demo)
+    t = Table.load(save_titles.TBL)
+    assert len(new) == len(demo)
+    assert [save_titles.decode(t, b) for _, b in save_titles.fields(new)] == [r[3] for r in save_titles.rows()]
+    spans = [(o, o + save_titles.FIELD) for o, _ in save_titles.fields(demo)]
+    outside = [i for i in range(len(demo)) if demo[i] != new[i] and not any(a <= i < b for a, b in spans)]
+    assert not outside
+
+
 def test_fmv_scripts_in_time_order():
     files = sorted((ROOT / "script" / "fmv").glob("*.tsv"))
     assert [f.stem for f in files] == [f"BOGO{n:02d}" for n in range(1, 19)]

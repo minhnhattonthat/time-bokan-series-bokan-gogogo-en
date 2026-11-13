@@ -58,4 +58,23 @@ def test_translation_covers_every_row_and_fits():
     for rid, en, cls, rect in rows:
         assert en and en.replace("©", "").isascii() and "  " not in en, rid
         assert not cls or cls in gfx.CLASSES, rid
-    assert fit.check(path) == 0  # no OVER; "grow" rows get their wider rect in phase 7
+    assert fit.check(path) == 0  # no OVER; "grow" rows widen inside their TIM at build time (typeset grow)
+
+
+def test_grown_rect_stays_in_its_tim():
+    assert gfx.grown((10, 2, 20, 8), (30, 8), (64, 16)) == (5, 2, 30, 8)  # about the centre
+    assert gfx.grown((0, 0, 20, 8), (30, 10), (64, 16)) == (0, 0, 30, 10)  # clamped at the left/top
+    assert gfx.grown((50, 6, 14, 10), (30, 12), (64, 16)) == (34, 4, 30, 12)  # and at the right/bottom
+
+
+@needs_rom
+def test_every_english_row_letters():
+    """The English build's graphics edits all apply: nothing overflows its (grown) rect, every edit changes pixels."""
+    edits = gfx.spike_edits(gfx.EN)
+    done = set()
+    for _, b in gfx_index.tims():
+        h = __import__("hashlib").sha1(b).hexdigest()
+        if h in edits and h not in done:
+            assert edits[h](b) != b
+            done.add(h)
+    assert done == set(edits)

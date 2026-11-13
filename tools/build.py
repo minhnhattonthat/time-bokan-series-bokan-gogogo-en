@@ -1,6 +1,7 @@
 """build.py: make the disc in build/ from rom/.
 
-usage: build.py [OUTDIR] [--identity | --marker | --spike]
+usage: build.py [OUTDIR] [--identity | --en [--no-staff] | --marker | --spike [--no-staff]]
+--en is the English disc (build/en, see english()).
 Every form 1 file goes back through disc.write_file, every TIMP archive through timp.unpack/pack and every TIM in it
 through tim.pixels/with_pixels, so with no edits the output must equal the dump: tests/test_build.py holds that.
 An entry whose bytes are unchanged keeps its original BPE stream; a changed one is re-encoded (timp.bpe_encode) and the
@@ -85,10 +86,46 @@ def build(out=None, identity=True, edits=None, after=None):
     return out / CUE
 
 
+def allowed_files(edits):
+    """Disc paths the English build may change: every file holding an edited blob, DEMO.BIN (save titles), the movies."""
+    import gfx_index
+    d = disc.Disc(str(ROM / BIN))
+    by_id = {p[1:].removesuffix(".TMP"): p for p in d.files}
+    files = {by_id[i.split("#")[0]] for i, b in gfx_index.tims() if hashlib.sha1(b).hexdigest() in edits}
+    return files | {"/OVER/DEMO.BIN"} | {p for p in d.files if p.startswith("/STR/")}
+
+
+def english(out=None, roll=True):
+    """The English disc in build/en: graphics_en.tsv lettered, subtitles burnt into BOGO02-18 (D7), save titles (D8),
+    the STAFF.STR roll re-lettered (D3; roll=False skips its ~20 min re-encode). Fails on any sector changed outside
+    allowed_files (tools/discdiff.py)."""
+    import discdiff
+    import fmv_burn
+    import gfx
+    import save_titles
+    import staff_roll
+    edits = gfx.spike_edits(gfx.EN)
+
+    def after(track):
+        save_titles.patch(track)
+        print("subtitles", fmv_burn.burn_en(track))
+        if roll:
+            print("staff roll", staff_roll.rewrite(track))
+    cue = build(out or ROOT / "build" / "en", False, edits, after)
+    allowed = allowed_files(edits)
+    (cue.parent / "allowed.txt").write_text("".join(p + "\n" for p in sorted(allowed)), encoding="utf-8")
+    errs, per = discdiff.check(ROM / BIN, cue.parent / BIN, allowed)
+    assert not errs, "\n".join(errs[:20])
+    print(f"discdiff: {sum(per.values())} sectors changed in {len(per)} files, all allowed")
+    return cue
+
+
 if __name__ == "__main__":
     import gfx
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    if "--marker" in sys.argv:
+    if "--en" in sys.argv:
+        print(english(args[0] if args else None, "--no-staff" not in sys.argv))
+    elif "--marker" in sys.argv:
         import fmv_burn
         print(build(args[0] if args else ROOT / "build" / "marker", False, gfx.marker_edits(), fmv_burn.burn_markers))
     elif "--spike" in sys.argv:

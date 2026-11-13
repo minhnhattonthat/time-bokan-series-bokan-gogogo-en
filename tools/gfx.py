@@ -203,9 +203,17 @@ def sampled_inks(px, clut, margin=None):
     return bg, fill, mode(rest) if rest.size else int(fill[0])
 
 
-def typeset(data, rows):
-    """data (a TIM file) with each (rect, text, form) rect cleared and lettered, centred. Raises ValueError on
-    overflow: English is never clipped silently."""
+def grown(rect, size, box):
+    """rect widened/heightened about its centre to hold size (w, h), kept inside box (w, h)."""
+    (x, y, w, h), (gw, gh), (bw, bh) = rect, size, box
+    nw, nh = max(w, gw), max(h, gh)
+    return (min(max(0, x - (nw - w) // 2), bw - nw), min(max(0, y - (nh - h) // 2), bh - nh), nw, nh)
+
+
+def typeset(data, rows, grow=False):
+    """data (a TIM file) with each (rect, text, form) rect cleared and lettered, centred. grow: a rect too small for its
+    text widens about its centre inside the TIM (only for a TIM's one row: fit.py's `grow` verdict, room = whole TIM).
+    Raises ValueError on overflow: English is never clipped silently."""
     t = tim.parse(data, strict=False)
     assert t and t.bpp in (4, 8), "not a CLUT TIM"
     width = pixel_width(t)
@@ -214,6 +222,8 @@ def typeset(data, rows):
         assert x + w <= width and y + h <= t.px_wh[1], f"rect {x, y, w, h} outside {width}x{t.px_wh[1]}"
         ink, halo, outer = glyphs(text, form)
         gh, gw = ink.shape
+        if grow and (gw > w or gh > h) and gw <= width and gh <= t.px_wh[1]:
+            x, y, w, h = grown((x, y, w, h), (gw, gh), (width, t.px_wh[1]))
         if gw > w or gh > h:
             raise ValueError(f"{text!r} is {gw}x{gh} in class {form}, rect is {w}x{h}")
         margin = np.concatenate([px[y:y + h, max(x - 3, 0):x], px[y:y + h, x + w:x + w + 3]], axis=1)
@@ -236,8 +246,12 @@ def typeset(data, rows):
     return tim.with_pixels(t, data, px.reshape(-1).tolist())
 
 
+EN = ROOT / "script" / "graphics_en.tsv"
+
+
 def spike_edits(path=ROOT / "script" / "spike.tsv"):
-    """{sha1: fn(blob) -> blob} lettering script/spike.tsv (columns id, en, class, rect; empty rect = the row's)."""
+    """{sha1: fn(blob) -> blob} lettering a translation tsv (columns id, en, class, rect; empty rect = the row's):
+    script/spike.tsv, or EN for the English build. A TIM's only row may grow into the TIM (fit.py gates it)."""
     by_id = {r.id: r for r in gfx_script.rows()}
     items = []
     for ln in path.read_text(encoding="utf-8").splitlines()[1:]:
@@ -245,7 +259,8 @@ def spike_edits(path=ROOT / "script" / "spike.tsv"):
         r = by_id[rid]
         items.append((r, (tuple(map(int, rect.split(","))) if rect else (r.x, r.y, r.w, r.h), en,
                           form or class_of(r))))
-    return {h: (lambda b, rs=rs: typeset(b, [p for _, p in rs])) for h, rs in by_blob(items).items()}
+    return {h: (lambda b, rs=rs: typeset(b, [p for _, p in rs], grow=len(rs) == 1 and rs[0][0].form != "art"))
+            for h, rs in by_blob(items).items()}
 
 
 if __name__ == "__main__":

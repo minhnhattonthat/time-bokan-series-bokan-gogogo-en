@@ -53,5 +53,23 @@ def extract():
     print(COUNT, "titles,", len(chars), "characters")
 
 
+def english(demo):
+    """DEMO.BIN with every title replaced by its `en` column (D8), each in its own 64-byte field."""
+    t = Table.load(TBL)
+    out = bytearray(demo)
+    for (n, off, jp, en), (o, b) in zip(rows(), fields(demo)):
+        assert int(off, 16) == o and decode(t, b) == jp, n
+        out[o:o + FIELD] = encode(t, en)
+    return bytes(out)
+
+
+def patch(track):
+    """build.py --en: the English titles into the built disc."""
+    import disc
+    d = disc.Disc(str(track), write=True)
+    d.write_file(FILE, english(d.read(FILE)))
+    d.f.close()
+
+
 if __name__ == "__main__":
     extract()

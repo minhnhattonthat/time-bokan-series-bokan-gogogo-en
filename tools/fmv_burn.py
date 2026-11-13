@@ -162,6 +162,19 @@ def marker_subs(movie):
             if row[2] in ("dlg", "caption", "form")]
 
 
+def en_subs(movie):
+    """English build: the `en` column of every row that has one (D7; BOGO01's song rows have none, D9)."""
+    path = ROOT / "script" / "fmv" / f"{movie}.tsv"
+    if not path.exists():
+        return []
+    rows = [ln.split("\t") for ln in path.read_text(encoding="utf-8").splitlines()[1:]]
+    return [(float(c[0]), float(c[1]), c[5]) for c in rows if c[5]]
+
+
+def burn_en(track):
+    return burn_all(str(track), en_subs)
+
+
 def burn_markers(track):
     """build.py --marker: marker subtitles in every movie."""
     return burn_all(str(track), marker_subs)
