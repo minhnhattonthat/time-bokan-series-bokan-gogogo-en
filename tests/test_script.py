@@ -1,6 +1,6 @@
 """Phase 4: every TIM on the disc is either text (its blob has rows in script/graphics.tsv) or listed in
 script/no_text.txt, never both; rects hold ink; the save titles roundtrip through tbl/save.tbl; movie scripts are
-in time order."""
+cleaned and in time order; the credit roll's cast groups are well formed."""
 import re
 import sys
 from pathlib import Path
@@ -82,6 +82,22 @@ def test_fmv_scripts_in_time_order():
             start, end, form, speaker, jp, *note = ln.split("\t")
             assert form in ("dlg", "song", "caption"), ln
             assert last <= float(start) < float(end), ln
-            if form != "song" and not (note and note[0].startswith("draft")):  # drafts are raw Whisper
-                assert jp and not re.search(r"[A-Za-z]{4}", jp), ln
+            assert not (note and note[0].startswith("draft")), ln  # every file is cleaned
+            if form == "song":
+                assert not jp, ln  # D9: lyrics stay out of git
+            else:
+                assert jp and speaker and not re.search(r"[A-Za-z]{4}", jp), ln
             last = float(start)
+
+
+def test_credits_rows():
+    rows = [ln.split("\t") for ln in (ROOT / "script" / "credits.tsv").read_text(encoding="utf-8").splitlines()[1:]]
+    assert [int(r[0]) for r in rows] == list(range(1, len(rows) + 1))
+    groups = [int(r[1]) for r in rows]
+    assert groups == sorted(groups)
+    for r in rows:
+        assert r[2] in ("head", "sub", "name", "role", "actor") and r[3], r
+    for g in set(groups):  # a cast group is roles then one actor
+        kinds = [r[2] for r in rows if int(r[1]) == g]
+        if "actor" in kinds:
+            assert kinds[-1] == "actor" and set(kinds[:-1]) == {"role"}, g

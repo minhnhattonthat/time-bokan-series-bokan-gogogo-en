@@ -1,8 +1,8 @@
 start	end	form	speaker	jp	note
-0.00	2.42	dlg		ワルサ、グロッキー、聞いたかい?	draft lp -0.21 ns 0.04
-2.48	4.34	dlg		他の三悪には負けられないよ!	draft lp -0.21 ns 0.04
-4.56	7.08	dlg		任せてくださいよ魔女様	draft lp -0.21 ns 0.04
-7.08	9.40	dlg		元祖の意地ってやつは見せてやりましょ	draft lp -0.21 ns 0.04
-9.40	10.94	dlg		絶対勝つもんね	draft lp -0.21 ns 0.04
-11.44	13.34	dlg		そうと決まったら出発だよー!	draft lp -0.21 ns 0.04
-14.02	15.96	dlg		よいよいさ、ほいほいさ!	draft lp -0.21 ns 0.04
+0.00	2.42	dlg	Majo	ワルサー、グロッキー、聞いたかい?	was: ワルサ
+2.48	4.34	dlg	Majo	他の三悪には負けられないよ!
+4.56	7.08	dlg	Grocky	任せてくださいよマージョ様	was: 魔女様
+7.08	9.40	dlg	Grocky	元祖の意地ってやつを見せてやりましょ	was: やつは
+9.40	10.94	dlg	Walsa	絶対勝つまんねん	? pass 1: 絶対勝つもんね; Walsa speaks Kansai in BOGO11
+11.44	13.34	dlg	Majo	そうと決まったら出発だよー!
+14.02	15.96	dlg	Grocky, Walsa	よいよいさ、ほいほいさ!	? the henchmen's yes-ma'am call

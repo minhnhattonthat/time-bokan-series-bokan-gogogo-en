@@ -123,21 +123,27 @@ def draft(spec):
 
 
 def sheet(prefix, form=None, ids=None):
-    from PIL import Image, ImageDraw
+    from PIL import Image, ImageDraw, ImageFont
     blob = dict(gfx_index.tims())
     rs = [r for r in rows() if (not form or r.form == form) and (not ids or r.id in ids)]
-    cols, cw, ch, per = 5, 260, 70, 100
+    try:  # the reading under each crop, for review; Windows font, else no reading
+        jpf = ImageFont.truetype("msgothic.ttc", 12)
+    except OSError:
+        jpf = None
+    cols, cw, ch, per = 5, 260, 84, 100
     for p in range(0, len(rs), per):
         chunk = rs[p:p + per]
         img = Image.new("RGB", (cols * cw, (len(chunk) + cols - 1) // cols * ch), (90, 0, 90))
         d = ImageDraw.Draw(img)
         for k, r in enumerate(chunk):
             crop = gfx_sheet.render(blob[r.file]).crop((r.x, r.y, r.x + r.w, r.y + r.h))
-            z = max(1, min((cw - 4) // r.w, (ch - 14) // r.h))
+            z = max(1, min((cw - 4) // r.w, (ch - 28) // r.h))
             crop = crop.resize((r.w * z, r.h * z), Image.NEAREST)
             x, y = k % cols * cw, k // cols * ch
             d.text((x + 2, y), r.id[:40], fill=(255, 255, 0))
-            img.paste(crop, (x + 2, y + 12), crop)
+            if jpf:
+                d.text((x + 2, y + 12), r.jp[:20], fill=(0, 255, 255), font=jpf)
+            img.paste(crop, (x + 2, y + 26), crop)
         out = f"{prefix}_{p // per}.png"
         img.save(out)
         print(out, len(chunk))

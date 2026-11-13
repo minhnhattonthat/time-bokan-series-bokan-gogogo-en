@@ -1,41 +1,39 @@
 start	end	form	speaker	jp	note
-3.92	6.40	dlg		お前たちよくやったべ	draft lp -0.26 ns 0.08
-6.40	9.36	dlg		あんたはドクロべ	draft lp -0.26 ns 0.08
-9.36	14.82	dlg		その主役の座の力でお前たちを我が輩の新世界の主役にしてやるべ	draft lp -0.26 ns 0.08
-14.82	17.64	dlg		主役の座をこちらへよこすだべ	draft lp -0.26 ns 0.08
-18.40	19.20	dlg		は、はい	draft lp -0.26 ns 0.08
-19.62	20.60	dlg		巨漢地、また	draft lp -0.26 ns 0.08
-20.60	21.30	dlg		はい	draft lp -0.26 ns 0.08
-22.00	24.02	dlg		どうかしたのかい、ゴスイネン	draft lp -0.26 ns 0.08
-24.64	27.02	dlg		よく考えてください、ムンムン様	draft lp -0.26 ns 0.08
-27.02	32.24	dlg		ここでドクロビーに渡さずに我々が主役の座を使ったとしたら?	draft lp -0.26 ns 0.18
-32.58	34.04	dlg		うん、使ったら?	draft lp -0.26 ns 0.18
-34.48	37.10	dlg		主役になり放題ってことですよ。	draft lp -0.26 ns 0.18
-37.14	43.82	dlg		出世なんて自由自在、社長、会長、盲聴、省庁、いやいや、世界の王にだってなれるってことでございます。	draft lp -0.26 ns 0.18
-44.18	45.28	dlg		あー、なるほど。	draft lp -0.26 ns 0.18
-46.22	47.54	dlg		頭いいであります。	draft lp -0.26 ns 0.18
-47.98	51.60	dlg		ぐだぐだ言ってないで、とっとと主役の座をよこすだぴー!	draft lp -0.26 ns 0.18
-51.66	52.26	dlg		あ、だめー!	draft lp -0.26 ns 0.18
-53.14	54.74	dlg		よこすだぴー!	draft lp -0.26 ns 0.18
-54.92	55.90	dlg		私の場所!	draft lp -0.26 ns 0.18
-57.02	58.76	dlg		うわああああああああああああ!	draft lp -0.46 ns 0.02
-60.54	62.80	dlg		お前たちの思い通りにはさせないぞ!	draft lp -0.46 ns 0.02
-62.98	63.98	dlg		一発魔!	draft lp -0.46 ns 0.02
-64.70	68.64	dlg		こら、一発魔。いつもいつも、邪魔してくれちゃって邪魔だぞ!	draft lp -0.46 ns 0.02
-69.30	72.56	dlg		そうよそうよ!いつまでも主役だと思ってるんじゃないわよ!	draft lp -0.46 ns 0.02
-73.28	75.26	dlg		今回は切り札があるんだぞ!	draft lp -0.46 ns 0.02
-75.64	77.72	dlg		せーの、ぱぱぱぱぱぱぱぱぱぱぱぱぱぱぱぱぱぱぱ!	draft lp -0.46 ns 0.02
-77.76	81.20	dlg		ううん、これで私たちが主役なのよ!	draft lp -0.46 ns 0.02
-81.38	81.94	dlg		しまった!	draft lp -0.46 ns 0.02
-85.96	89.00	dlg		あら、一発マンになっちゃった。	draft lp -0.36 ns 0.03
-89.18	93.32	dlg		でも一発マンになったってことは数が多い分、こちらが有利です。	draft lp -0.36 ns 0.03
-93.50	95.12	dlg		我々の数であります。	draft lp -0.36 ns 0.03
-95.48	97.62	dlg		よーし、やっておしまい。	draft lp -0.36 ns 0.03
-108.16	109.78	dlg		あら、なんで?	draft lp -0.36 ns 0.03
-111.94	112.94	dlg		やりましたー!	draft lp -0.26 ns 0.38
-113.72	115.50	dlg		あたしも、バッテン!	draft lp -0.26 ns 0.38
-116.22	116.58	dlg		はい!	draft lp -0.26 ns 0.38
-116.62	121.20	dlg		どうやら主役の座は主役の格好になるだけだったんだべ	draft lp -0.26 ns 0.38
-121.20	123.84	dlg		そんな中途半端なものはもういらないだべ	draft lp -0.26 ns 0.38
-123.84	126.72	dlg		と言いつつ我が輩は帰ることにするべ	draft lp -0.26 ns 0.38
-127.68	131.88	dlg		帰りまほう、帰りまほう、帰りまほう、帰りまほう	draft lp -0.26 ns 0.38
+3.92	6.40	dlg	Dokurobey	お前たちよくやったべ
+6.40	9.36	dlg	Munmun	あんたはドクロベエ	was: ドクロべ
+9.36	14.82	dlg	Dokurobey	その主役の座の力でお前たちを我が輩の新世界の主役にしてやるべ
+14.82	17.64	dlg	Dokurobey	主役の座をこちらへよこすだべ
+18.40	19.20	dlg	Kyokanchin	は、はい	? speaker: he holds the flower
+19.62	20.60	dlg	Kosuinen	キョカンチン、待った!	pass 2; pass 1: 巨漢地、また
+20.60	21.30	dlg	Kyokanchin	はい?	?
+22.00	24.02	dlg	Munmun	どうかしたのかい、コスイネン	was: ゴスイネン
+24.64	27.02	dlg	Kosuinen	よく考えてください、ムンムン様
+27.02	32.24	dlg	Kosuinen	ここでドクロベエに渡さずに我々が主役の座を使ったとしたら?	was: ドクロビー
+32.58	34.04	dlg	Munmun	うん、使ったら?
+34.48	37.10	dlg	Kosuinen	主役になり放題ってことですよ。
+37.14	43.82	dlg	Kosuinen	出世なんて自由自在、社長、会長、盲腸、小腸、いやいや、世界の王にだってなれるってことでございます。	? gag: titles slide into organs; was: 盲聴、省庁, pass 2: 盲長、省長
+44.18	45.28	dlg	Munmun	あー、なるほど。
+46.22	47.54	dlg	Kyokanchin	頭いいであります。
+47.98	51.60	dlg	Dokurobey	ぐだぐだ言ってないで、とっとと主役の座をよこすだべ!	was: だぴー
+51.66	52.26	dlg	Munmun	あ、だめー!
+53.14	54.74	dlg	Dokurobey	よこすだべ!	was: だぴー
+57.02	58.76	dlg	Dokurobey	うわああああああ!	? speaker
+60.54	62.80	dlg	Ippatsuman	お前たちの思い通りにはさせないぞ!
+62.98	63.98	dlg	Munmun	イッパツマン!	was: 一発魔
+64.70	68.64	dlg	Kosuinen	こら、イッパツマン。いつもいつも、邪魔してくれちゃって邪魔だぞ!	was: 一発魔; his close-up at 64-68 s
+69.30	72.56	dlg	Munmun	そうよそうよ!いつまでも主役だと思ってるんじゃないわよ!
+73.28	75.26	dlg	Kosuinen	今回は切り札があるんだぞ!	?
+75.64	77.72	dlg	Munmun	せーの!	? was: せーの、ぱぱぱ…
+77.76	81.20	dlg	Munmun	うふふ、これで私たちが主役なのよ!	? was: ううん
+81.38	81.94	dlg	Ippatsuman	しまった!
+85.96	89.00	dlg	Munmun	あら、イッパツマンになっちゃった。	was: 一発マン; the three now wear Ippatsuman suits
+89.18	93.32	dlg	Kosuinen	でもイッパツマンになったってことは数が多い分、こちらが有利です。
+93.50	95.12	dlg	Kyokanchin	我々の勝ちであります。	? was: 我々の数であります
+95.48	97.62	dlg	Munmun	よーし、やっておしまい。
+108.16	109.78	dlg	Munmun	あら、なんで?	the real Ippatsuman has won
+111.94	112.94	dlg	Kosuinen	やりましたー!	? maybe 参りました; the defeated henchmen are on screen
+113.72	115.50	dlg	Munmun	あたしも、バッテン!	? unclear
+116.62	121.20	dlg	Dokurobey	どうやら主役の座は主役の格好になるだけだったんだべ
+121.20	123.84	dlg	Dokurobey	そんな中途半端なものはもういらないだべ
+123.84	126.72	dlg	Dokurobey	と言いつつ我が輩は帰ることにするべ
+127.68	131.88	dlg	Dokurobey	帰りまひょ、帰りまひょ、帰りまひょ、帰りまひょ	? was: 帰りまほう, pass 2: がんばろう x4; he walks off

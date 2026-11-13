@@ -1,23 +1,22 @@
 start	end	form	speaker	jp	note
-7.70	10.10	dlg		おまえたちよくやっただべ	draft lp -0.20 ns 0.06
-10.92	12.66	dlg		あんたはドクロべ	draft lp -0.20 ns 0.06
-12.66	15.74	dlg		さあ主役の座を我が輩に渡すだべ	draft lp -0.20 ns 0.06
-15.74	19.90	dlg		さすればおまえたちをメジャーデビューさせてやるだべ	draft lp -0.20 ns 0.06
-19.90	21.48	dlg		どうするおまえたち	draft lp -0.20 ns 0.06
-21.48	23.26	dlg		メジャーデビューですか	draft lp -0.20 ns 0.06
-24.02	25.98	dlg		悪い話ではないまんねん	draft lp -0.20 ns 0.06
-25.98	30.94	dlg		そうね、私たち主役は愚か、脇役としても出足りないからね。	draft lp -0.30 ns 0.01
-31.76	32.72	dlg		乗りますか?	draft lp -0.30 ns 0.01
-33.02	34.24	dlg		乗るまんねん。	draft lp -0.30 ns 0.01
-34.38	35.48	dlg		よし、決めた!	draft lp -0.30 ns 0.01
-35.88	37.98	dlg		どころでさま、お世話になります!	draft lp -0.30 ns 0.01
-38.34	38.66	dlg		うめ。	draft lp -0.30 ns 0.01
-41.24	41.80	dlg		いただき!	draft lp -0.30 ns 0.01
-43.40	44.84	dlg		あ、いただきまーす!	draft lp -0.30 ns 0.01
-45.08	50.30	dlg		いくら日に当たらない生活が長いからって、こんなアイテムに頼ってちゃおしまいだぜ。	draft lp -0.30 ns 0.01
-50.88	54.98	dlg		そんな後ろ向きの猟犬の奴らには、笑う角に供養こい!	draft lp -0.30 ns 0.01
-54.98	56.86	dlg		これをプレゼントでい!	draft lp -0.40 ns 0.18
-70.14	72.44	dlg		ドクロビー様、助けてー!	draft lp -0.40 ns 0.18
-80.22	82.68	dlg		一人で逃げちゃってるなんててるよ!	draft lp -0.40 ns 0.18
-85.62	90.44	dlg		おー絶景かな絶景かな	draft lp -0.39 ns 0.02
-92.34	94.26	dlg		ほんじゃそういうことで	draft lp -0.39 ns 0.02
+7.70	10.10	dlg	Dokurobey	お前たちよくやっただべ
+10.92	12.66	dlg	Yanyan	あ!あんたはドクロベエ!	pass 2; pass 1: あんたはドクロべ
+12.66	15.74	dlg	Dokurobey	さあ主役の座を我が輩に渡すだべ
+15.74	19.90	dlg	Dokurobey	さすればお前たちをメジャーデビューさせてやるだべ
+19.90	21.48	dlg	Yanyan	どうする、お前たち
+21.48	23.26	dlg	Dasainen	メジャーデビューですか
+24.02	25.98	dlg	Tonmentan	悪い話ではないまんねん
+25.98	30.94	dlg	Yanyan	そうね、私たち主役はおろか、脇役としても出足りないからね。	both passes; pass 1 主役は愚か
+31.76	32.72	dlg	Dasainen	乗りますか?
+33.02	34.24	dlg	Tonmentan	乗るまんねん。
+34.38	35.48	dlg	Yanyan	よし、決めた!
+35.88	37.98	dlg	Yanyan	ドクロベエ様、お世話になります!	pass 2; pass 1: どころでさま
+41.24	41.80	dlg	Itadakiman	いただき!	? his staff snatches the flower; pass 2: ドロッキー!
+43.40	44.84	dlg	Itadakiman	あ、いただきまーす!	?
+45.08	50.30	dlg	Itadakiman	いくら日に当たらない生活が長いからって、こんなアイテムに頼ってちゃおしまいだぜ。
+50.88	54.98	dlg	Itadakiman	そんな後ろ向きの了見の奴らには、笑う門に苦よ来い!	? twist on 笑う門には福来る, a curse before his attack; was: 猟犬, 笑う角に供養こい, pass 2: わらんかどにくよこい
+54.98	56.86	dlg	Itadakiman	これをプレゼントでい!	he blows a swarm of little monkeys at them
+70.14	72.44	dlg	Yanyan	ドクロベエ様、助けてー!	was: ドクロビー様
+80.22	82.68	dlg	Yanyan	一人で逃げちゃうなんてひどいよ!	? was: 一人で逃げちゃってるなんててるよ; Dokurobey left only a skeleton
+85.62	90.44	dlg	Itadakiman	おー、絶景かな絶景かな
+92.34	94.26	dlg	Itadakiman	ほんじゃ、そういうことで

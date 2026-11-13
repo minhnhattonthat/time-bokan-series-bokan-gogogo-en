@@ -75,7 +75,7 @@ MODE#91	GRAP/MODE#91	0	6	126	18	machine	ドロンボータンク
 MODE#92	GRAP/MODE#92	0	7	125	17	machine	シャレコウベメカ
 MODE#93	GRAP/MODE#93	0	6	127	18	machine	シャレコウベバギー
 MODE#94	GRAP/MODE#94	0	6	130	18	machine	アンドロメダマ号α
-MODE#95	GRAP/MODE#95	0	5	110	19	machine	タイムラワーダ
+MODE#95	GRAP/MODE#95	0	5	110	19	machine	タイムラクーダ
 MODE#96	GRAP/MODE#96	0	5	95	19	machine	デンデンメカ
 MODE#97	GRAP/MODE#97	0	7	46	17	menu	もどる
 MODE#98	GRAP/MODE#98	0	0	44	16	stat	スピード
@@ -215,7 +215,7 @@ CSELECT#79	GRAP/CSELECT#79	0	6	126	18	machine	ドロンボータンク
 CSELECT#80	GRAP/CSELECT#80	0	7	125	17	machine	シャレコウベメカ
 CSELECT#81	GRAP/CSELECT#81	0	6	127	18	machine	シャレコウベバギー
 CSELECT#82	GRAP/CSELECT#82	0	6	130	18	machine	アンドロメダマ号α
-CSELECT#83	GRAP/CSELECT#83	0	5	110	19	machine	タイムラワーダ
+CSELECT#83	GRAP/CSELECT#83	0	5	110	19	machine	タイムラクーダ
 CSELECT#84	GRAP/CSELECT#84	0	5	95	19	machine	デンデンメカ
 CSELECT#85	GRAP/CSELECT#85	0	8	92	16	machine	ヤッターワン
 CSELECT#86	GRAP/CSELECT#86	0	7	111	17	machine	ゼンダライオン
@@ -236,7 +236,7 @@ MSELECT#16.1	GRAP/MSELECT#16	4	2	136	14	plate	シャレコウベメカ	rects by 
 MSELECT#16.2	GRAP/MSELECT#16	4	16	136	14	plate	アクダマン	rects by hand: frame and text share colours
 MSELECT#17.1	GRAP/MSELECT#17	4	2	136	14	plate	アンドロメダマ号α	rects by hand: frame and text share colours
 MSELECT#17.2	GRAP/MSELECT#17	4	16	136	14	plate	オジャママン	rects by hand: frame and text share colours
-MSELECT#18.1	GRAP/MSELECT#18	4	2	136	14	plate	タイムラワーダ	rects by hand: frame and text share colours
+MSELECT#18.1	GRAP/MSELECT#18	4	2	136	14	plate	タイムラクーダ	rects by hand: frame and text share colours
 MSELECT#18.2	GRAP/MSELECT#18	4	16	136	14	plate	ミレンジョ一味	rects by hand: frame and text share colours
 MSELECT#19.1	GRAP/MSELECT#19	4	2	136	14	plate	シャレコウベバギー	rects by hand: frame and text share colours
 MSELECT#19.2	GRAP/MSELECT#19	4	16	136	14	plate	クリーン悪トリオ	rects by hand: frame and text share colours
@@ -266,7 +266,7 @@ RANK#3	GRAP/RANK#3	0	6	126	34	machine	タイムガイコッツ
 RANK#4	GRAP/RANK#4	0	4	126	36	machine	ドロンボータンク
 RANK#5	GRAP/RANK#5	0	6	125	34	machine	シャレコウベメカ
 RANK#6	GRAP/RANK#6	0	4	130	36	machine	アンドロメダマ号α
-RANK#7	GRAP/RANK#7	0	2	110	38	machine	タイムラワーダ
+RANK#7	GRAP/RANK#7	0	2	110	38	machine	タイムラクーダ
 RANK#8	GRAP/RANK#8	0	4	127	36	machine	シャレコウベバギー
 RANK#9	GRAP/RANK#9	0	2	95	38	machine	デンデンメカ
 RANK#10	GRAP/RANK#10	0	8	92	32	machine	ヤッターワン
@@ -353,7 +353,7 @@ SAVE#39	GRAP/SAVE#39	1	0	124	16	machine	タイムガイコッツ
 SAVE#40	GRAP/SAVE#40	1	0	124	16	machine	ドロンボータンク
 SAVE#41	GRAP/SAVE#41	1	0	123	16	machine	シャレコウベメカ
 SAVE#42	GRAP/SAVE#42	1	0	127	16	machine	アンドロメダマ号α
-SAVE#43	GRAP/SAVE#43	1	0	108	16	machine	タイムラワーダ
+SAVE#43	GRAP/SAVE#43	1	0	108	16	machine	タイムラクーダ
 SAVE#44	GRAP/SAVE#44	0	0	125	16	machine	シャレコウベバギー
 SAVE#45	GRAP/SAVE#45	1	0	93	16	machine	デンデンメカ
 SAVE#47	GRAP/SAVE#47	0	0	76	16	machine	メカブトン
@@ -394,50 +394,50 @@ DOKURO#3	GRAP/DOKURO#3	0	6	126	34	machine	タイムガイコッツ
 DOKURO#4	GRAP/DOKURO#4	0	4	126	36	machine	ドロンボータンク
 DOKURO#5	GRAP/DOKURO#5	0	6	125	34	machine	シャレコウベメカ
 DOKURO#6	GRAP/DOKURO#6	0	4	130	36	machine	アンドロメダマ号α
-DOKURO#7	GRAP/DOKURO#7	0	2	110	38	machine	タイムラワーダ
+DOKURO#7	GRAP/DOKURO#7	0	2	110	38	machine	タイムラクーダ
 DOKURO#8	GRAP/DOKURO#8	0	4	127	36	machine	シャレコウベバギー
 DOKURO#9	GRAP/DOKURO#9	0	2	95	38	machine	デンデンメカ
 DOKURO#34	GRAP/DOKURO#34	0	1	122	23	brief	はじめのコースは、	briefing piece; pieces join at run time (order is code)
 DOKURO#35	GRAP/DOKURO#35	0	0	106	24	brief	つぎのコースは、	briefing piece
-DOKURO#36	GRAP/DOKURO#36	0	0	192	24	brief	3位までに、ゴールするだベエ~	briefing piece
-DOKURO#37	GRAP/DOKURO#37	1	0	173	24	brief	1位で、ゴールするだベエ~	briefing piece
-DOKURO#38	GRAP/DOKURO#38	0	0	172	24	brief	ジュラッキパーク だベエ~	briefing piece
-DOKURO#39	GRAP/DOKURO#39	0	0	185	24	brief	ゴッタガエシティー だベエ~	briefing piece
-DOKURO#40	GRAP/DOKURO#40	0	0	141	24	brief	半里の長城 だベエ~	briefing piece
-DOKURO#41	GRAP/DOKURO#41	0	0	142	24	brief	トースター島 だベエ~	briefing piece
-DOKURO#42	GRAP/DOKURO#42	0	0	154	24	brief	ナス湖の湖畔 だベエ~	briefing piece
-DOKURO#43	GRAP/DOKURO#43	0	0	149	24	brief	イマラヤ山脈 だベエ~	briefing piece
-DOKURO#44	GRAP/DOKURO#44	0	0	137	24	brief	ナゼカ平原 だベエ~	briefing piece
-DOKURO#45	GRAP/DOKURO#45	0	0	135	24	brief	ドーセ宮殿 だベエ~	briefing piece
-DOKURO#46	GRAP/DOKURO#46	0	0	172	24	brief	ローストワールド だベエ~	briefing piece
-DOKURO#47	GRAP/DOKURO#47	0	0	125	24	brief	もー大陸 だベエ~	briefing piece
-DOKURO#48	GRAP/DOKURO#48	0	0	176	24	brief	バラサイユタウン だベエ~	briefing piece
-DOKURO#49	GRAP/DOKURO#49	0	0	165	24	brief	アリアガラの滝 だベエ~	briefing piece
-DOKURO#50	GRAP/DOKURO#50	0	0	149	24	brief	エドロポリス だベエ~	briefing piece
-DOKURO#51	GRAP/DOKURO#51	0	0	179	24	brief	マハラヘッタ王国 だベエ~	briefing piece
-DOKURO#52	GRAP/DOKURO#52	0	0	176	24	brief	クタビレゾンの森 だベエ~	briefing piece
-DOKURO#53	GRAP/DOKURO#53	0	0	192	24	brief	シュヤクノザを、倒すだベエ~	briefing piece
-DOKURO#54	GRAP/DOKURO#54	0	0	94	24	brief	よくやったベエ	briefing piece
-DOKURO#55	GRAP/DOKURO#55	0	0	155	24	brief	ステージクリアだベエ~	briefing piece
+DOKURO#36	GRAP/DOKURO#36	0	0	192	24	brief	3位までに、ゴールするだベェ~	briefing piece
+DOKURO#37	GRAP/DOKURO#37	1	0	173	24	brief	1位で、ゴールするだベェ~	briefing piece
+DOKURO#38	GRAP/DOKURO#38	0	0	172	24	brief	ジュラッキパーク だベェ~	briefing piece
+DOKURO#39	GRAP/DOKURO#39	0	0	185	24	brief	ゴッタガエシティー だベェ~	briefing piece
+DOKURO#40	GRAP/DOKURO#40	0	0	141	24	brief	半里の長城 だベェ~	briefing piece
+DOKURO#41	GRAP/DOKURO#41	0	0	142	24	brief	トースター島 だベェ~	briefing piece
+DOKURO#42	GRAP/DOKURO#42	0	0	154	24	brief	ナス湖の湖畔 だベェ~	briefing piece
+DOKURO#43	GRAP/DOKURO#43	0	0	149	24	brief	イマラヤ山脈 だベェ~	briefing piece
+DOKURO#44	GRAP/DOKURO#44	0	0	137	24	brief	ナゼカ平原 だベェ~	briefing piece
+DOKURO#45	GRAP/DOKURO#45	0	0	135	24	brief	ドーセ宮殿 だベェ~	briefing piece
+DOKURO#46	GRAP/DOKURO#46	0	0	172	24	brief	ローストワールド だベェ~	briefing piece
+DOKURO#47	GRAP/DOKURO#47	0	0	125	24	brief	もー大陸 だベェ~	briefing piece
+DOKURO#48	GRAP/DOKURO#48	0	0	176	24	brief	バラサイユタウン だベェ~	briefing piece
+DOKURO#49	GRAP/DOKURO#49	0	0	165	24	brief	アリアガラの滝 だベェ~	briefing piece
+DOKURO#50	GRAP/DOKURO#50	0	0	149	24	brief	エドロポリス だベェ~	briefing piece
+DOKURO#51	GRAP/DOKURO#51	0	0	179	24	brief	マハラヘッタ王国 だベェ~	briefing piece
+DOKURO#52	GRAP/DOKURO#52	0	0	176	24	brief	クタビレゾンの森 だベェ~	briefing piece
+DOKURO#53	GRAP/DOKURO#53	0	0	192	24	brief	シュヤクノザを、倒すだベェ~	briefing piece
+DOKURO#54	GRAP/DOKURO#54	0	0	94	24	brief	よくやったベェ	briefing piece
+DOKURO#55	GRAP/DOKURO#55	0	0	155	24	brief	ステージクリアだベェ~	briefing piece
 DOKURO#56	GRAP/DOKURO#56	0	2	75	22	brief	おめえたち	briefing piece
-DOKURO#57	GRAP/DOKURO#57	0	0	120	23	brief	がんばるだベエ~	briefing piece
-DOKURO#58	GRAP/DOKURO#58	0	0	172	24	brief	メカブトンに勝つだベエ~	briefing piece
-DOKURO#59	GRAP/DOKURO#59	0	0	183	24	brief	ヤッターワンに勝つだベエ~	briefing piece
-DOKURO#60	GRAP/DOKURO#60	0	0	192	24	brief	ゼンダライオンに勝つだベエ~	briefing piece
-DOKURO#61	GRAP/DOKURO#61	0	0	186	24	brief	弾丸ヘッド号に勝つだベエ~	briefing piece
-DOKURO#62	GRAP/DOKURO#62	0	0	142	24	brief	巨神号に勝つだベエ~	briefing piece
-DOKURO#63	GRAP/DOKURO#63	0	0	170	24	brief	カブトゼミに勝つだベエ~	briefing piece
-DOKURO#64	GRAP/DOKURO#64	0	0	190	24	brief	オタスケタヌキに勝つだベエ~	briefing piece
+DOKURO#57	GRAP/DOKURO#57	0	0	120	23	brief	がんばるだベェ~	briefing piece
+DOKURO#58	GRAP/DOKURO#58	0	0	172	24	brief	メカブトンに勝つだベェ~	briefing piece
+DOKURO#59	GRAP/DOKURO#59	0	0	183	24	brief	ヤッターワンに勝つだベェ~	briefing piece
+DOKURO#60	GRAP/DOKURO#60	0	0	192	24	brief	ゼンダライオンに勝つだベェ~	briefing piece
+DOKURO#61	GRAP/DOKURO#61	0	0	186	24	brief	弾丸ヘッド号に勝つだベェ~	briefing piece
+DOKURO#62	GRAP/DOKURO#62	0	0	142	24	brief	巨神号に勝つだベェ~	briefing piece
+DOKURO#63	GRAP/DOKURO#63	0	0	170	24	brief	カブトゼミに勝つだベェ~	briefing piece
+DOKURO#64	GRAP/DOKURO#64	0	0	190	24	brief	オタスケタヌキに勝つだベェ~	briefing piece
 DOKURO#65	GRAP/DOKURO#65	0	0	115	24	brief	セーブしますか?	briefing piece
 DOKURO#66	GRAP/DOKURO#66	0	0	160	24	brief	ゲームを終了しますか?	briefing piece
 DOKURO#67	GRAP/DOKURO#67	32	3	30	21	menu	はい
 DOKURO#68	GRAP/DOKURO#68	32	3	46	21	menu	いいえ
 DOKURO#69	GRAP/DOKURO#69	0	1	73	23	brief	3位までに、	briefing piece
-DOKURO#70	GRAP/DOKURO#70	0	0	162	24	brief	ゴールできなかったベエ~	briefing piece
-DOKURO#71	GRAP/DOKURO#71	1	0	168	24	brief	1位に、なれなかったベエ~	briefing piece
-DOKURO#72	GRAP/DOKURO#72	0	0	179	24	brief	もう一度、がんばるだベエ~	briefing piece
+DOKURO#70	GRAP/DOKURO#70	0	0	162	24	brief	ゴールできなかったベェ~	briefing piece
+DOKURO#71	GRAP/DOKURO#71	1	0	168	24	brief	1位に、なれなかったベェ~	briefing piece
+DOKURO#72	GRAP/DOKURO#72	0	0	179	24	brief	もう一度、がんばるだベェ~	briefing piece
 DOKURO#73	GRAP/DOKURO#73	0	2	55	22	brief	いよいよ	briefing piece
-DOKURO#74	GRAP/DOKURO#74	0	2	120	22	brief	勝てなかったベエ~	briefing piece
+DOKURO#74	GRAP/DOKURO#74	0	2	120	22	brief	勝てなかったベェ~	briefing piece
 DOKURO#75	GRAP/DOKURO#75	0	0	108	24	label	ドクロストン獲得数
 DOKURO#76	GRAP/DOKURO#76	0	0	120	24	label	チューンアップポイント
 GOVER#8	GRAP/GOVER#8	13	3	231	42	title	ゲームオーバー
@@ -495,8 +495,8 @@ TUP0#69	GRAP/TUP0#69	1	0	95	16	course	エドロポリス
 TUP0#70	GRAP/TUP0#70	1	1	122	15	course	マハラヘッタ王国
 TUP0#71	GRAP/TUP0#71	0	0	124	16	course	クタビレゾンの森
 TUP0#72	GRAP/TUP0#72	1	0	126	16	course	ホネオリゾン渓谷
-TUP0#73	GRAP/TUP0#73	0	0	77	14	label	次のコースは。
-TUP0#74	GRAP/TUP0#74	1	0	78	14	label	はじめのコースは。
+TUP0#73	GRAP/TUP0#73	0	0	77	14	label	次のコースは、
+TUP0#74	GRAP/TUP0#74	1	0	78	14	label	はじめのコースは、
 STAT01#30	STAGE/STAT01#30	1	0	85	32	hud	ゴール
 STAT01#31	STAGE/STAT01#31	0	0	127	31	hud	ファイナルラップ	#193 in each STAT file is the same blob
 STAT01#61	STAGE/STAT01#61	2	19	28	12	hud	スカ	item icon: skull over the word スカ (dud); rect by eye

@@ -1,7 +1,7 @@
 start	end	form	speaker	jp	note
-0.00	3.66	dlg		ねーとぼっけーどんじゅうろ、これはチャンスだよー!	draft lp -0.34 ns 0.02
-3.84	8.44	dlg		はーい、わいらの実力を証明するいい機械だまんねー!	draft lp -0.34 ns 0.02
-9.34	13.90	dlg		ムージョ様、マシンの準備もできてますから、いつでも出発できますよ。	draft lp -0.34 ns 0.02
-14.16	16.64	dlg		よーし、さっそく出発だよー!	draft lp -0.34 ns 0.02
-18.96	20.86	dlg		まーちゃーい!	draft lp -0.34 ns 0.02
-21.08	23.78	dlg		だ、だ、だ、だよー!	draft lp -0.34 ns 0.02
+0.00	3.66	dlg	Mujo	ねえトボッケー、ドンジューロー、これはチャンスだよー!	was: とぼっけーどんじゅうろ
+3.84	8.44	dlg	Donjuro	はーい、わいらの実力を証明するいい機会だまんねー!	? was: 機械だまんねー, pass 2 機会だまんね; speaker by the Kansai まんねん
+9.34	13.90	dlg	Tobokke	ムージョ様、マシンの準備もできてますから、いつでも出発できますよ。
+14.16	16.64	dlg	Mujo	よーし、さっそく出発だよー!
+18.96	20.86	dlg	Tobokke, Donjuro	まーちゃーい!	? unclear shout as they leave
+21.08	23.78	dlg	Mujo	だ、だ、だ、だよー!	?

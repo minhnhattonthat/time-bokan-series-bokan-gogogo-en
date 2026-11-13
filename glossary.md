@@ -25,6 +25,12 @@ Seeded from the sibling project time-bokan-series-bokan-desu-yo-en (its D11: nam
 | ドクロベエ / ドクロベー | Dokurobey | | | Dokurobee, Dokurobei |
 | ドロンボー | Doronbow | | the gang | Doronbo, Dorombo |
 
+Movie speaker labels (phase 4, `script/fmv/`), Hepburn until phase 6 checks official spellings: Majo, Grocky, Walsa
+(Time Bokan); Mujo, Tobokke, Donjuro (Zenderman); Atasha, Secovicci, Dowalski (Rescueman); Mirenjo, Kokematsu,
+Sukadon (Yattodetaman); Munmun, Kosuinen, Kyokanchin (Ippatsuman); Yanyan, Dasainen, Tonmentan (Itadakiman); heroes
+Tanpei, Junko, Gan-chan, Ai-chan, Omotchama, Odate-Buta, Zenderman-1, Rescueman-1, Yattodetaman, Ippatsuman,
+Itadakiman. Credits spell two in full: ジュリー・コケマツ (Julie Kokematsu), アラン・スカドン (Alan Sukadon).
+
 ## Places
 16 course names (`graphics.md`, MODE#183-198): to be set in phase 6.
 
@@ -43,4 +49,5 @@ Seeded from the sibling project time-bokan-series-bokan-desu-yo-en (its D11: nam
 | シャレコウベ | Skull | | Skull Mecha, Skull Buggy | |
 | ガイコッツ | Gaikottsu | | Hepburn, no official source | Gaikotts |
 | アンドロメダマ | Andromedama | | | |
+| タイムラクーダ | Time Rakuda | | camel machine, as desu-yo | Time Rawada |
 | グランプリ | Grand Prix | | | |

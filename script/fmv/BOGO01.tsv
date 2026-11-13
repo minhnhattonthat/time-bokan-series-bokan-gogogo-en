@@ -1,14 +1,12 @@
 start	end	form	speaker	jp	note
-1.24	8.92	dlg		作詞・作曲・編曲 初音ミク	draft lp -0.38 ns 0.48
-8.92	9.52	dlg		はぁっ!?	draft lp -0.33 ns 0.54
-25.56	28.48	dlg		ギャイギャイ ギャイギャイ ブタブタ	draft lp -0.33 ns 0.54
-28.98	31.70	dlg		カッカイイ カッカイイ スカスカ	draft lp -0.33 ns 0.54
-32.34	34.90	dlg		これまた今夜も狙ってる	draft lp -0.33 ns 0.54
-35.70	37.44	dlg		悪役の主役	draft lp -0.33 ns 0.54
-38.90	44.12	dlg		おどろくどくろのどろまんじゅう おたべ せいきなるひとよ	draft lp -0.27 ns 0.64
-45.36	47.98	dlg		まんず なんらかとおさない	draft lp -0.27 ns 0.64
-50.22	54.62	dlg		まんねり まんねん せんねん きれいなかお ほどしわになる	draft lp -0.27 ns 0.64
-55.12	57.66	dlg		じょしこうせいでも バッバをひく	draft lp -0.27 ns 0.64
-57.66	61.08	dlg		さあ ここが やまばた	draft lp -0.27 ns 0.64
-61.08	65.38	dlg		てんさい どんどん えいゆう どんどん がらがら どんどん ぼっかい	draft lp -0.27 ns 0.64
-65.38	67.32	dlg		トントントロンボ	draft lp -0.52 ns 0.21
+25.56	28.48	song			D9: lyrics local only, readings in work/fmv/BOGO01.whisper.tsv and BOGO01.pass2.tsv
+28.98	31.70	song			D9
+32.34	34.90	song			D9
+35.70	37.44	song			D9
+38.90	44.12	song			D9
+45.36	47.98	song			D9
+50.22	54.62	song			D9
+55.12	57.66	song			D9
+57.66	61.08	song			D9
+61.08	65.38	song			D9
+65.38	67.32	song			D9

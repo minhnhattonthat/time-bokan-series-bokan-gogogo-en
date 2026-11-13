@@ -1,9 +1,9 @@
 start	end	form	speaker	jp	note
-1.34	3.18	dlg		ゴケバチ、シカダマ!	draft lp -0.27 ns 0.05
-4.46	7.08	dlg		これは何としても勝たねばならぬぞよ!	draft lp -0.27 ns 0.05
-7.32	12.42	dlg		はい、ミレンジョ様。他の三悪がライバルなら、なおさら負けるわけにはいきません。	draft lp -0.27 ns 0.05
-12.64	17.54	dlg		シリーズ唯一、顔が違うと言われて、我々根性だけは負けてませんから。	draft lp -0.27 ns 0.05
-17.92	19.34	dlg		GO TO THE VICTORY!	draft lp -0.27 ns 0.05
-19.40	20.98	dlg		皆のもの行くぞよ!	draft lp -0.27 ns 0.05
-21.20	22.22	dlg		行くぞ!	draft lp -0.27 ns 0.05
-22.80	24.02	dlg		バカだ。	draft lp -0.27 ns 0.05
+1.34	3.18	dlg	Mirenjo	コケマツ、スカドン!	? was: ゴケバチ、シカダマ
+4.46	7.08	dlg	Mirenjo	これは何としても勝たねばならぬぞよ!
+7.32	12.42	dlg	Kokematsu	はい、ミレンジョ様。他の三悪がライバルなら、なおさら負けるわけにはいきません。
+12.64	17.54	dlg	Kokematsu	シリーズ唯一、顔が違うと言われて、我々根性だけは負けてませんから。	?
+17.92	19.34	dlg	Sukadon	ゴー・トゥー・ザ・ビクトリー!	spoken in English (was: GO TO THE VICTORY!); speaker a guess
+19.40	20.98	dlg	Mirenjo	皆のもの行くぞよ!
+21.20	22.22	dlg	Kokematsu, Sukadon	行くぞ!	? pass 2: ラブーダー!
+22.80	24.02	dlg	Sukadon	バカだ。	? unclear

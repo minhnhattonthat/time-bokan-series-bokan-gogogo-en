@@ -1,13 +1,12 @@
 start	end	form	speaker	jp	note
-1.42	2.92	dlg		ねえ、ダサいね。	draft lp -0.24 ns 0.01
-4.00	6.70	dlg		どんめんたん、いい話じゃないのさ。	draft lp -0.24 ns 0.01
-6.94	9.88	dlg		わいらにもようやく春がやってきたまんねん。	draft lp -0.24 ns 0.01
-10.10	11.58	dlg		でも、大丈夫かしら?	draft lp -0.24 ns 0.01
-11.78	14.52	dlg		あたしらってほら、競争が苦手じゃない?	draft lp -0.24 ns 0.01
-15.50	17.18	dlg		大丈夫ですよ、ヤンヤンさん。	draft lp -0.24 ns 0.01
-17.50	21.34	dlg		何せテレビ放送でも一番早くゴールを迎えちゃいましたから。	draft lp -0.24 ns 0.01
-22.80	24.54	dlg		なんてやっていられないんだよ。	draft lp -0.24 ns 0.01
-24.64	25.90	dlg		さっそく出発だよ。	draft lp -0.24 ns 0.01
-25.90	26.50	dlg		にゅー!	draft lp -1.45 ns 0.46
-26.80	27.96	dlg		ああああああぁー!!	draft lp -1.45 ns 0.46
-27.96	29.48	dlg		おい、ヤシ踏んでるよおい!	draft lp -1.45 ns 0.46
+1.42	2.92	dlg	Yanyan	ねえ、ダサイネン、	was: ダサいね。
+4.00	6.70	dlg	Yanyan	トンメンタン、いい話じゃないのさ。	was: どんめんたん
+6.94	9.88	dlg	Tonmentan	わいらにもようやく春がやってきたまんねん。
+10.10	11.58	dlg	Yanyan	でも、大丈夫かしら?
+11.78	14.52	dlg	Yanyan	あたしらってほら、競争が苦手じゃない?
+15.50	17.18	dlg	Dasainen	大丈夫ですよ、ヤンヤンさん。
+17.50	21.34	dlg	Dasainen	何せテレビ放送でも一番早くゴールを迎えちゃいましたから。	joke: Itadakiman was the shortest-running series
+22.80	24.54	dlg	Yanyan	なんてやっていられないんだよ。	? start of the line may be missing
+24.64	25.90	dlg	Yanyan	さっそく出発だよ。
+26.80	27.96	dlg	Dasainen	ああああああぁー!!	?
+27.96	29.48	dlg	Dasainen	おい、足踏んでるよおい!	? both passes: ヤシ踏んでる

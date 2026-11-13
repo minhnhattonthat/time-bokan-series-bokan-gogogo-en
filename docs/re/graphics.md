@@ -34,7 +34,7 @@ confirm. "label" = a single word/phrase sprite; "panel" = a picture with letteri
 - #73 ストーリーモード (title). #74 さいしょから #75 つづきから.
 - #76-88 story picture cards: art only (no lettering seen at 1x).
 - #89 マシン データ (title). #90-#105 machine names (タイムガイコッツ, ドロンボータンク, シャレコウベメカ, シャレコウベバギー,
-  アンドロメダマ号α, タイムラワーダ, デンデンメカ, ヤッターワン, ゼンダライオン, ワンダーブル, トッタルニャン, メカブトン ...), #97 もどる.
+  アンドロメダマ号α, タイムラクーダ, デンデンメカ, ヤッターワン, ゼンダライオン, ワンダーブル, トッタルニャン, メカブトン ...), #97 もどる.
 - #98 スピード #99 ダッシュ #100 グリップ (stat labels).
 - #115-126 team names: マージョ一味, ドロンボー一味, アクダマン, オジャママン, ミレンジョー一味, クリーン悪トリオ, ヤンヤンシー行,
   ヤッターマン, ゼンダマン, 花の刑事(デカ)トリオ, きらめきマン, タイムボカン.
@@ -111,6 +111,8 @@ Every text entry below is byte-identical in all 40 files (and #31/#193 appear tw
 - BOGO01 opening: TIME BOKAN title (English), ボカン GoGoGo logo (logo rule, D5), タツノコプロ end card -> "Tatsunoko Pro".
 - BOGO02 story intro (Dokurobey's briefing); BOGO18 an ending. Spoken dialogue, no captions seen at the sampled frames.
   BOGO03-17 sampled but read only at thumbnail size: phase 4 transcribes them and lists any caption.
+  Phase 4 read every 2 s sheet (`work/fmv/BOGOxx/`): no caption or sign text in BOGO02-18. The shapes on Dokurobey's
+  monitor in BOGO18 (8-10 s, zoomed) are three tiny unicyclists, not kana.
 - STAFF.STR (24,152 sectors, ~3 min): scrolling staff roll, Japanese role headings and names, cast list with character
   names, kart pictures, over black. English credits (D3) need this movie re-rendered.
 

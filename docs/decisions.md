@@ -17,3 +17,4 @@ owner can overrule. Per-game override: the bokan-desu-yo-en project may be used 
 | D6 | 2026-11-13 | Specs and plans | need approval, pre-approved | Pre-approved. Owner's standing answer. |
 | D7 | 2026-11-13 | Spoken story in BOGO02-18 (no subtitles) | leave; burn English subtitles | Burn in subtitles, reusing desu-yo's `mdec.py`/`fmv_burn.py`, if each movie keeps its sector count. **Agent default**, as in desu-yo: the story is otherwise lost. |
 | D8 | 2026-11-13 | Memory card save titles (Shift-JIS, BIOS manager only) | leave; full-width English | Full-width English, same byte length. **Agent default.** |
+| D9 | 2026-11-14 | Opening song (BOGO01) lyrics | subtitle them; leave unsubtitled | No subtitles (the original shows none) and verbatim lyrics stay out of git, as third-party text: `script/fmv/BOGO01.tsv` keeps only the song rows' times, the readings live in gitignored `work/fmv/BOGO01.*.tsv`. Same as desu-yo D8. **Agent default.** |
