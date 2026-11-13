@@ -200,8 +200,8 @@ end
 -- After セーブが終了しました circle starts over at the slot prompt; cross leaves (M=0xA, or M=7 in GP).
 -- Save screens poll the card and drop most presses, so circle goes in every 50 frames (~1900 frames: the save is
 -- done by then), with a shot after each (s01-s32): every message of the flow lands in one of them.
-function W.save_presses()
-  for i = 1, 32 do W.tap("circle"); W.frames(50); W.shot(string.format("s%02d", i)) end
+function W.save_presses(n)
+  for i = 1, n or 32 do W.tap("circle"); W.frames(50); W.shot(string.format("s%02d", i)) end
 end
 local function save_through()
   W.save_presses()
@@ -623,12 +623,13 @@ local function title_menu_open()
   tap_until(function() return W.r16(0x408E6) == 2 end, "start", "title menu (music 2)", 60, 10)
   W.frames(120)
 end
-local function title_load()
+local function title_load(n)
   title_menu_open()
   W.tap("down"); W.frames(40)
-  W.save_presses()
+  W.save_presses(n)
 end
-S.title_load = function() title_load(); W.done() end -- card from story_saved
+-- card from story_saved; 18 presses end on the save file list (runs are deterministic)
+S.title_load = function() title_load(18); W.frames(30); W.check(W.m() <= 4, "title load screen M=" .. W.m()); W.done() end
 -- Title ロード of a story save resumes the story: M=0x12 intro movie -> machine select -> team movie -> tune-up
 -- (card from story_saved).
 S.story_resume = function()
