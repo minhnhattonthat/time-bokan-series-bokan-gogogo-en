@@ -70,9 +70,48 @@ Thread 0 yield sites used as "screen is live" tests: 80052AAC mode select (and i
 - Kart structs: 7 karts, stride 0x1B4; a u16 track-progress counter at `8003EC84 + i*0x1B4` (rises along the track
   across laps; CPUs reach ~450-540 by frame 14,000). The player is slot 3 (`8003F1A0`) in a story race. The bytes at
   progress-8 and progress-0xC look like laps done (0 player, 1 CPUs at frame 14,000).
-- **Not working:** progress and the -8/-0xC bytes are recomputed from the kart position every frame, so poking them
-  does nothing. Holding the player-vs-CPU differing bytes (offsets -0x52/-0x51, -0x1C/-0x1B, -0xF2/-0xF1,
-  -0x92/-0x91, +0x26/+0x27/+0x2D/+0x2F) to the CPU values did not make the player drive itself.
+- Progress and the -8/-0xC bytes are recomputed from the kart position every frame, so poking them does nothing.
+- **Race end (verified, `W.finish_race`):** the story race loop (CART 80049310, overlay base 80048048) runs until
+  `8003DD28` (exit flag) is set. The player thread (CART 80049E28, step in s2: 0 countdown, 1 racing, 2 pause menu)
+  sets bit 0x400 of the player flags `8003E0E0` when **laps done `8003E1A4` (s32) >= 2**; the finish then sets
+  M=0x1A and the exit flag. Writing 2 to `8003E1A4` once the race runs finishes it at once, and the player comes
+  first. Placing: u16 rank at `8003ECBC + slot*0x1B4` (0 = first), player slot = u16 `8003E0DC` (3 in story).
+  Holding the rank at 3 until the race ends gives a loss.
+- Pause menu (step 2): up/down cursor s4, circle: 0 continue, 1 retry (M=0x1B), 2 quit (M=4), 3 title (M=3).
+
+## After a story race (verified by `race_results`, `stage_clear`, `story_save`, `story_saved`, `story_lose`)
+
+- M=0x1A runs the Dokurobey screen (DEMO 8006F99C, as M=0x19): レース結果 and the placings, then on a win
+  Dokurobey's ステージクリア line; the course `8003DED2` goes up by one there. Circle moves on.
+- Win: M=0xC save screen (DEMO 80060924; steps in s2, jump table 80049734): メモリーカードをチェック -> slot 1/2 ->
+  card check (~600 frames) -> どのファイルに -> ここにセーブしてよろしいですか (はい default) -> セーブ中 ->
+  セーブが終了しました. Left/right toggle one yes/no flag shared by the prompts, so circle alone saves to slot 1,
+  file 1; circle after the save starts over at the slot prompt, and cross leaves. On exit M=7 if `$gp+0x68` & 2
+  (GP), else M=0xA: tune-up for the next course.
+- Winning course 7: DEMO 80072304 sets M=0x1F and course 8. M=0x1F plays the team ending (movie table 80034064 +
+  16 x team: BOGO14, 17, 12, 11, 13, 16, 15 for teams 0-6), sets u32 `8003E6A8 + 4*team` = 2 (cleared) and goes to
+  M=0x20 (BOGO18) if all 7 are cleared, else M=0x21 (STAFF.STR, file 0x187); `$gp+0x2C` = teams cleared (capped
+  at 5). M=0x21 -> M=0x22 (save screen, DEMO 80060924) -> M=1 (logo). M=0x23 runs DEMO 80073A20 (not reached yet).
+- Team movies (M=0x13, table 80033FE4 + 16 x team): BOGO06, 09, 04, 03, 05, 08, 07.
+- Loss: results show the top 3, then an explosion scene, then M=0xA with the course unchanged (retry). Game over
+  (GOVER) not reached yet: no lives counter seen after one loss.
+- Story course select for warps: write the course to `8003DED2` on the tune-up screen; the warp tunnel and race
+  load that course (course 7 plays BOGO10 first).
+
+## Memory card
+
+`--sav` gives each run a fresh formatted card (`warp_all.py` writes `work/saves/blank.mcd`). Without it, a story save
+lands on the portable `tools/pcsx/memcard1.mcd` and later runs see it. Card result each main-loop frame:
+`800CB5B4` (1 done, -1 none/error, 0 busy); the card op step is `800CB5A8`. While the card handler (DEMO 8005C90C)
+runs a libcard read, thread 0 is not resumed for several frames (libcard sector waits at 800301A0/800300C8): slow,
+not hung.
+
+## BOGO10 stalls headless (open)
+
+Course 7's warp tunnel goes to M=0x14, which plays BOGO10; in PCSX-Redux headless the stream never delivers a
+sector (MOV_PLAY 80048A08 retries StGetNext 2000 times, over and over) and the screen stays black. BOGO01, 02 and the
+team movies play. `story_course(7)` sidesteps it (enters as course 6, writes 7 when the briefing starts). Check BOGO10
+in the movie viewer (M=9) before blaming the emulator.
 
 ## Emulator workaround (warp.lua, RAM only)
 

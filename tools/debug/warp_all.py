@@ -19,8 +19,35 @@ from skill import SKILL  # noqa: E402
 DEFAULT_ROM = os.path.join(ROOT, "rom", "Time Bokan Series - Bokan GoGoGo (Japan).cue")
 SCENES = os.path.join(ROOT, "tools", "debug", "scenes.lua")
 WARP = os.path.join(ROOT, "tools", "debug", "warp.lua")
-LONG = {}  # scene -> frame budget when 20000 is not enough
+LONG = {"true_ending": 30000, "staff_roll": 30000}  # scene -> frame budget when 20000 is not enough
 NO_SMOKE = set()  # scenes that end on a flat colour by design
+
+
+CARD = os.path.join(ROOT, "work", "saves", "blank.mcd")
+
+
+def blank_card():
+    """A freshly formatted 128 KB PS1 memory card (as PCSX-Redux formats one): header, 15 free directory frames,
+    20 empty broken-sector frames, header copy in frame 63. Each warp run gets its own copy through emu.py --sav, so
+    the portable card beside the emulator (which a story save writes) never changes a scene."""
+    d = bytearray(0x20000)
+
+    def frame(i, head):
+        f = bytearray(128)
+        f[:len(head)] = head
+        x = 0
+        for b in f[:127]:
+            x ^= b
+        f[127] = x
+        d[i * 128:(i + 1) * 128] = f
+
+    frame(0, b"MC")
+    for i in range(1, 16):
+        frame(i, b"\xa0\0\0\0\0\0\0\0\xff\xff")
+    for i in range(16, 36):
+        frame(i, b"\xff\xff\xff\xff\0\0\0\0\xff\xff")
+    frame(63, b"MC")
+    return bytes(d)
 
 
 def scene_names():
@@ -36,18 +63,21 @@ def run(scene, rom, out, states, extra):
     d = os.path.join(out, scene)
     frames = LONG.get(scene, 20000)
     cmd = [sys.executable, "-X", "utf8", os.path.join(SKILL, "scripts", "emu.py"), rom, "--out", d, "--frames", str(frames),
-           "--timeout", "1200", "--script", WARP, "--script", SCENES, "--var", f"SCENE='{scene}'"] + extra
+           "--timeout", "1200", "--sav", CARD, "--script", WARP, "--script", SCENES, "--var", f"SCENE='{scene}'"] + extra
     if scene not in NO_SMOKE:
         cmd.append("--smoke")
     if states:
         cmd += ["--state-out", os.path.join(ROOT, "work", "states", scene + ".sstate")]
     r = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, encoding="utf-8", errors="replace")
     log = os.path.join(d, "log.txt")
-    last = ""
+    last, lines = "", []
     if os.path.exists(log):
         lines = open(log, encoding="utf-8", errors="replace").read().splitlines()
         last = lines[-1] if lines else ""
-    return scene, r.returncode, last, r.stdout.strip().splitlines()[-2:] if r.returncode else []
+    rc = r.returncode
+    if rc == 0 and not any(x.startswith("warp done") for x in lines[-3:]):
+        rc = 4  # ran out of frames before the scene reached W.done(): never a pass
+    return scene, rc, last, r.stdout.strip().splitlines()[-2:] if rc else []
 
 
 def main():
@@ -65,6 +95,9 @@ def main():
         print("\n".join(names))
         return 0
     extra = [x for s in a.script for x in ("--script", os.path.abspath(s))]
+    os.makedirs(os.path.dirname(CARD), exist_ok=True)
+    with open(CARD, "wb") as f:
+        f.write(blank_card())
     bad = 0
     with cf.ThreadPoolExecutor(a.jobs) as ex:
         for scene, rc, last, err in ex.map(lambda s: run(s, a.rom, a.out, a.states, extra), names):
