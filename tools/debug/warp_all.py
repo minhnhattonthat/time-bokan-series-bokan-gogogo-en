@@ -23,7 +23,9 @@ LONG = {"true_ending": 30000, "staff_roll": 30000, "post_game_save": 45000}  # f
 # scenes with exec hooks (L.on_exec needs the debugger + interpreter)
 DEBUGGER = {f"{p}{t}" for p in ("ending_t", "team_movie_t") for t in range(7)} | {
     "staff_roll", "true_ending", "post_game_save"}
-NO_SMOKE = {"ending_entry"}  # scenes that end on a flat colour by design (ending_entry: results.png is its proof)
+NO_SMOKE = {"ending_entry"}
+# scene -> scene whose written card (work/qa/warp/<src>/memcard1.mcd) it boots with; run after the others
+CARD_FROM = {"title_load": "story_saved", "story_resume": "story_saved", "ta_ghost_loaded": "ta_ghost_save"}  # scenes that end on a flat colour by design (ending_entry: results.png is its proof)
 
 
 CARD = os.path.join(ROOT, "work", "saves", "blank.mcd")
@@ -65,8 +67,11 @@ def scene_names():
 def run(scene, rom, out, states, extra):
     d = os.path.join(out, scene)
     frames = LONG.get(scene, 20000)
+    card = os.path.join(out, CARD_FROM[scene], "memcard1.mcd") if scene in CARD_FROM else CARD
+    if not os.path.exists(card):
+        return scene, 5, f"no card from {CARD_FROM[scene]}: run that scene first", []
     cmd = [sys.executable, "-X", "utf8", os.path.join(SKILL, "scripts", "emu.py"), rom, "--out", d, "--frames", str(frames),
-           "--timeout", "1200", "--sav", CARD, "--script", WARP, "--script", SCENES, "--var", f"SCENE='{scene}'"] + extra
+           "--timeout", "1200", "--sav", card, "--script", WARP, "--script", SCENES, "--var", f"SCENE='{scene}'"] + extra
     if scene not in NO_SMOKE:
         cmd.append("--smoke")
     if scene in DEBUGGER:
@@ -104,10 +109,12 @@ def main():
     with open(CARD, "wb") as f:
         f.write(blank_card())
     bad = 0
-    with cf.ThreadPoolExecutor(a.jobs) as ex:
-        for scene, rc, last, err in ex.map(lambda s: run(s, a.rom, a.out, a.states, extra), names):
-            print(f"{'ok  ' if rc == 0 else 'FAIL'} {scene:18} rc={rc} {last} {err}", flush=True)
-            bad += rc != 0
+    # scenes that boot with another scene's card go in a second wave, after their sources have written it
+    for wave in ([s for s in names if s not in CARD_FROM], [s for s in names if s in CARD_FROM]):
+        with cf.ThreadPoolExecutor(a.jobs) as ex:
+            for scene, rc, last, err in ex.map(lambda s: run(s, a.rom, a.out, a.states, extra), wave):
+                print(f"{'ok  ' if rc == 0 else 'FAIL'} {scene:18} rc={rc} {last} {err}", flush=True)
+                bad += rc != 0
     print(f"{len(names) - bad}/{len(names)} scenes ok")
     return 1 if bad else 0
 
