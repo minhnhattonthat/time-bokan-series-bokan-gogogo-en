@@ -36,6 +36,8 @@ def rows():
 
 
 def extract():
+    assert not TSV.exists() or "en" not in TSV.read_text(encoding="utf-8").split("\n", 1)[0].split("\t"), \
+        "script/save_titles.tsv has the English column; extract would drop it"
     import build
     import disc
     demo = disc.Disc(str(build.ROM / build.BIN)).read(FILE)

@@ -2,7 +2,32 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 6. Translate next: phase 5 (marker build, engine spike, width gate) done 2026-11-14. Only spike English exists.
+- **Phase:** 7. Insert, fit, check next: phase 6 (translation) done 2026-11-14. English exists for every row; the build doesn't letter it yet.
+- **Phase 6 (done 2026-11-14):** translated by one agent (no subagents in the Orca run), reviewed by `codex exec`.
+  - Graphics: `script/graphics_en.tsv` (id, en, class, rect; the spike format, so `fit.py` and `gfx.spike_edits` read
+    it): 495 rows, `fit.py` 0 OVER, 65 `grow` (fit only their measured room; phase 7 widens the rect). Test
+    `test_gfx.py::test_translation_covers_every_row_and_fits`. New classes `narrow`/`narrowlabel` (Tiny5 drawn twice as
+    tall, D11) for character names, movie tabs, スカ, 逆走行, two song titles; MSELECT plates in caps. Course names
+    re-punned to fit (glossary Places). SAVE#7 letters only the misspelt word (rect 104,1,67,15).
+  - Movies: `en` column after `jp` in `script/fmv/BOGO02-18.tsv`, 292 rows, each 2 lines max at 288 px
+    (`test_mdec.py::test_english_subtitles_fit_two_lines`). `tools/fmv_set.py FIX.tsv` sets rows by movie and start.
+  - Credits: `en` column in `script/credits.tsv` (202 lines, Western name order). Save titles: `en` column in
+    `script/save_titles.tsv`, full width, course padded to 15 like the JP column, then ＃１/＃２; `tbl/save.tbl` has
+    the full-width Latin letters and ＃; the test round-trips every English title through the table into 64 bytes.
+  - Style: `docs/style-reference.md` (desu-yo's voices + this game's trios), `docs/reviewer-brief.md`,
+    `tools/pairs.py OUT` (gfx/fmv/credits/save pairs files). Decisions D11 (narrow class), D12 (", y'hear", -sama,
+    Top Billing). Cuts and font mixes for the in-game look: `docs/polish.md`.
+  - Review: independent `codex exec` (read-only) of all four pairs files (`work/review/phase6_codex.txt`): 0 Critical,
+    13 Important (voice lost in 3 subtitles, the pearl-skin gag set up too early, two machine-description lines,
+    "Gyakuten!" left untranslated, 5 credit names against published credits), 11 Minor; all applied (subtitles via
+    `work/review/phase6_fmv_fixes.tsv`). Save titles now keep the spaces: `<course padded to 15>　＃１`.
+    Second pass (`phase6_codex2.txt`): every earlier finding fixed but two Important left (Ryuko's parentage,
+    DOKURO#54 without the tic) and 3 Minor; all applied ("the dragon god's girl / Ryuko powers it!", "Good,
+    y'hear!", ゴール = "Finish!").
+- **Next (phase 7):** build lettering from `graphics_en.tsv` (spike_edits takes the path), grow rects for `grow` rows
+  after a zoomed marker look, subtitles from the `en` column (`fmv_burn.read_rows` returns jp today), STAFF.STR roll
+  from `credits.tsv` en (font still open: default Liberation Sans Bold, the roll's longest line is "Infini
+  Entertainment Technology"), save titles through `save_titles.encode`, romdiff/lint, full tour.
 - **Phase 5 (done 2026-11-14):** details in `docs/re/engine.md`.
   - Marker build (`build.py --marker`): every graphics row painted with its row number (single-row TIMs painted whole to show the drawn span), marker subtitles in BOGO02-18. 441 edited blobs, 0 original copies left on the disc. Tour `work/qa/marker`: **129/129 scenes ok**; sheets `work/qa/msheet/` read (half size, zooms of `ta_menu`, a movie, `true_ending`): every listed sprite marked, no Japanese left but the logo (D5) and STAFF.STR.
   - Fonts (D10): classes `title`/`big`/`menu` (Bangers 34/28/22), `bar` (Liberation Sans Bold 14), `sign`/`label` (Jersey 10 at native 18.67, double outline / plain), `small` (Tiny5 8, added to `fonts/`), subtitles Liberation Serif Bold 13. Chosen with `tools/font_try.py` on the real TIMs; `gfx.typeset` now does a double outline (darkest out, lightest in, commonest mid ink as fill). Spike builds (`build.py --spike`, `script/spike.tsv`, 27 rows, one or more per form) toured: `work/qa/spike` (128/129, `game_over` failed once with a Lua coroutine error and passed on rerun), `work/qa/spike2` (17 scenes). English seen in game on mode select, machine data, movie tabs, course select, machine select plate, ranking, pause, title copyright, briefing page.
@@ -10,7 +35,7 @@ Updated at the end of every session. Keep it to what the next session needs; his
   - Movies: `tools/mdec.py` + `tools/fmv_burn.py` ported from desu-yo (BOGO movies are STR v2 320x224, every frame roundtrips). STAFF.STR is v3: `tools/staff.py` decodes it with ffmpeg and writes v2 frames (`mdec.encode_rgb`) into the same sectors; **the game plays the v2 roll** (test line seen in `work/qa/spike/staff_roll`). Re-encoding all 2,415 frames takes ~20 min.
   - Review: independent `codex exec` (read-only) of the phase 5 code, `work/review/phase5_codex.txt`: ran the tests, 102 BPE round trips, rect isolation on 465 real rows, 5 STAFF frames rewritten in memory; 1 Minor (Bangers' italic overhang clipped by the glyph canvas, so the width gate measured 1 px short), fixed. In-game shots and font choices were read by the implementer only.
   - Encoder: `timp.bpe_best` (smallest of three block sizes) fixed a 2-byte growth the build test caught; limits measured from every disc block (15,623 bytes out, stack 78) in `docs/re/disc.md`.
-- **Next (phase 6):** translate `script/graphics.tsv` (495 rows to letter, glossary names, budgets from `script/budgets.tsv`, `fit.py` must report no OVER), the 292 movie rows (two lines of 288 px at Liberation Serif Bold 13), 202 credit lines (STAFF.STR re-letter; choose the roll font: `credit` Jersey 15 at 15 px is off its grid), 33 save titles (full-width, same byte length, D8). Course names for the glossary. Notes for translators: Bangers is caps only; briefing pieces (DOKURO#34-74) join at run time in an order set by code, unknown; briefing screen is 384 px wide mode. Phase 7: left-align option for description panels, rect growth for `grow` rows after a zoomed look at their marker shot (neighbours overlap in machine data panels).
+- **Carried from phase 5 to 7:** left-align option for description panels; rect growth for `grow` rows after a zoomed look at their marker shot (neighbours overlap in machine data panels); briefing pieces (DOKURO#34-74) join at run time in an order set by code, unknown (the English assumes "First up:" + "<course>, y'hear"); briefing screen is 384 px wide mode.
 - **Phase 4 (done 2026-11-14):**
   - `script/graphics.tsv`: 507 line rows over 453 text blobs (1,011 TIMs with text once copies are counted; `tools/gfx_index.py` names each blob by its first `ARCHIVE#entry`, the build replaces by hash). `script/no_text.txt`: the other 11,198 TIMs, as whole archives or entry ranges. `tests/test_script.py`: every TIM is in exactly one, rows name the canonical copy, every rect is inside its TIM and has ink. Forms: `keep` = the ボカン logo (D5), `fix` = SAVE#7 "CANSEL", `art` = lettering painted into a picture (RANK#81, SAVE#79/80, STAT#61), rect by eye.
   - Rects: one-line rows = the sprite's opaque box; multi-line panels from ink bands (`tools/gfx_sheet.py inklines`), split evenly where bands touch (noted), MSELECT plates by hand. Phase 5 should take exact spans in game. Draft source was `work/gfx/spec.tsv` (gitignored); from now on edit `graphics.tsv` itself (`gfx_script.py draft` would overwrite it).

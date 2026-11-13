@@ -4,9 +4,9 @@ start	end	form	speaker	jp	en	note
 6.94	9.88	dlg	Tonmentan	わいらにもようやく春がやってきたまんねん。	Spring's finally come for us too, I tell ya.	
 10.10	11.58	dlg	Yanyan	でも、大丈夫かしら?	But will we be all right?	
 11.78	14.52	dlg	Yanyan	あたしらってほら、競争が苦手じゃない?	You know us, we're no good at racing, are we?	
-15.50	17.18	dlg	Dasainen	大丈夫ですよ、ヤンヤンさん。	We'll be fine, Miss Yanyan.	
-17.50	21.34	dlg	Dasainen	何せテレビ放送でも一番早くゴールを迎えちゃいましたから。	After all, we were the first to reach the finish line on TV, too!	joke: Itadakiman was the shortest-running series
-22.80	24.54	dlg	Yanyan	なんてやっていられないんだよ。	...we can't just sit around like this.	? start of the line may be missing
+15.50	17.18	dlg	Dasainen	大丈夫ですよ、ヤンヤンさん。	We'll be fine, Yanyan-san.	
+17.50	21.34	dlg	Dasainen	何せテレビ放送でも一番早くゴールを迎えちゃいましたから。	After all, our TV run reached the finish line fastest, too!	joke: Itadakiman was the shortest-running series
+22.80	24.54	dlg	Yanyan	なんてやっていられないんだよ。	Oh, I've had enough of this!	? start of the line may be missing
 24.64	25.90	dlg	Yanyan	さっそく出発だよ。	Let's get going.	
 26.80	27.96	dlg	Dasainen	ああああああぁー!!	Aaaaaaah!	?
 27.96	29.48	dlg	Dasainen	おい、足踏んでるよおい!	Hey, you're on my foot! Hey!	? both passes: ヤシ踏んでる

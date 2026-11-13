@@ -3,10 +3,10 @@ start	end	form	speaker	jp	en	note
 7.54	8.82	dlg	Mirenjo	ドクロベエ!	Dokurobey!	? both passes: ドクロビー
 8.82	12.38	dlg	Dokurobey	さあ主役の座を我が輩に渡すだべ	Now, hand Top Billing over to me, y'hear.	was: 渡すだビー
 12.38	15.96	dlg	Dokurobey	さすれば新世界での主役を約束するだべ	Do that, and I promise you top billing in the new world, y'hear.	was: するだビー
-15.96	18.96	dlg	Mirenjo	ドクロベエ様、ご機嫌うるわしゅう	Lord Dokurobey, we trust you are in fine spirits.	was: ドクロビー様
+15.96	18.96	dlg	Mirenjo	ドクロベエ様、ご機嫌うるわしゅう	Dokurobey-sama, we trust you are in fine spirits.	was: ドクロビー様
 18.96	20.94	dlg	Kokematsu	主役の座はここでございます	Here is Top Billing, sir.	? speaker
 22.24	26.54	dlg	Mirenjo	ところで主役の件なのですがお願いがございますの	Now, about this starring role... we have a request.	
-26.54	29.00	dlg	Dokurobey	何でも聞いてやるだべ	Ask me anything, y'hear.	was: だビー
+26.54	29.00	dlg	Dokurobey	何でも聞いてやるだべ	Name your wish, y'hear.	was: だビー
 29.00	35.20	dlg	Mirenjo	わらわたちにとっての願いは、ナンダラ王国の復活と、我が弟コマロの王位継承でございます。	We wish to restore the Kingdom of Nandara, and see our little brother Komaro crowned.	? ナンダラ, コマロ (the boy shown in her thought bubble at 46 s)
 35.68	41.90	dlg	Mirenjo	どうせ、新世界での主役をやらせていただけるのなら、この条件で叶えてくださいませんか?	If we are to star in the new world anyway, would you grant us that?	
 42.52	44.36	dlg	Dokurobey	わかった、任せるだべ。	Done. Leave it to me, y'hear.	
@@ -17,6 +17,6 @@ start	end	form	speaker	jp	en	note
 65.58	66.52	dlg	Kokematsu	やったー!	Got it!	he holds the flower at 66-68 s
 66.82	68.94	dlg	Kokematsu	ジュリーが捕まえましたよー!	Julie caught it!	? both passes: キョウシーが; his first name in the credits is ジュリー
 72.04	74.22	dlg	Sukadon	アイム・ソーリー…	I'm sorry...	English; he has sat on the flower
-76.26	78.54	dlg	Kokematsu	ミレンジョ様、これを!	Lady Mirenjo, here!	?
+76.26	78.54	dlg	Kokematsu	ミレンジョ様、これを!	Mirenjo-sama, here!	?
 83.00	86.04	dlg	Yattodetaman	主役とはそんなものに頼ってなれるものではない	You can't become a star by relying on a thing like that.	
 86.04	88.80	dlg	Yattodetaman	真の勇気を持つ者だけがなれるんだ	Only those with true courage can!	

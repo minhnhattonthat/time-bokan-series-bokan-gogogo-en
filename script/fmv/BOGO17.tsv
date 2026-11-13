@@ -6,17 +6,17 @@ start	end	form	speaker	jp	en	note
 19.90	21.48	dlg	Yanyan	どうする、お前たち	What do you say, you two?	
 21.48	23.26	dlg	Dasainen	メジャーデビューですか	A big-time debut?	
 24.02	25.98	dlg	Tonmentan	悪い話ではないまんねん	Not a bad deal, I tell ya.	
-25.98	30.94	dlg	Yanyan	そうね、私たち主役はおろか、脇役としても出足りないからね。	True. We barely make it as supporting players, never mind stars.	both passes; pass 1 主役は愚か
+25.98	30.94	dlg	Yanyan	そうね、私たち主役はおろか、脇役としても出足りないからね。	True. We hardly get screen time even as supporting players, never mind stars.	both passes; pass 1 主役は愚か
 31.76	32.72	dlg	Dasainen	乗りますか?	Shall we take it?	
 33.02	34.24	dlg	Tonmentan	乗るまんねん。	Let's take it, I tell ya.	
 34.38	35.48	dlg	Yanyan	よし、決めた!	All right, it's decided!	
-35.88	37.98	dlg	Yanyan	ドクロベエ様、お世話になります!	Lord Dokurobey, we're in your hands!	pass 2; pass 1: どころでさま
+35.88	37.98	dlg	Yanyan	ドクロベエ様、お世話になります!	Dokurobey-sama, we're in your hands!	pass 2; pass 1: どころでさま
 41.24	41.80	dlg	Itadakiman	いただき!	Mine!	? his staff snatches the flower; pass 2: ドロッキー!
 43.40	44.84	dlg	Itadakiman	あ、いただきまーす!	Ah, thanks for the meal!	?
 45.08	50.30	dlg	Itadakiman	いくら日に当たらない生活が長いからって、こんなアイテムに頼ってちゃおしまいだぜ。	Sure, you've lived out of the limelight a long time, but leaning on an item like this is pathetic.	
 50.88	54.98	dlg	Itadakiman	そんな後ろ向きの了見の奴らには、笑う門に苦よ来い!	For a gloomy bunch like you: laugh, and misery comes laughing back!	? twist on 笑う門には福来る, a curse before his attack; was: 猟犬, 笑う角に供養こい, pass 2: わらんかどにくよこい
 54.98	56.86	dlg	Itadakiman	これをプレゼントでい!	Here's a present for ya!	he blows a swarm of little monkeys at them
-70.14	72.44	dlg	Yanyan	ドクロベエ様、助けてー!	Lord Dokurobey, help us!	was: ドクロビー様
+70.14	72.44	dlg	Yanyan	ドクロベエ様、助けてー!	Dokurobey-sama, help us!	was: ドクロビー様
 80.22	82.68	dlg	Yanyan	一人で逃げちゃうなんてひどいよ!	Running off all by yourself, that's so mean!	? was: 一人で逃げちゃってるなんててるよ; Dokurobey left only a skeleton
 85.62	90.44	dlg	Itadakiman	おー、絶景かな絶景かな	Oh, what a splendid view, what a splendid view!	
 92.34	94.26	dlg	Itadakiman	ほんじゃ、そういうことで	Well then, that's that.	

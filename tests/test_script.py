@@ -67,10 +67,11 @@ def test_save_titles_roundtrip():
     rows = save_titles.rows()
     fields = save_titles.fields(demo)
     assert len(rows) == len(fields) == 33
-    for (n, off, jp), (o, b) in zip(rows, fields):
+    for (n, off, jp, en), (o, b) in zip(rows, fields):
         assert int(off, 16) == o
         assert save_titles.decode(t, b) == jp
         assert save_titles.encode(t, jp) == b
+        assert save_titles.decode(t, save_titles.encode(t, en)) == en  # D8: full width, fits the field
 
 
 def test_fmv_scripts_in_time_order():
@@ -98,6 +99,7 @@ def test_credits_rows():
     assert groups == sorted(groups)
     for r in rows:
         assert r[2] in ("head", "sub", "name", "role", "actor") and r[3], r
+        assert r[4] and r[4].isascii(), r  # en, Western name order (D1)
     for g in set(groups):  # a cast group is roles then one actor
         kinds = [r[2] for r in rows if int(r[1]) == g]
         if "actor" in kinds:

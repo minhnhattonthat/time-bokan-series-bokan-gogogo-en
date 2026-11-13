@@ -1,203 +1,203 @@
-n	group	kind	jp	note
-1	1	head	絵コンテ	STAFF.STR staff roll, top to bottom, read from 3 s frames at 2x (work/fmv/STAFF/full); head = ◆heading◆, role/actor = cast columns (left/right) of one group
-2	1	name	笹川 ひろし
-3	2	head	演出
-4	2	name	工藤 進
-5	3	head	脚本
-6	3	name	河内 厚典
-7	4	head	キャスト
-8	5	role	マージョ
-9	5	role	ドロンジョ
-10	5	role	ムージョ
-11	5	role	アターシャ
-12	5	role	ミレンジョ
-13	5	role	ムンムン
-14	5	role	ヤンヤン
-15	5	role	ルージュ
-16	5	actor	小原 乃梨子
-17	6	role	グロッキー
-18	6	role	ボヤッキー
-19	6	role	トボッケー
-20	6	role	セコビッチ
-21	6	role	ジュリー・コケマツ
-22	6	role	コスイネン
-23	6	role	ダサイネン
-24	6	role	ヒエール	as on screen; the MODE#177 name sprite is ピエール (the intended name; handakuten lost at this size?)
-25	6	actor	八奈見 乗児
-26	7	role	ワルサー
-27	7	role	トンズラー
-28	7	role	ドンジューロー
-29	7	role	ドワルスキー
-30	7	role	アラン・スカドン
-31	7	role	キョカンチン
-32	7	role	トンメンタン
-33	7	role	オンドレー
-34	7	actor	たてかべ 和也
-35	8	role	ドクロベエ
-36	8	actor	滝口 順平
-37	9	role	丹平
-38	9	role	ヤッターマン1号
-39	9	actor	太田 淑子
-40	10	role	淳子
-41	10	role	ヤッターマン2号
-42	10	actor	岡本 茉莉
-43	11	role	オモッチャマ
-44	11	actor	桂 玲子
-45	12	role	ゼンダマン1号
-46	12	actor	三ツ矢 雄二
-47	13	role	オタスケマン1号
-48	13	actor	水島 裕
-49	14	role	ヤットデタマン
-50	14	actor	曽我部 和恭
-51	15	role	イッパツマン
-52	15	actor	松本 保典
-53	16	role	イタダキマン
-54	16	actor	田中 真弓
-55	17	role	ゼンダライオン
-56	17	role	ゲキガスキー
-57	17	actor	山本 正之
-58	18	role	オシイ星人
-59	18	actor	鈴木 勝美
-60	19	role	大巨神
-61	19	actor	宝亀 克寿
-62	20	role	オロカブ
-63	20	actor	横尾 まり
-64	21	role	トッタルニャン
-65	21	actor	木村 郁絵
-66	22	name	深森 らえる	other voices, no role or heading
-67	22	name	越智 透一
-68	22	name	尾又 徹
-69	22	name	江藤 真琴
-70	23	head	オープニング原画
-71	23	name	大久保 富彦
-72	23	name	工原 しげき
-73	23	name	佐藤 陽子
-74	23	name	佐野 英敏
-75	23	name	高田 詩乃
-76	23	name	竹内 進二
-77	23	name	富岡 隆司
-78	23	name	三浦 和也
-79	23	name	宮脇 千鶴
-80	23	name	山下 敏成
-81	24	head	作画監督
-82	24	name	加野 晃
-83	25	head	ゲーム版メカ設定
-84	25	name	鉄羅 紀明
-85	26	head	原画
-86	26	name	椿 久美子	椿 or 梅 (codex review): small kanji
-87	26	name	竹内 進二
-88	26	name	佐藤 陽子
-89	26	name	佐野 隆史
-90	26	name	松田 たけし
-91	26	name	宮脇 千鶴
-92	26	name	ロベルト・フェラーリ
-93	27	sub	アニメアール	<sub-heading> in angle brackets
-94	27	name	崎山 知明
-95	27	name	志村 泉
-96	27	name	松坂 定俊
-97	27	name	村田 雅美
-98	28	sub	スタジオ・マーク
-99	28	name	相坂 直紀
-100	28	name	川添 政和
-101	28	name	佐野 英俊
-102	28	name	服部 益実
-103	29	head	動画チェック
-104	29	name	桐山 和子
-105	30	head	動画
-106	30	name	角田 恵子
-107	30	name	長牛 みゆき
-108	30	name	清水 保之
-109	30	name	スタジオ・アド
-110	30	name	きのプロダクション
-111	30	name	韓一動画
-112	31	head	色指定
-113	31	name	北爪 英子
-114	32	head	仕上
-115	32	name	竜の子カラーセンター
-116	32	name	スタジオ・アド
-117	32	name	韓一動画
-118	33	head	検査
-119	33	name	北爪 英子
-120	33	name	米原 純子
-121	34	head	特殊効果
-122	34	name	前川 孝
-123	35	head	美術監修
-124	35	name	多田 喜久子
-125	36	head	背景
-126	36	name	イメージルーム・ジロー
-127	37	head	撮影
-128	37	name	横山 幸太郎
-129	37	name	相沢 健四郎
-130	37	name	武川 昌志
-131	37	name	横山 昌彦
-132	38	head	編集
-133	38	name	三木 幸子
-134	38	name	中野 ちひろ
-135	39	head	現像・ビデオ編集
-136	39	name	東京現像所
-137	40	head	リスワーク
-138	40	name	マキ・プロ
-139	41	head	CGワークス
-140	41	name	アンフィニ・エンタテインメント・テクノロジ	runs off the right edge of the frame in the original (テクノロジー cut)
-141	41	name	アニメンタル・スタジオ
-142	42	head	CGディレクター
-143	42	name	片岡 順一
-144	43	head	3Dワークス
-145	43	name	田代 輝紀
-146	44	head	2Dワークス
-147	44	name	スコット・フレージャー
-148	45	head	セルシェーダー
-149	45	name	中嶌 隆史	heading read セルシェーダー at 2x; codex read セルシューター
-150	46	head	録音演出
-151	46	name	水本 完
-152	47	head	効果
-153	47	name	加藤 昭二 (アニメサウンド)	company in small type
-154	48	head	調整
-155	48	name	西澤 規夫
-156	48	name	成田 一明
-157	49	head	録音スタジオ
-158	49	name	整音スタジオ
-159	50	head	音響制作
-160	50	name	ザックプロモーション
-161	51	head	制作デスク
-162	51	name	イビラタカヤ	no space on screen
-163	52	head	制作進行
-164	52	name	渡部 明弘
-165	53	head	制作事務
-166	53	name	西尾 美子
-167	54	head	アニメーション・プロデューサー
-168	54	name	吉田 昇一
-169	55	head	アニメーション制作
-170	55	name	タツノコプロ
-171	56	head	監督
-172	56	name	笹川 ひろし
-173	57	head	ゲームグラフィック
-174	57	name	筒井 和雄
-175	57	name	大田 恵弘
-176	57	name	高澤 國芳
-177	57	name	伊藤 行勝
-178	57	name	佐藤 佳代子
-179	57	name	小島 友子
-180	57	name	西村 年幸
-181	58	head	プログラム
-182	58	name	大川 弘樹
-183	58	name	井上 勇二
-184	59	head	開発制作進行
-185	59	name	小山 正義
-186	59	name	河内 厚典
-187	60	head	開発
-188	60	name	株式会社シー・ラボ
-189	61	head	ゲーム音楽制作
-190	61	name	有限会社エムズファクトリー
-191	61	name	増子 司
-192	62	head	デバック	spelled デバック on screen
-193	62	name	有限会社ブローバワークス	ブ or プ: reads ブ at 2x, プ to the codex review
-194	63	head	パッケージワーク
-195	63	name	インターインター有限会社
-196	64	head	スペシャルサンクス
-197	64	name	柳田 一利
-198	64	name	鈴木 克寛
-199	64	name	石渡 利明
-200	64	name	尾鼻 直人	尾鼻? small kanji
-201	65	head	製作発売	held alone at the end, then fades
-202	65	name	株式会社バンプレスト
+n	group	kind	jp	en	note
+1	1	head	絵コンテ	Storyboards	STAFF.STR staff roll, top to bottom, read from 3 s frames at 2x (work/fmv/STAFF/full); head = ◆heading◆, role/actor = cast columns (left/right) of one group
+2	1	name	笹川 ひろし	Hiroshi Sasagawa	
+3	2	head	演出	Direction	
+4	2	name	工藤 進	Susumu Kudo	
+5	3	head	脚本	Script	
+6	3	name	河内 厚典	Atsunori Kawachi	
+7	4	head	キャスト	Cast	
+8	5	role	マージョ	Majo	
+9	5	role	ドロンジョ	Doronjo	
+10	5	role	ムージョ	Mujo	
+11	5	role	アターシャ	Atasha	
+12	5	role	ミレンジョ	Mirenjo	
+13	5	role	ムンムン	Munmun	
+14	5	role	ヤンヤン	Yanyan	
+15	5	role	ルージュ	Rouge	
+16	5	actor	小原 乃梨子	Noriko Ohara	
+17	6	role	グロッキー	Grocky	
+18	6	role	ボヤッキー	Boyacky	
+19	6	role	トボッケー	Tobokke	
+20	6	role	セコビッチ	Secovicci	
+21	6	role	ジュリー・コケマツ	Julie Kokematsu	
+22	6	role	コスイネン	Kosuinen	
+23	6	role	ダサイネン	Dasainen	
+24	6	role	ヒエール	Pierre	as on screen; the MODE#177 name sprite is ピエール (the intended name; handakuten lost at this size?)
+25	6	actor	八奈見 乗児	Joji Yanami	
+26	7	role	ワルサー	Walsa	
+27	7	role	トンズラー	Tonzra	
+28	7	role	ドンジューロー	Donjuro	
+29	7	role	ドワルスキー	Dowalski	
+30	7	role	アラン・スカドン	Alan Sukadon	
+31	7	role	キョカンチン	Kyokanchin	
+32	7	role	トンメンタン	Tonmentan	
+33	7	role	オンドレー	Ondore	
+34	7	actor	たてかべ 和也	Kazuya Tatekabe	
+35	8	role	ドクロベエ	Dokurobey	
+36	8	actor	滝口 順平	Junpei Takiguchi	
+37	9	role	丹平	Tanpei	
+38	9	role	ヤッターマン1号	Yatterman-1	
+39	9	actor	太田 淑子	Yoshiko Ota	
+40	10	role	淳子	Junko	
+41	10	role	ヤッターマン2号	Yatterman-2	
+42	10	actor	岡本 茉莉	Mari Okamoto	
+43	11	role	オモッチャマ	Omotchama	
+44	11	actor	桂 玲子	Reiko Katsura	
+45	12	role	ゼンダマン1号	Zenderman-1	
+46	12	actor	三ツ矢 雄二	Yuji Mitsuya	
+47	13	role	オタスケマン1号	Rescueman-1	
+48	13	actor	水島 裕	Yu Mizushima	
+49	14	role	ヤットデタマン	Yattodetaman	
+50	14	actor	曽我部 和恭	Kazuyuki Sogabe	
+51	15	role	イッパツマン	Ippatsuman	
+52	15	actor	松本 保典	Yasunori Matsumoto	
+53	16	role	イタダキマン	Itadakiman	
+54	16	actor	田中 真弓	Mayumi Tanaka	
+55	17	role	ゼンダライオン	Zendalion	
+56	17	role	ゲキガスキー	Gekigasky	
+57	17	actor	山本 正之	Masayuki Yamamoto	
+58	18	role	オシイ星人	Oshii Alien	
+59	18	actor	鈴木 勝美	Katsumi Suzuki	
+60	19	role	大巨神	Daikyojin	
+61	19	actor	宝亀 克寿	Katsuhisa Hoki	
+62	20	role	オロカブ	Orokabu	
+63	20	actor	横尾 まり	Mari Yokoo	
+64	21	role	トッタルニャン	Tottarunyan	
+65	21	actor	木村 郁絵	Ikue Kimura	
+66	22	name	深森 らえる	Raeru Fukamori	other voices, no role or heading
+67	22	name	越智 透一	Toichi Ochi	
+68	22	name	尾又 徹	Toru Omata	
+69	22	name	江藤 真琴	Makoto Eto	
+70	23	head	オープニング原画	Opening Key Animation	
+71	23	name	大久保 富彦	Tomihiko Okubo	
+72	23	name	工原 しげき	Shigeki Kuhara	
+73	23	name	佐藤 陽子	Yoko Sato	
+74	23	name	佐野 英敏	Hidetoshi Sano	
+75	23	name	高田 詩乃	Shino Takada	
+76	23	name	竹内 進二	Shinji Takeuchi	
+77	23	name	富岡 隆司	Takashi Tomioka	
+78	23	name	三浦 和也	Kazuya Miura	
+79	23	name	宮脇 千鶴	Chizuru Miyawaki	
+80	23	name	山下 敏成	Toshinari Yamashita	
+81	24	head	作画監督	Animation Director	
+82	24	name	加野 晃	Akira Kano	
+83	25	head	ゲーム版メカ設定	Game Mecha Design	
+84	25	name	鉄羅 紀明	Toshiaki Tetsura	reading としあき per anidb creator 6230 (phase 6 review)
+85	26	head	原画	Key Animation	
+86	26	name	栫 久美子	Kumiko Kakoi	read 椿 or 梅 small; MobyGames' credits for this game give Kumiko Kakoi (栫)
+87	26	name	竹内 進二	Shinji Takeuchi	
+88	26	name	佐藤 陽子	Yoko Sato	
+89	26	name	佐野 隆史	Takashi Sano	
+90	26	name	松田 たけし	Takeshi Matsuda	
+91	26	name	宮脇 千鶴	Chizuru Miyawaki	
+92	26	name	ロベルト・フェラーリ	Roberto Ferrari	
+93	27	sub	アニメアール	Anime R	<sub-heading> in angle brackets
+94	27	name	崎山 知明	Tomoaki Sakiyama	
+95	27	name	志村 泉	Izumi Shimura	
+96	27	name	松坂 定俊	Sadatoshi Matsuzaka	
+97	27	name	村田 雅美	Masami Murata	
+98	28	sub	スタジオ・マーク	Studio Mark	
+99	28	name	相坂 直紀	Naoki Aisaka	
+100	28	name	川添 政和	Masakazu Kawazoe	
+101	28	name	佐野 英俊	Hidetoshi Sano	
+102	28	name	服部 益実	Masumi Hattori	
+103	29	head	動画チェック	In-Between Check	
+104	29	name	桐山 和子	Kazuko Kiriyama	
+105	30	head	動画	In-Between Animation	
+106	30	name	角田 恵子	Keiko Tsunoda	
+107	30	name	長牛 みゆき	Miyuki Nagaushi	
+108	30	name	清水 保之	Yasuyuki Shimizu	
+109	30	name	スタジオ・アド	Studio Add	the studio's own spelling (st-add.com)
+110	30	name	きのプロダクション	Kino Production	
+111	30	name	韓一動画	Hanil Animation	
+112	31	head	色指定	Color Design	
+113	31	name	北爪 英子	Eiko Kitazume	
+114	32	head	仕上	Ink and Paint	
+115	32	name	竜の子カラーセンター	Tatsunoko Color Center	
+116	32	name	スタジオ・アド	Studio Add	
+117	32	name	韓一動画	Hanil Animation	
+118	33	head	検査	Checking	
+119	33	name	北爪 英子	Eiko Kitazume	
+120	33	name	米原 純子	Junko Yonehara	
+121	34	head	特殊効果	Special Effects	
+122	34	name	前川 孝	Takashi Maekawa	
+123	35	head	美術監修	Art Supervisor	
+124	35	name	多田 喜久子	Kikuko Tada	
+125	36	head	背景	Backgrounds	
+126	36	name	イメージルーム・ジロー	Image Room Jiro	
+127	37	head	撮影	Photography	
+128	37	name	横山 幸太郎	Kotaro Yokoyama	
+129	37	name	相沢 健四郎	Kenshiro Aizawa	
+130	37	name	武川 昌志	Masashi Takekawa	
+131	37	name	横山 昌彦	Masahiko Yokoyama	
+132	38	head	編集	Editing	
+133	38	name	三木 幸子	Sachiko Miki	
+134	38	name	中野 ちひろ	Chihiro Nakano	
+135	39	head	現像・ビデオ編集	Film Processing and Video Editing	
+136	39	name	東京現像所	Tokyo Laboratory	
+137	40	head	リスワーク	Lith Work	
+138	40	name	マキ・プロ	Maki Pro	
+139	41	head	CGワークス	CG Works	
+140	41	name	アンフィニ・エンタテインメント・テクノロジ	Infini Entertainment Technology	runs off the right edge of the frame in the original (テクノロジー cut)
+141	41	name	アニメンタル・スタジオ	Animental Studio	
+142	42	head	CGディレクター	CG Director	
+143	42	name	片岡 順一	Junichi Kataoka	
+144	43	head	3Dワークス	3D Works	
+145	43	name	田代 輝紀	Teruki Tashiro	
+146	44	head	2Dワークス	2D Works	
+147	44	name	スコット・フレージャー	Scott Frazier	
+148	45	head	セルシェーダー	Cel Shader	
+149	45	name	中嶌 隆史	Takashi Nakajima	heading read セルシェーダー at 2x; codex read セルシューター
+150	46	head	録音演出	Sound Director	
+151	46	name	水本 完	Kan Mizumoto	
+152	47	head	効果	Sound Effects	
+153	47	name	加藤 昭二 (アニメサウンド)	Shoji Kato (Anime Sound)	company in small type
+154	48	head	調整	Mixing	
+155	48	name	西澤 規夫	Norio Nishizawa	
+156	48	name	成田 一明	Kazuaki Narita	
+157	49	head	録音スタジオ	Recording Studio	
+158	49	name	整音スタジオ	Seion Studio	
+159	50	head	音響制作	Sound Production	
+160	50	name	ザックプロモーション	Zack Promotion	
+161	51	head	制作デスク	Production Desk	
+162	51	name	イビラタカヤ	Takaya Ibira	no space on screen
+163	52	head	制作進行	Production Assistant	
+164	52	name	渡部 明弘	Akihiro Watanabe	
+165	53	head	制作事務	Production Office	
+166	53	name	西尾 美子	Yoshiko Nishio	
+167	54	head	アニメーション・プロデューサー	Animation Producer	
+168	54	name	吉田 昇一	Shoichi Yoshida	
+169	55	head	アニメーション制作	Animation Production	
+170	55	name	タツノコプロ	Tatsunoko Production	
+171	56	head	監督	Director	
+172	56	name	笹川 ひろし	Hiroshi Sasagawa	
+173	57	head	ゲームグラフィック	Game Graphics	
+174	57	name	筒井 和雄	Kazuo Tsutsui	
+175	57	name	大田 恵弘	Yoshihiro Ota	
+176	57	name	高澤 國芳	Kuniyoshi Takazawa	
+177	57	name	伊藤 行勝	Yukikatsu Ito	
+178	57	name	佐藤 佳代子	Kayoko Sato	
+179	57	name	小島 友子	Tomoko Kojima	
+180	57	name	西村 年幸	Toshiyuki Nishimura	
+181	58	head	プログラム	Programming	
+182	58	name	大川 弘樹	Hiroki Okawa	
+183	58	name	井上 勇二	Yuji Inoue	
+184	59	head	開発制作進行	Development Production Assistant	
+185	59	name	小山 正義	Masayoshi Koyama	
+186	59	name	河内 厚典	Atsunori Kawachi	
+187	60	head	開発	Development	
+188	60	name	株式会社シー・ラボ	C-Lab Inc.	
+189	61	head	ゲーム音楽制作	Game Music	
+190	61	name	有限会社エムズファクトリー	M's Factory Ltd.	
+191	61	name	増子 司	Tsukasa Masuko	
+192	62	head	デバック	Debugging	spelled デバック on screen
+193	62	name	有限会社プローバワークス	Prova Works Ltd.	reads ブ at 2x, プ to the codex review; ProvaWorks is this game's test contractor (ogdb.eu)
+194	63	head	パッケージワーク	Package Design	
+195	63	name	インターインター有限会社	Inter Inter Ltd.	
+196	64	head	スペシャルサンクス	Special Thanks	
+197	64	name	柳田 一利	Kazutoshi Yanagida	
+198	64	name	鈴木 克寛	Katsuhiro Suzuki	
+199	64	name	石渡 利明	Toshiaki Ishiwatari	
+200	64	name	尾鼻 直人	Naoto Obana	尾鼻? small kanji
+201	65	head	製作発売	Produced and Published by	held alone at the end, then fades
+202	65	name	株式会社バンプレスト	Banpresto Co., Ltd.	

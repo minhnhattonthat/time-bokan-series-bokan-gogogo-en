@@ -5,16 +5,16 @@ start	end	form	speaker	jp	en	note
 12.46	14.96	dlg	Dokurobey	新世界を創造してやるだべ	...and create a new world, y'hear.	
 14.96	17.54	dlg	Dokurobey	さあ主役の座を渡すだべ	Now, hand over Top Billing, y'hear.	
 18.38	23.42	dlg	Mujo	ドクちゃん、これ渡す前に一つ教えてほしいことがあるんだけど	Doku-chan, before I hand it over, there's one thing I'd like you to tell me.	was: ドクチアン
-23.42	28.28	dlg	Dokurobey	色っぽい声でお願いされると我が輩は弱いだべ	I'm weak when a sultry voice asks me nicely, y'hear.	? was: イロペコイで
+23.42	28.28	dlg	Dokurobey	色っぽい声でお願いされると我が輩は弱いだべ	I can't resist a sultry voice asking nicely, y'hear.	? was: イロペコイで
 28.72	30.56	dlg	Dokurobey	なんでも聞くがいいだべ	Ask me anything you like, y'hear.	
 30.56	31.26	dlg	Mujo	ほんと?	Really?	
 31.62	36.80	dlg	Mujo	じゃあこの主役の座をどうすると世界一の主役になることができるの?	Then what do I do with this Top Billing to become the biggest star in the world?	
 37.14	39.26	dlg	Dokurobey	よかよか、教えてやるだべ	Fine, fine, I'll tell you, y'hear.	
 39.26	42.72	dlg	Dokurobey	その花の中にある主役蜜を飲むんだべ	You drink the star nectar inside that flower, y'hear.	
-42.72	45.96	dlg	Dokurobey	さすればツヤツヤの玉のような肌になり	Do that, and your skin turns smooth and round as a pearl...	
+42.72	45.96	dlg	Dokurobey	さすればツヤツヤの玉のような肌になり	Do that, and your skin becomes smooth and lustrous as a pearl...	
 45.96	50.12	dlg	Dokurobey	その美貌で世界一の主役間違いなしになるのだべ	...and with those looks, you're sure to be the world's biggest star, y'hear.	
 50.12	52.06	dlg	Mujo	玉のようなお肌	Skin like a pearl...	
-54.48	56.60	dlg	Tobokke	ああ、ムージョ様だけずるい	Aw, no fair, Lady Mujo!	was: 無茶様だけちゅるい
+54.48	56.60	dlg	Tobokke	ああ、ムージョ様だけずるい	Aw, no fair, Mujo-sama!	was: 無茶様だけちゅるい
 58.20	59.70	dlg	Tobokke	飲ませて飲ませて	Let me drink, let me drink!	?
 59.70	62.40	dlg	Donjuro	わいも飲むまんねや	I'll drink some too, I tell ya!	
 66.82	69.04	dlg	Zenderman-1	しまった、間に合わなかったか	Blast, we're too late!	Zenderman-1 and -2 arrive on screen
@@ -25,8 +25,8 @@ start	end	form	speaker	jp	en	note
 86.22	88.14	dlg	Zenderman-1	まるで玉のような姿だな	You look just like balls!	
 90.50	93.32	dlg	Tobokke	やい、ドクロベエ、これはどういうことなんだ、ドクロベエ	Hey, Dokurobey, what is the meaning of this? Dokurobey!	? both passes: やあ、ドクメ…ドクメ; speaker by the close-up
 95.02	97.08	dlg	Tobokke	あれ、いないもんね	Huh? He's gone!	?
-98.68	101.46	dlg	Dokurobey	主役蜜が玉のような肌どころか	So the star nectar doesn't give you skin round as a pearl...	voice only; was: シュアクミス
-101.46	105.76	dlg	Dokurobey	文字通り玉のような体になることだったとは知らなかっただべ	...it literally turns your body into a ball. I had no idea, y'hear.	
+98.68	101.46	dlg	Dokurobey	主役蜜が玉のような肌どころか	So the star nectar doesn't give you pearly skin...	voice only; was: シュアクミス
+101.46	105.76	dlg	Dokurobey	文字通り玉のような体になることだったとは知らなかっただべ	...it makes you round as a pearl, all over! I had no idea, y'hear.	
 106.28	107.60	dlg	Dokurobey	あー、飲まなくてよかった	Phew, glad I didn't drink it.	? speaker; pass 2 has the あー
 108.22	108.60	dlg	Mujo	そんな	No way...	?
 110.92	113.36	dlg	Zenderman-1	おいムージョ、その姿よく似合ってるぜ	Hey, Mujo, that shape really suits you!	

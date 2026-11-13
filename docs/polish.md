@@ -22,7 +22,22 @@ no usable reading stay dropped and are listed below. `grep -P '\t\?' script/fmv/
   (written ジュリー), BOGO13 ドクメ (written ドクロベエ), BOGO15 ナンダラ王国 / コマロ.
 - [ ] BOGO12 91.76: who goes back to "my original form", Dokurobey or the gang (frames 76-96 s).
 
+## Translation (phase 6): cuts and font overrides to look at in game
+
+- [ ] CUT: アンドロメダマ号α is "Andromedama" on sprites (no α glyph; "Alpha" is 1-8 px over on the plate and SAVE#42).
+  Subtitles keep "Andromedama Alpha". Phase 7: a hand-drawn α, or a rect grown after a zoomed look.
+- [ ] CUT: ナゼカ平原 is "Whyzca" (平原 dropped; "Whyzca Plain" is 87 px in 80 px sprites).
+- [ ] Class overrides that mix fonts inside one list (D11): songs MODE#35 (`label`), MODE#38/41 (`narrowlabel`), MODE#14/15
+  (`label`), machines MODE#96/105 and copies, CSELECT#87 (`label`), cup plate CSELECT#2.1 (`label`). Check the look.
+- [ ] SAVE#7: only "CANSEL" is relettered as "CANCEL" in Liberation Sans Bold; copying the sprite's own C over the S
+  would keep the italic art (phase 7).
+- [ ] シュウリョウ movie tab read as "Finish" (tabs run Opening, Dokurobey, Start, Finish, Ending, Punishment: likely
+  BOGO10, the boss reveal); check which movies it lists in the movie viewer.
+- [ ] Names Whisper guessed now have English (BOGO15 Julie / Komaro / Nandara, BOGO14 comet): same ear check as above.
+
 ## Credits
 
-- [ ] `script/credits.tsv` readings marked in the note (ヒエール on screen vs the ピエール sprite, 椿 or 梅,
-  ブローバ or プローバ, 尾鼻, セルシェーダー (codex read セルシューター)): check against a staff list or a sharper frame.
+- [ ] `script/credits.tsv` readings marked in the note (ヒエール on screen vs the ピエール sprite, 尾鼻, セルシェーダー
+  (codex read セルシューター)): check against a staff list or a sharper frame. Settled in the phase 6 review from
+  published credits: 栫 久美子 Kumiko Kakoi (was read 椿/梅), プローバワークス Prova Works, 鉄羅 紀明 Toshiaki Tetsura,
+  石渡 利明 Toshiaki Ishiwatari, スタジオ・アド Studio Add. Other name readings are Hepburn guesses from the kanji.
