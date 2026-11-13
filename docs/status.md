@@ -5,7 +5,7 @@ Updated at the end of every session. Keep it to what the next session needs; his
 - **Phase:** 7. Insert, fit, check next: phase 6 (translation) done 2026-11-14. English exists for every row; the build doesn't letter it yet.
 - **Phase 6 (done 2026-11-14):** translated by one agent (no subagents in the Orca run), reviewed by `codex exec`.
   - Graphics: `script/graphics_en.tsv` (id, en, class, rect; the spike format, so `fit.py` and `gfx.spike_edits` read
-    it): 495 rows, `fit.py` 0 OVER, 65 `grow` (fit only their measured room; phase 7 widens the rect). Test
+    it): 495 rows, `fit.py` 0 OVER, 70 `grow` (fit only their measured room; phase 7 widens the rect). Test
     `test_gfx.py::test_translation_covers_every_row_and_fits`. New classes `narrow`/`narrowlabel` (Tiny5 drawn twice as
     tall, D11) for character names, movie tabs, スカ, 逆走行, two song titles; MSELECT plates in caps. Course names
     re-punned to fit (glossary Places). SAVE#7 letters only the misspelt word (rect 104,1,67,15).
@@ -24,6 +24,14 @@ Updated at the end of every session. Keep it to what the next session needs; his
     Second pass (`phase6_codex2.txt`): every earlier finding fixed but two Important left (Ryuko's parentage,
     DOKURO#54 without the tic) and 3 Minor; all applied ("the dragon god's girl / Ryuko powers it!", "Good,
     y'hear!", ゴール = "Finish!").
+    Harness review (`.harness/reviews/...-phase6.md`, 4 Important) applied: MODE1#1 "Itadakiman's Ryuko, / dragon
+    god's daughter, / powers this mystic car!" (lines 2-3 widened to 4,y,152 inside the panel border), BOGO13@86.22
+    "You're round as pearls, the lot of you!", DOKURO#54 "Bravo, y'hear!", MODE1#4 "built tough, it races / through
+    time!", MODE1 third lines all end "!", save titles "ＢＯＫＡＮ　ＧＯＧＯＧＯ"; new lint
+    `test_script.py::test_glossary_and_charset` (Avoid spellings, JP term => EN form, 様/さん, Dokurobey's tic, ASCII
+    but ©; waivers in `GLOSSARY_WAIVED`). Third codex pass over every line changed since p6b (`phase6_codex3.txt`):
+    1 Important (MODE1#1), fixed; fourth pass (`phase6_codex4.txt`): **Assessment: Approved**.
+    `docs/synopsis.md` still to write before phase 9 (story pass chapter list).
 - **Next (phase 7):** build lettering from `graphics_en.tsv` (spike_edits takes the path), grow rects for `grow` rows
   after a zoomed marker look, subtitles from the `en` column (`fmv_burn.read_rows` returns jp today), STAFF.STR roll
   from `credits.tsv` en (font still open: default Liberation Sans Bold, the roll's longest line is "Infini

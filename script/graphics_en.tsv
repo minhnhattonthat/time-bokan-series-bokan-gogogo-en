@@ -405,7 +405,7 @@ DOKURO#50	Edopolis, y'hear
 DOKURO#51	Hungrajah Realm, y'hear		
 DOKURO#52	Tirezon Forest, y'hear		
 DOKURO#53	Beat Top Billing, y'hear!		
-DOKURO#54	Good, y'hear!		
+DOKURO#54	Bravo, y'hear!		
 DOKURO#55	Stage clear, y'hear!		
 DOKURO#56	You lot,		
 DOKURO#57	try hard, y'hear!		
@@ -432,15 +432,15 @@ GOVER#8	Game Over
 MODE1#0.1	From Rescueman		
 MODE1#0.2	newly built compact,		
 MODE1#0.3	a super-big machine!		
-MODE1#1.1	From Itadakiman		
-MODE1#1.2	the dragon god's girl		
-MODE1#1.3	Ryuko powers it!		
+MODE1#1.1	Itadakiman's Ryuko,		
+MODE1#1.2	dragon god's daughter,		4,18,152,13
+MODE1#1.3	powers this mystic car!		4,31,152,14
 MODE1#2.1	From Yatterman		
 MODE1#2.2	the Doronbow Gang's		
-MODE1#2.3	all-new original car		
+MODE1#2.3	all-new original car!		
 MODE1#4.1	From Zenderman		
-MODE1#4.2	a proud, tough body		
-MODE1#4.3	runs through time!		
+MODE1#4.2	built tough, it races		
+MODE1#4.3	through time!		
 MODE1#5.1	From Ippatsuman		
 MODE1#5.2	only it beat heroes(?)		
 MODE1#5.3	the strongest car!		
@@ -449,7 +449,7 @@ MODE1#6.2	springs are its trick,
 MODE1#6.3	a miracle racer!		
 MODE1#7.1	From the 1st series		
 MODE1#7.2	with beetle power,		
-MODE1#7.3	Time Bokan's Unit 1		
+MODE1#7.3	Time Bokan's Unit 1!		
 MODE1#8.1	Evil never prospers!		
 MODE1#8.2	Strike a victory pose!		
 MODE1#8.3	Go! The dog mecha!		
@@ -458,7 +458,7 @@ MODE1#9.2	a train of justice,
 MODE1#9.3	singing lion mecha!		
 MODE1#10.1	From Kiramekiman		
 MODE1#10.2	with 1,000 faces,		
-MODE1#10.3	a powerhouse car		
+MODE1#10.3	a powerhouse car!		
 MODE1#11.1	Out for treasure,		
 MODE1#11.2	here in style!		
 MODE1#11.3	dazzling cat mecha!		

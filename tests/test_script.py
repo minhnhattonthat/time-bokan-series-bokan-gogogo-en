@@ -92,6 +92,69 @@ def test_fmv_scripts_in_time_order():
             last = float(start)
 
 
+def en_pairs():
+    """(where, speaker, jp, en) for every graphics row, movie line and credit line."""
+    jp = {r.id: r.jp for r in gfx_script.rows()}
+    out = [(rid, "", jp[rid], en) for rid, en, *_ in
+           (ln.split("\t") for ln in (ROOT / "script" / "graphics_en.tsv").read_text(encoding="utf-8").splitlines()[1:])]
+    for f in sorted((ROOT / "script" / "fmv").glob("*.tsv")):
+        for ln in f.read_text(encoding="utf-8").splitlines()[1:]:
+            c = ln.split("\t")
+            if c[5]:
+                out.append((f"{f.stem}@{c[0]}", c[3], c[4], c[5]))
+    for c in (ln.split("\t") for ln in (ROOT / "script" / "credits.tsv").read_text(encoding="utf-8").splitlines()[1:]):
+        out.append((f"credits#{c[0]}", "", c[3], c[4]))
+    return out
+
+
+def glossary():
+    """(jp alternatives, en alternatives, avoid list) from every table in glossary.md."""
+    terms = []
+    for ln in (ROOT / "glossary.md").read_text(encoding="utf-8").splitlines():
+        c = [x.strip() for x in ln.strip().strip("|").split("|")]
+        if not ln.startswith("|") or len(c) < 5 or c[0] in ("JP", "---"):
+            continue
+        avoid = [a.split("(")[0].strip() for a in c[4].split(",") if a.strip()]
+        terms.append(([j.strip() for j in c[0].split("/")], [e.strip() for e in c[1].split("/")], avoid))
+    return terms
+
+
+# jp present, en form deliberately reworded (where -> why)
+GLOSSARY_WAIVED = {
+    "MODE#145": "movie tab, 46 px: Punishment",
+    "BOGO07@7.32": "the other trios: villains already named by context",
+    "BOGO18@13.74": "the other trios: Dokurobey speaks of the villains",
+}
+
+
+def has_term(low, en):
+    """en form found, ignoring '(s)', a trailing '!' and case."""
+    return en.lower().replace("(s)", "").split(" (")[0].rstrip("!") in low
+
+
+def test_glossary_and_charset():
+    """translation.md §Validation: Avoid spellings, glossary terms, honorifics (D1), Dokurobey's tic, ASCII."""
+    bad = []
+    terms = glossary()
+    for where, speaker, jp, en in en_pairs():
+        low = en.lower()
+        if not all(ch.isascii() or ch == "©" for ch in en):
+            bad.append((where, "non-ASCII", en))
+        for jps, ens, avoid in terms:
+            bad += [(where, f"avoid {a}", en) for a in avoid if re.search(rf"\b{re.escape(a)}\b", en)]
+            hit = next((j for j in jps if j and j in jp), None)
+            if hit and not any(has_term(low, e) for e in ens) and where not in GLOSSARY_WAIVED:
+                bad.append((where, f"{hit} without {ens}", en))
+        if re.search(r"(?<![仕模])様(?!子)", jp) and "-sama" not in en and where not in GLOSSARY_WAIVED:
+            bad.append((where, "様 without -sama", en))
+        if "さん" in jp and "-san" not in en and where not in GLOSSARY_WAIVED:
+            bad.append((where, "さん without -san", en))
+        if (speaker == "Dokurobey" or where.startswith("DOKURO#")) and re.search(r"べ[ェエー]?[。！!…]*$", jp) \
+                and "y'hear" not in en:
+            bad.append((where, "Dokurobey's tic missing", en))
+    assert not bad, "\n".join(map(str, bad))
+
+
 def test_credits_rows():
     rows = [ln.split("\t") for ln in (ROOT / "script" / "credits.tsv").read_text(encoding="utf-8").splitlines()[1:]]
     assert [int(r[0]) for r in rows] == list(range(1, len(rows) + 1))
