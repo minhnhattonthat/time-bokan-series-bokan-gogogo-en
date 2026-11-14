@@ -495,8 +495,8 @@ TUP0#69	GRAP/TUP0#69	1	0	95	16	course	エドロポリス
 TUP0#70	GRAP/TUP0#70	1	1	122	15	course	マハラヘッタ王国
 TUP0#71	GRAP/TUP0#71	0	0	124	16	course	クタビレゾンの森
 TUP0#72	GRAP/TUP0#72	1	0	126	16	course	ホネオリゾン渓谷
-TUP0#73	GRAP/TUP0#73	0	0	77	14	label	次のコースは、
-TUP0#74	GRAP/TUP0#74	1	0	78	14	label	はじめのコースは、
+TUP0#73	GRAP/TUP0#73	0	0	77	14	brief	次のコースは、
+TUP0#74	GRAP/TUP0#74	1	0	78	14	brief	はじめのコースは、
 STAT01#30	STAGE/STAT01#30	1	0	85	32	hud	ゴール
 STAT01#31	STAGE/STAT01#31	0	0	127	31	hud	ファイナルラップ	#193 in each STAT file is the same blob
 STAT01#61	STAGE/STAT01#61	2	19	28	12	hud	スカ	item icon: skull over the word スカ (dud); rect by eye

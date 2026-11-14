@@ -41,7 +41,7 @@ THICK = {"title", "big"}
 FORM_CLASS = {"title": "title", "art": "title", "hud": "big", "menu": "bar", "cup": "bar", "lap": "bar", "team": "label",
               "pause": "bar", "stat": "sign", "badge": "bar", "movie": "bar", "song": "bar", "fix": "bar",
               "machine": "sign", "course": "sign", "name": "sign", "plate": "sign", "label": "label",
-              "msg": "sign", "brief": "sign", "panel": "label", "copy": "small"}
+              "msg": "sign", "brief": "label1", "panel": "label", "copy": "small"}
 
 
 def class_of(r):
@@ -315,8 +315,8 @@ def typeset(data, rows, grow=False):
 
 EN = ROOT / "script" / "graphics_en.tsv"
 # Forms drawn as on-screen lists whose Japanese starts at the TIM's left edge (pause menu, course, machine and song
-# lists, phase 8): English keeps that anchor, else the items' left edges go ragged.
-LEFT_FORMS = {"pause", "course", "machine", "song"}
+# lists, phase 8; briefing pieces joined at run time, owner report): English keeps that anchor, else left edges go ragged.
+LEFT_FORMS = {"pause", "course", "machine", "song", "brief"}
 
 
 def left_anchored(r):

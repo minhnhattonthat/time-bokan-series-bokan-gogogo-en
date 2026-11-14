@@ -467,24 +467,24 @@ TUP0#3	Speed
 TUP0#4	Dash		
 TUP0#5	Grip		
 TUP0#6	Done		
-TUP0#57	Jurassicky Park		
-TUP0#58	Hubbub City		
-TUP0#59	Great-ish Wall		
-TUP0#60	Toaster Island		
-TUP0#61	Loch Mess Shore		
-TUP0#62	Imalaya Range		
-TUP0#63	Whyzca		
-TUP0#64	Doze Castle		
-TUP0#65	Roast World		
-TUP0#66	Moo Land		
-TUP0#67	Rosailles Town		
-TUP0#68	Antiagara Falls		
-TUP0#69	Edopolis		
-TUP0#70	Hungrajah Realm		
-TUP0#71	Tirezon Forest		
-TUP0#72	Toilzon Canyon		
-TUP0#73	Up next:		
-TUP0#74	First up:		
+TUP0#57	Jurassicky Park	label1	
+TUP0#58	Hubbub City	label1	
+TUP0#59	Great-ish Wall	label1	
+TUP0#60	Toaster Island	label1	
+TUP0#61	Loch Mess Shore	label1	
+TUP0#62	Imalaya Range	label1	
+TUP0#63	Whyzca	label1	
+TUP0#64	Doze Castle	label1	
+TUP0#65	Roast World	label1	
+TUP0#66	Moo Land	label1	
+TUP0#67	Rosailles Town	label1	
+TUP0#68	Antiagara Falls	label1	
+TUP0#69	Edopolis	label1	
+TUP0#70	Hungrajah Realm	label1	
+TUP0#71	Tirezon Forest	label1	
+TUP0#72	Toilzon Canyon	label1	
+TUP0#73	Up next:	label	
+TUP0#74	First up:	label	
 STAT01#30	Finish!		
 STAT01#31	Final Lap		
 STAT01#61	DUD	narrow	
