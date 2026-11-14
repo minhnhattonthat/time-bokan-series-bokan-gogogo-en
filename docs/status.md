@@ -2,15 +2,17 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 9. Release: every gate passes on build/en sha1 `c138922296f1763f3020d21d0b36b6ff1628b2a1`; only the
-  patch + zip step is left (`python -X utf8 tools/release.py 1.0`).
-- **Next (phase 9):** run `tools/release.py 1.0` (~10 min: tests, smoke, discdiff, jp_left, both qa_gates, textcover,
-  polish, README, xdelta3 with a 64 MB window, re-apply check, zip in `release/`). The first run (2026-11-14) passed
-  every gate and was killed by the harness during `xdelta3 -B <disc size>` for low system memory (other projects'
-  jobs on the machine); the window is now 64 MB (LBAs never move, so in-place matches are all found). Then check the
-  zip (patch + README.txt), record the patch sha1 here. Never `gh release create`. Any rebuild needs a new tour +
-  `qa_gate.py init --build` and codex verdicts for changed sheets (`tools/qa_codex.py`, chunk files renamed
-  uniquely: it now refuses to overwrite an older run's `chunk_000.tsv`).
+- **Phase:** 9 done. Release v1.0 built and verified (2026-11-14); publishing is the owner's call.
+- **Release v1.0:** `release/Time_Bokan_Series_Bokan_GoGoGo_EN_v1.0.zip` (209,798,269 bytes) = `..._v1.0.xdelta`
+  (209,794,311 bytes, sha1 `77660f35f477bcdc7aeadc605b31daad811e9e0a`) + README.txt (base and patched hashes).
+  `tools/release.py 1.0` exit 0: dump, 39 tests, smoke, discdiff, SLPS_031.33 untouched, jp_left DEMO.BIN + SLPS,
+  qa_gate `work/qa/manifest.tsv` + `work/qa/story/manifest.tsv`, textcover 480 + 15 waived, polish 0 open, README
+  placeholders, xdelta3 (64 MB window) re-applied = build sha1 `c138922296f1763f3020d21d0b36b6ff1628b2a1`
+  (CRC32 4E9EAD34). The README's own command (`xdelta3 -d -s`, no `-B`) also re-checked: same sha1.
+  Patch is large (~210 MB) because 2,415 STAFF frames + 11,190 subtitle frames are re-encoded MDEC.
+- **Next:** none in the pipeline. Owner: publish (never by agent: no `gh release create`). Any rebuild needs a new
+  tour + `qa_gate.py init --build`, codex verdicts for changed sheets (`tools/qa_codex.py`, unique chunk names),
+  then `tools/release.py VERSION`.
 - **Phase 9 so far (2026-11-14), build `c1389222`:**
   - Story pass: `tools/pairs.py --chapters work/qa/story/chapters` (9 chapters: intro + briefings + BOGO10, 7 trios =
     team movie + ending, true ending), `qa_gate.py init work/qa/story/manifest.tsv ... --glob "*.txt"`, verdicts by
