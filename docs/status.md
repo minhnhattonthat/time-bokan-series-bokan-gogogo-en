@@ -10,8 +10,9 @@ Updated at the end of every session. Keep it to what the next session needs; his
   placeholders, xdelta3 (64 MB window) re-applied = build sha1 `c138922296f1763f3020d21d0b36b6ff1628b2a1`
   (CRC32 4E9EAD34). The README's own command (`xdelta3 -d -s`, no `-B`) also re-checked: same sha1.
   Patch is large (~210 MB) because 2,415 STAFF frames + 11,190 subtitle frames are re-encoded MDEC.
-- **2026-11-14 owner report (D15):** briefing pieces + tune-up bubble restyled and left-aligned; `build/en` rebuilt
-  with `--no-staff` and warped (tuneup, briefing*, win_c0: ok by eye, `work/qa/fix_brief/`). Release v1.0 zip is
+- **2026-11-14 owner reports (D15, D16):** briefing pieces + tune-up bubble restyled and left-aligned; all two-outline
+  rows recoloured from the sampled Japanese inks; menus/stats/panels/labels left-anchored. `build/en` rebuilt with
+  `--no-staff`, warped and checked by eye (`work/qa/fix_brief/`, `fix2`-`fix5`). Every `sign`/`menu` sheet changed. Release v1.0 zip is
   stale: needs `build.py --en` (with STAFF), tour + qa_gate re-init, codex verdicts for changed sheets, `release.py 1.1`.
 - **Next:** none in the pipeline. Owner: publish (never by agent: no `gh release create`). Any rebuild needs a new
   tour + `qa_gate.py init --build`, codex verdicts for changed sheets (`tools/qa_codex.py`, unique chunk names),

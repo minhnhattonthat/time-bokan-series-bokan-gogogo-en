@@ -22,7 +22,7 @@ J10 = 1400 / 75  # Jersey 10's native pixel grid (upm / pixel unit); 20 px doubl
 CLASSES = {
     "title": ("Bangers-Regular.ttf", 34, True),       # big screen titles (モード セレクト), art lettering
     "big": ("Bangers-Regular.ttf", 28, True),         # race HUD words (ゴール), 30+ px rows
-    "menu": ("Bangers-Regular.ttf", 22, 2),           # 20+ px menu rows: fill, light inner and dark outer outline
+    "menu": ("Bangers-Regular.ttf", 22, 2),           # 20+ px menu rows: fill and a 2 px outline
     "bar": ("LiberationSans-Bold.ttf", 14, True),     # buttons and bars: Bangers garbles below 18 px (desu-yo D16)
     "sign": ("Jersey10-Regular.ttf", J10, 2),         # names, courses, machines, messages, briefings: outlined art
     "label": ("Jersey10-Regular.ttf", J10, False),    # plain text on a panel (machine descriptions), small labels
@@ -156,7 +156,7 @@ def glyphs(text, form):
     if yscale:
         ink = np.repeat(ink, yscale[0], axis=0)
     rings = []
-    for _ in range(2 if form in THICK else int(outline)):  # 1: one; 2: inner light, outer dark (menu art); THICK: 2 px
+    for _ in range(2 if form in THICK else int(outline)):  # 1: one ring; 2 or THICK: two (typeset paints both the outline ink)
         ink = np.pad(ink, 1)
         rings = [np.pad(r, 1) for r in rings]
         inside = ink | np.any(rings, axis=0) if rings else ink
@@ -297,17 +297,9 @@ def typeset(data, rows, grow=False):
         cell[:] = bg[:, None] if known is None else inpainted(orig, known)
         oy, ox = (h - gh) // 2, 0 if left else (w - gw) // 2
         box = cell[oy:oy + gh, ox:ox + gw]
-        if form in THICK:
-            halo = halo | outer
-        elif outer.any():  # solid fill (no per-row gradient), lightest ink inside, darkest outside
-            inks = [i for i in np.unique(orig[orig != bg[:, None]]).tolist()]
-            luma = lambda i: (t.clut[i] & 31) * 2 + ((t.clut[i] >> 5) & 31) * 4 + ((t.clut[i] >> 10) & 31)  # noqa: E731
-            dark, light = min(inks, key=luma), max(inks, key=luma)
-            mid = orig[~np.isin(orig, [dark, light]) & (orig != bg[:, None])]
-            box[outer], box[halo] = dark, light
-            box[ink] = mode(mid) if mid.size else mode(fill)  # the commonest ink between the two outlines
-            continue
-        box[halo] = line
+        # 2 px of the sampled outline: the Japanese is fill + one thick outline shading into it; light inner / dark
+        # outer rings took the pale shading ink as fill (owner report: unreadable Speed/Dash/Grip, options menu, D16)
+        box[halo | outer] = line
         prof = fill[np.round(np.arange(gh) * (len(fill) - 1) / max(gh - 1, 1)).astype(int)]
         box[ink] = np.broadcast_to(prof[:, None], ink.shape)[ink]
     return tim.with_pixels(t, data, px.reshape(-1).tolist())
@@ -315,12 +307,13 @@ def typeset(data, rows, grow=False):
 
 EN = ROOT / "script" / "graphics_en.tsv"
 # Forms drawn as on-screen lists whose Japanese starts at the TIM's left edge (pause menu, course, machine and song
-# lists, phase 8; briefing pieces joined at run time, owner report): English keeps that anchor, else left edges go ragged.
-LEFT_FORMS = {"pause", "course", "machine", "song", "brief"}
+# lists, phase 8; briefing pieces, menus, stat labels, panels and labels, owner reports D15/D16): English starts where
+# the Japanese starts, else left edges go ragged. Centred: titles, HUD, cups, laps, badges, teams, messages, names.
+LEFT_FORMS = {"pause", "course", "machine", "song", "brief", "menu", "stat", "panel", "label"}
 
 
 def left_anchored(r):
-    return r.form in LEFT_FORMS and r.x <= 8  # every list row starts at x 0, 1 or 8 (GP course list: 8)
+    return r.form in LEFT_FORMS
 
 
 def spike_edits(path=ROOT / "script" / "spike.tsv"):
