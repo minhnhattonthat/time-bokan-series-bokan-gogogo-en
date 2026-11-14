@@ -2,16 +2,29 @@
 
 Updated at the end of every session. Keep it to what the next session needs; history is in git.
 
-- **Phase:** 9. Release next (phase 8 done 2026-11-14 on build/en sha1 `6642505a2538ae8c9fb573423b65a08942321502`).
-- **Next (phase 9):** story pass per chapter (`docs/synopsis.md` chapters -> `work/qa/story/manifest.tsv`, verdicts by
-  `codex exec` read-only as in phase 6, `references/translation.md` §Review); tick or resolve every line of
-  `docs/polish.md`; release script (none yet) running `qa_gate.py check work/qa/manifest.tsv work/qa/verdicts`,
-  `textcover.py work/qa/env_cover work/qa/env_cover/strings.tsv --waive docs/text_unshown.tsv` and `jp_left.py`
-  (`--sjis` on DEMO.BIN, `--known script/jp_known.txt` on SLPS_031.33) on the build; debug tool is not in the build
-  (warp is Lua only); xdelta/BPS patch for a 650 MB .bin (bps.py is per-byte Python: check speed, else xdelta3),
-  re-applied and verified; README (base dump hashes from `rom.sha1`), zip = patch + README. Never `gh release create`.
-  The build hash above is what qa_gate's manifest recorded: any rebuild needs a new tour + `qa_gate.py init` (or
-  `waive` with a reason).
+- **Phase:** 9. Release: every gate passes on build/en sha1 `c138922296f1763f3020d21d0b36b6ff1628b2a1`; only the
+  patch + zip step is left (`python -X utf8 tools/release.py 1.0`).
+- **Next (phase 9):** run `tools/release.py 1.0` (~10 min: tests, smoke, discdiff, jp_left, both qa_gates, textcover,
+  polish, README, xdelta3 with a 64 MB window, re-apply check, zip in `release/`). The first run (2026-11-14) passed
+  every gate and was killed by the harness during `xdelta3 -B <disc size>` for low system memory (other projects'
+  jobs on the machine); the window is now 64 MB (LBAs never move, so in-place matches are all found). Then check the
+  zip (patch + README.txt), record the patch sha1 here. Never `gh release create`. Any rebuild needs a new tour +
+  `qa_gate.py init --build` and codex verdicts for changed sheets (`tools/qa_codex.py`, chunk files renamed
+  uniquely: it now refuses to overwrite an older run's `chunk_000.tsv`).
+- **Phase 9 so far (2026-11-14), build `c1389222`:**
+  - Story pass: `tools/pairs.py --chapters work/qa/story/chapters` (9 chapters: intro + briefings + BOGO10, 7 trios =
+    team movie + ending, true ending), `qa_gate.py init work/qa/story/manifest.tsv ... --glob "*.txt"`, verdicts by
+    `tools/story_codex.py` (codex exec read-only, brief `docs/story-reviewer-brief.md`, reports
+    `work/qa/story/reports/`): 9/9 ok, 0 Critical/Important; 11 Minors applied (`work/review/phase9_story_fixes*.tsv`),
+    changed chapters re-reviewed -> `fixed`. Story gate exit 0.
+  - Credits checked against MobyGames' list: ヒエール is Kiramekiman's **Hierre** (was "Pierre" in credits and the
+    MODE#177 sprite; glossary fixed), 角田 恵子 Keiko Kakuta, 岡本 茉利. `docs/polish.md`: every line ticked (fixed or
+    waived with reason; audio items waived: no listener, README known issue).
+  - Rebuilt (`build.py --en`), smoke ok, tour `work/qa/env` 136/136 (ending_t4 needed a rerun: the known Lua
+    coroutine flake), coverage 480 + 15 waived, 0 Japanese loaded, textcover exit 0; sheets: only `staff_roll` changed
+    (codex ok); 12 older verdicts lost to a chunk-name clash were re-reviewed (ok). `qa_gate check` 149/149 exit 0.
+  - `tools/release.py`, `docs/release_readme.txt` (zip README: Redump SLPS-03133, base CRC32 2F7887FB, MD5, SHA-1,
+    patched hashes filled in by the script), repo README filled in (no template placeholders).
 - **Phase 8 done (2026-11-14), build `6642505a`:** smoke ok; warp tour `work/qa/env` 136/136; `qa_gate.py check
   work/qa/manifest.tsv work/qa/verdicts` exit 0 (149 sheets ok; codex exec verdicts, chunks `work/qa/chunks3`, older
   verdict files `p1_*`/`p2_*`); coverage 480/495 rows seen + 15 waived, 0 Japanese originals loaded, `textcover.py`

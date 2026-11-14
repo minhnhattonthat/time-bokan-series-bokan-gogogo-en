@@ -53,6 +53,10 @@ if __name__ == "__main__":
     args = [a for a in args if not a.isdigit()]
     RAW.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
+    # todo names chunks chunk_000.. every run: a reused name would replace an older run's verdicts
+    taken = [a for a in args if (OUT / (Path(a).stem + ".tsv")).exists()]
+    if taken:
+        sys.exit(f"verdict files exist for {taken}: rename the chunk files (e.g. p9_chunk_000.txt)")
     bad = 0
     with cf.ThreadPoolExecutor(jobs) as ex:
         for chunk, n, got, issues in ex.map(run, args):

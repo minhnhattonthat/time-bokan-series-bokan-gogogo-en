@@ -25,6 +25,7 @@ from skill import SKILL  # noqa: E402
 NAME = "Time Bokan Series - Bokan GoGoGo (Japan)"
 ORIG, BUILT = ROOT / "rom" / f"{NAME}.bin", ROOT / "build" / "en" / f"{NAME}.bin"
 SLUG = "Time_Bokan_Series_Bokan_GoGoGo_EN"
+WINDOW = 64 << 20  # xdelta3 source window
 PY = [sys.executable, "-X", "utf8"]
 PLACEHOLDER = re.compile(r"<(Game title|platform|publisher|year|repo|file|size|sha1|game|ext|Translated|Left in|"
                          r"none known|Dialogue|Menus|Title screen|Name entry|Songs)[^>]*>")
@@ -85,11 +86,13 @@ def main(version, force):
     out.mkdir(exist_ok=True)
     base, new = hashes(ORIG), hashes(BUILT)
     patch.unlink(missing_ok=True)
-    step("xdelta3 encode", [shutil.which("xdelta3"), "-e", "-9", "-f", "-B", str(base["size"]), "-s", str(ORIG),
+    # disc.write_file keeps every LBA, so changed data sits at its original offset and a 64 MB source window finds
+    # every match; -B <disc size> needs ~1.3 GB and was killed for low memory
+    step("xdelta3 encode", [shutil.which("xdelta3"), "-e", "-9", "-f", "-B", str(WINDOW), "-s", str(ORIG),
                             str(BUILT), str(patch)])
     with tempfile.TemporaryDirectory() as tmp:
         re_bin = Path(tmp) / "patched.bin"
-        step("xdelta3 apply", [shutil.which("xdelta3"), "-d", "-f", "-B", str(base["size"]), "-s", str(ORIG),
+        step("xdelta3 apply", [shutil.which("xdelta3"), "-d", "-f", "-B", str(WINDOW), "-s", str(ORIG),
                                str(patch), str(re_bin)])
         step("re-applied patch equals the build", ok=hashes(re_bin)["sha1"] == new["sha1"])
     readme = (ROOT / "docs" / "release_readme.txt").read_text(encoding="utf-8").format(
