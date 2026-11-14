@@ -10,6 +10,10 @@ Updated at the end of every session. Keep it to what the next session needs; his
   placeholders, xdelta3 (64 MB window) re-applied = build sha1 `c138922296f1763f3020d21d0b36b6ff1628b2a1`
   (CRC32 4E9EAD34). The README's own command (`xdelta3 -d -s`, no `-B`) also re-checked: same sha1.
   Patch is large (~210 MB) because 2,415 STAFF frames + 11,190 subtitle frames are re-encoded MDEC.
+- **Release v1.1 (2026-11-14), published on GitHub:** `release/Time_Bokan_Series_Bokan_GoGoGo_EN_v1.1.zip`, patch sha1
+  `11458a6e443539db79ecb521fd1c6e628cb4e0eb`, patched bin sha1 `3bd01acecc62169671d12f77c98646451f1587d0` (CRC32
+  44D4628E). `release.py 1.1` exit 0; tour `work/qa/env` 136/136, coverage 480 + 15 waived, codex verdicts
+  `p11_*` (91 sheets, 9 issues: save slots centred -> form `slot`) and `p11b_*` (26 re-checked, ok); qa_gate 149/149.
 - **2026-11-14 owner reports (D15, D16):** briefing pieces + tune-up bubble restyled and left-aligned; all two-outline
   rows recoloured from the sampled Japanese inks; menus/stats/panels/labels left-anchored. `build/en` rebuilt with
   `--no-staff`, warped and checked by eye (`work/qa/fix_brief/`, `fix2`-`fix5`). Every `sign`/`menu` sheet changed. Release v1.0 zip is
