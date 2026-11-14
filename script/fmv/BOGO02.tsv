@@ -3,13 +3,13 @@ start	end	form	speaker	jp	en	note
 5.38	8.04	dlg	Dokurobey	我が輩はドクロベエだべ	I am Dokurobey, y'hear!	was: わが輩はどこのべだべ
 8.70	10.94	dlg	Doronbow	ははーっ	Yes, sir!	? was: はあ、オッシュ
 10.94	15.58	dlg	Dokurobey	タイムボカンシリーズ歴代の悪役諸君に	To all you villains of the Time Bokan Series, past and present...	
-15.58	17.90	dlg	Dokurobey	耳寄りな情報を与えるべ	I bring a juicy bit of news, y'hear.	
+15.58	17.90	dlg	Dokurobey	耳寄りな情報を与えるべ	...I bring a juicy bit of news, y'hear.	
 17.90	21.68	dlg	Dokurobey	秘境アラゾンの奥の奥、そのまた奥にある	Deep, deep in the wilds of the Arazon, and then deeper still...	was: そこまた; アラゾン = Amazon parody, map of South America on screen
-21.68	24.76	dlg	Dokurobey	地図にも載っていないクタビレゾンの森に	in the Tirezon Forest, a place on no map...	was: くたびれゾン; course name クタビレゾン
-24.76	28.62	dlg	Dokurobey	主役の座という不思議な力を持った花が生えてるだべ	grows a flower with a mysterious power, called Top Billing, y'hear.	
+21.68	24.76	dlg	Dokurobey	地図にも載っていないクタビレゾンの森に	...in the Tirezon Forest, a place on no map...	was: くたびれゾン; course name クタビレゾン
+24.76	28.62	dlg	Dokurobey	主役の座という不思議な力を持った花が生えてるだべ	...grows a flower with a mysterious power, called Top Billing, y'hear.	
 29.08	34.78	dlg	Dokurobey	その花の力で我が輩は悪役の新世界を作る計画を立ててるだべ	With the power of that flower, I'm planning a new world for villains, y'hear.	was: ワンハイ
 39.56	45.20	dlg	Dokurobey	そこでじゃ、その主役の座を見事我が輩の手に届けた者どもには	So here's the deal. Whoever delivers Top Billing into my hands...	was: ワンハイ
-45.20	50.54	dlg	Dokurobey	我が輩の作り出す新世界での主役になれることを約束してやるだべ	I promise top billing in the new world I create, y'hear!	was: ワンハイ
+45.20	50.54	dlg	Dokurobey	我が輩の作り出す新世界での主役になれることを約束してやるだべ	...I promise top billing in the new world I create, y'hear!	was: ワンハイ
 51.16	53.46	dlg	Doronjo	悪役新世界の主役だって?	The stars of a new villain world?	? speaker: Doronbow on screen at 52 s
 53.86	54.30	dlg	Atasha	まあ	My!	? speaker: Atasha's bath at 54 s
 55.20	56.18	dlg	Atasha	すごすぎる	That's just too good!	?
@@ -23,7 +23,7 @@ start	end	form	speaker	jp	en	note
 67.44	68.64	dlg	Dokurobey	そこでじゃ。	Here's the deal.	
 68.96	71.48	dlg	Dokurobey	今回はおめえら歴代三悪の中から、	This time, from all you villain trios...	was: 山岳, pass 2: 産学 (さんあく)
 71.58	74.04	dlg	Dokurobey	新世界の主役を選ぶために、	...to choose the star of the new world...	
-74.08	77.08	dlg	Dokurobey	マシーンによるレース勝負で行ってもらうだべ。	you'll settle it with a race, machine against machine, y'hear.	
+74.08	77.08	dlg	Dokurobey	マシーンによるレース勝負で行ってもらうだべ。	...you'll settle it with a race, machine against machine, y'hear.	
 77.44	80.44	dlg	Dokurobey	諸君らの無駄な健闘を祈るだべ。	I wish you all the best in your futile efforts, y'hear.	
 82.12	85.38	dlg	Dokurobey	と言って我が輩はきらびやかに消える。	And with that, I vanish in a dazzling flash.	? was: キラキラ赤に消える, pass 2: きらめきやっかに; he vanishes in a flash
 90.28	91.40	dlg	Omotchama	おやおやおや	Well, well, well!	

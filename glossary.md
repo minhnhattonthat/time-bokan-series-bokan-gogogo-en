@@ -18,7 +18,7 @@ Seeded from the sibling project time-bokan-series-bokan-desu-yo-en (its D11: nam
   without "!"). Speaker tics and voices: `docs/style-reference.md`.
 - Heroes and villains by trio: Majo/Grocky/Walsa (Time Bokan), Doronjo/Boyacky/Tonzra (Yatterman), Mujo/Tobokke/
   Donjuro (Zenderman), Atasha/Secovicci/Dowalski (Rescueman), Mirenjo/Kokematsu/Sukadon (Yattodetaman), Munmun/
-  Kosuinen/Kyokanchin (Ippatsuman), Yanyan/Dasainen/Tonmentan (Itadakiman), Rouge/Pierre/Ondore (Kiramekiman).
+  Kosuinen/Kyokanchin (Ippatsuman), Yanyan/Dasainen/Tonmentan (Itadakiman), Rouge/Hierre/Ondore (Kiramekiman).
 - Honorifics (D1, as desu-yo's "Doronjo-sama"): 様 → "-sama" (Majo-sama, Dokurobey-sama), さん → "-san" (Yanyan-san);
   ドクちゃん → "Doku-chan", ガンちゃん → "Gan-chan".
 - Graphics: Bangers classes are caps; machine-select plates are in caps (Jersey 10 descenders don't fit 14 px).
