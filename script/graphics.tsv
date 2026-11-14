@@ -311,8 +311,8 @@ RESULT#78	GRAP/RESULT#78	5	0	57	32	lap	ラップ 7
 RESULT#79	GRAP/RESULT#79	5	0	57	32	lap	ラップ 8
 RESULT#80	GRAP/RESULT#80	5	0	57	32	lap	ラップ 9
 RESULT#81	GRAP/RESULT#81	3	0	106	32	label	トータルタイム
-SAVE#0	GRAP/SAVE#0	0	0	72	16	menu	スロット 1
-SAVE#1	GRAP/SAVE#1	0	0	74	16	menu	スロット 2
+SAVE#0	GRAP/SAVE#0	0	0	72	16	slot	スロット 1
+SAVE#1	GRAP/SAVE#1	0	0	74	16	slot	スロット 2
 SAVE#2	GRAP/SAVE#2	0	0	225	16	msg	使用するスロットを選んで下さい。
 SAVE#3	GRAP/SAVE#3	0	0	242	16	msg	メモリーカードをチェックしています。
 SAVE#4	GRAP/SAVE#4	0	0	236	16	msg	メモリーカードが差さっていません。

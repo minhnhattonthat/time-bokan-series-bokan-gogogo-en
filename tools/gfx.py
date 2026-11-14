@@ -39,7 +39,7 @@ CLASSES = {
 THICK = {"title", "big"}
 # graphics.tsv form -> class; a translation row may name another class
 FORM_CLASS = {"title": "title", "art": "title", "hud": "big", "menu": "bar", "cup": "bar", "lap": "bar", "team": "label",
-              "pause": "bar", "stat": "sign", "badge": "bar", "movie": "bar", "song": "bar", "fix": "bar",
+              "pause": "bar", "stat": "sign", "badge": "bar", "movie": "bar", "song": "bar", "fix": "bar", "slot": "bar",
               "machine": "sign", "course": "sign", "name": "sign", "plate": "sign", "label": "label",
               "msg": "sign", "brief": "label1", "panel": "label", "copy": "small"}
 
@@ -308,7 +308,8 @@ def typeset(data, rows, grow=False):
 EN = ROOT / "script" / "graphics_en.tsv"
 # Forms drawn as on-screen lists whose Japanese starts at the TIM's left edge (pause menu, course, machine and song
 # lists, phase 8; briefing pieces, menus, stat labels, panels and labels, owner reports D15/D16): English starts where
-# the Japanese starts, else left edges go ragged. Centred: titles, HUD, cups, laps, badges, teams, messages, names.
+# the Japanese starts, else left edges go ragged. Centred: titles, HUD, cups, laps, badges, teams, messages, names,
+# save slots (form `slot`: the Slot 1 / Slot 2 pair is centred in its panel, p11 visual QA).
 LEFT_FORMS = {"pause", "course", "machine", "song", "brief", "menu", "stat", "panel", "label"}
 
 

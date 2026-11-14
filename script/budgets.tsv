@@ -299,8 +299,8 @@ RESULT#78	lap	bar	57	32	64	32	64	32	1	tim
 RESULT#79	lap	bar	57	32	64	32	64	32	1	tim
 RESULT#80	lap	bar	57	32	64	32	64	32	1	tim
 RESULT#81	label	label	106	32	112	32	112	32	1	tim
-SAVE#0	menu	bar	72	16	80	16	80	16	1	tim
-SAVE#1	menu	bar	74	16	80	16	80	16	1	tim
+SAVE#0	slot	bar	72	16	80	16	80	16	1	tim
+SAVE#1	slot	bar	74	16	80	16	80	16	1	tim
 SAVE#2	msg	sign	225	16	240	16	240	16	1	tim
 SAVE#3	msg	sign	242	16	256	16	256	16	1	tim
 SAVE#4	msg	sign	236	16	240	16	240	16	1	tim
